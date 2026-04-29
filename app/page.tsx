@@ -46,14 +46,7 @@ export default async function Home() {
                 {content.hero.secondaryCta}
               </a>
             </div>
-            <div className="metric-row">
-              {content.metrics.map((metric) => (
-                <div className="metric-card" key={`${metric.value}-${metric.label}`}>
-                  <strong>{metric.value}</strong>
-                  <p>{metric.label}</p>
-                </div>
-              ))}
-            </div>
+
           </div>
 
           <div className="paper-card" aria-label="Asistan önizlemesi">

@@ -83,7 +83,7 @@ p {
 }
 
 .eyebrow {
-  color: var(--accent);
+  color: var(--muted);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -152,8 +152,8 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--accent);
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--ink);
 }
 
 /* Mobile First Hero */
@@ -178,7 +178,7 @@ nav a:hover {
 }
 
 .hero-copy h1 span {
-  color: var(--accent);
+  color: var(--ai-glow);
   display: block;
   font-size: 0.8em;
   margin-top: 8px;
@@ -267,7 +267,7 @@ nav a:hover {
   display: block;
   font-family: var(--font-display), sans-serif;
   font-size: 2rem;
-  color: var(--accent);
+  color: var(--ink);
   margin-bottom: 8px;
 }
 
@@ -588,7 +588,7 @@ details[open] p {
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--ink);
   font-weight: 900;
   margin: 0;
   padding: 12px 14px;
