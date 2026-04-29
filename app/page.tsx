@@ -52,26 +52,7 @@ export default async function Home() {
 
           </div>
 
-          <div className="paper-card" aria-label="Asistan önizlemesi">
-            <div className="paper-card-header">
-              <span>Referans Anahtarı</span>
-              <strong>Fizik 101</strong>
-            </div>
-            <div className="paper-preview">
-              <div className="question-block active">
-                <b>Soru 1 (30 Puan)</b>
-                <p>İvme ve hız denklemleri doğru kurulmuş, formülasyon net.</p>
-              </div>
-              <div className="question-block">
-                <b>Soru 2 (25 Puan)</b>
-                <p>Kısmi doğru. Birim dönüştürme adımı eksik.</p>
-              </div>
-              <div className="question-block" style={{ background: "rgba(67, 56, 202, 0.05)" }}>
-                <b>Asistan Önerisi: 85/100</b>
-                <p>Nihai kararınızı bekliyor.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
