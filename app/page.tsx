@@ -100,6 +100,9 @@ export default async function Home() {
         <div className="section-heading">
           <span className="eyebrow">Nasıl Çalışır?</span>
           <h2 id="workflow-title">Beş Adımda Değerlendirme Süreciniz.</h2>
+          <p style={{ marginTop: "12px", maxWidth: "640px" }}>
+            Papirus AI, değerlendirme sürecinizi tek bir şeffaf akışta toplar. Kararınızı devralmaz; karara varmanız için gereken bilgiyi sizin uzmanlığınıza sunar.
+          </p>
         </div>
 
         {/* Intro step — plain text, no dot */}
@@ -126,11 +129,7 @@ export default async function Home() {
       <section className="section split-section" id="belgeler">
         <div>
           <span className="eyebrow">Süreç</span>
-          <h2>Referans, öğrenci yanıtı ve değerlendirme tek bir odakta toplanır.</h2>
-          <p style={{ color: "var(--muted)", marginTop: "16px", lineHeight: "1.8" }}>
-            Papirus AI, değerlendirme sürecinizi tek bir şeffaf akışta toplamak için tasarlanmıştır.
-            Amacımız kararınızı devralmak değil, karara varmanız için gereken bilgileri sizin uzmanlığınıza en saf haliyle sunmaktır.
-          </p>
+          <h2>Referans, yanıt ve değerlendirme tek akışta.</h2>
         </div>
         <div className="document-stack">
           {content.documents.map((document) => (

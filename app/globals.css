@@ -192,7 +192,8 @@ nav a:hover {
 
 .hero-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -201,14 +202,15 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
+  padding: 11px 24px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   border: 1px solid transparent;
-  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .button.primary {
