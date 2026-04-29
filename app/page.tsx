@@ -5,6 +5,8 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const content = await getSiteContent();
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:7331";
+  const authUrl = `${appUrl.replace(/\/$/, "")}/enter`;
 
   return (
     <main className="site-shell">
@@ -16,12 +18,22 @@ export default async function Home() {
             <small>{content.brand.shortDescription}</small>
           </span>
         </Link>
-        <nav aria-label="Ana menü">
-          <a href="#akis">Akış</a>
-          <a href="#belgeler">Belgeler</a>
-          <a href="#demo">Demo</a>
-          <a href="#sss">SSS</a>
-        </nav>
+        <div className="topbar-actions">
+          <nav aria-label="Ana menü">
+            <a href="#akis">Akış</a>
+            <a href="#belgeler">Belgeler</a>
+            <a href="#demo">Demo</a>
+            <a href="#sss">SSS</a>
+          </nav>
+          <div className="auth-actions" aria-label="Hesap işlemleri">
+            <a className="button small ghost" href={authUrl}>
+              Giriş yap
+            </a>
+            <a className="button small primary" href={authUrl}>
+              Kayıt ol
+            </a>
+          </div>
+        </div>
       </header>
 
       <section className="hero-grid">
@@ -34,6 +46,9 @@ export default async function Home() {
           <div className="hero-actions">
             <a className="button primary" href="#demo">
               {content.hero.primaryCta}
+            </a>
+            <a className="button accent" href={authUrl}>
+              Kayıt ol
             </a>
             <a className="button ghost" href="#akis">
               Nasıl çalışır?
