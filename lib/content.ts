@@ -28,7 +28,6 @@ const fallbackContent: SiteContent = {
     url: "",
     posterHint: "Sınav kağıtları, ayrılmış soru blokları ve puan kontrol alanı.",
   },
-  adminPitch: [],
   faq: [],
 };
 
@@ -68,7 +67,6 @@ export function normalizeSiteContent(value: unknown): SiteContent {
       ...fallbackContent.video,
       ...content.video,
     },
-    adminPitch: Array.isArray(content.adminPitch) ? content.adminPitch : [],
     faq: Array.isArray(content.faq) ? content.faq : [],
   };
 }

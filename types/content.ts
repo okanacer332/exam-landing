@@ -52,6 +52,5 @@ export type SiteContent = {
   features: Feature[];
   documents: DocumentConcept[];
   video: VideoConcept;
-  adminPitch: Feature[];
   faq: FaqItem[];
 };
