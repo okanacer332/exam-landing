@@ -32,7 +32,6 @@ export default function CountdownBar() {
       gap: "12px",
       flexWrap: "wrap"
     }}>
-      <span>🚀 Fırsat: Ücretsiz deneme sürümüne katılmak için son şansınız!</span>
       <span style={{
         background: "rgba(0,0,0,0.2)",
         padding: "4px 8px",
@@ -42,6 +41,7 @@ export default function CountdownBar() {
       }}>
         {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
       </span>
+      <span>içinde üye olup ücretsiz deneyebilirsiniz. 🚀</span>
     </div>
   );
 }
