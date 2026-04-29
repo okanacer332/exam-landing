@@ -18,7 +18,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=7332
+ENV PORT=3000
 
 RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 
@@ -31,6 +31,6 @@ RUN chown -R nextjs:nodejs /app/data
 
 USER nextjs
 
-EXPOSE 7332
+EXPOSE 3000
 
 CMD ["node", "server.js"]

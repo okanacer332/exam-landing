@@ -5,8 +5,8 @@ Papirus AI Landing, akademisyenlerin sınav okuma sürecini hızlandıran ürün
 ## Amaç
 
 - Referans cevap kağıdı, öğrenci teslimleri ve değerlendirme özeti fikrini sade biçimde anlatmak.
-- Ana Papirus AI uygulamasından bağımsız Docker ve deploy hattına sahip olmak.
-- Cloud Pages gibi statik/edge odaklı ortamlara kolayca taşınabilecek temiz bir landing yapısı sunmak.
+- Ana Papirus AI uygulamasından bağımsız deploy hattına sahip olmak.
+- `papirus-ai.com` alan adı altında hızlı ve kontrol edilebilir bir tanıtım sitesi sunmak.
 
 ## Lokal Çalıştırma
 
@@ -15,31 +15,15 @@ npm install
 npm run dev
 ```
 
-Uygulama varsayılan olarak `http://localhost:7332` adresinde açılır.
+Landing yerelde standart Next adresi olan `http://localhost:3000` ile çalışır.
 
-## Yerel İçerik Kontrolü
+Canlı landing alan adı: `https://papirus-ai.com`
 
-İçerik düzenleme ekranı sadece lokal kullanım içindir:
-
-```text
-http://localhost:7332/admin
-```
-
-Geliştirme ortamında varsayılan şifre:
+Kayıt ve giriş butonları konsola gider:
 
 ```text
-admin123
+https://konsol.papirus-ai.com/giris
 ```
-
-Yayına çıkmadan önce ortam değişkenlerini değiştir:
-
-```bash
-ADMIN_PASSWORD="guclu-bir-sifre"
-ADMIN_SESSION_SECRET="uzun-rastgele-bir-secret"
-ADMIN_COOKIE_SECURE="false"
-```
-
-Canlı HTTPS ortamında `ADMIN_COOKIE_SECURE="true"` kullan.
 
 ## Docker
 
@@ -47,4 +31,4 @@ Canlı HTTPS ortamında `ADMIN_COOKIE_SECURE="true"` kullan.
 docker compose up --build
 ```
 
-Docker servisi `http://localhost:7332` adresinden çalışır. `./data` klasörü container içine volume olarak bağlanır.
+Docker yalnızca gerektiğinde çalıştırılır. Günlük geliştirmede landing container'ı açık tutulmaz.

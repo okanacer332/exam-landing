@@ -4,12 +4,9 @@ services:
       context: .
     container_name: papirus-ai-landing
     environment:
-      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
-      ADMIN_SESSION_SECRET: ${ADMIN_SESSION_SECRET:-local-dev-secret-change-me}
-      ADMIN_COOKIE_SECURE: ${ADMIN_COOKIE_SECURE:-false}
-      PORT: 7332
+      PORT: 3000
     ports:
-      - "7332:7332"
+      - "3000:3000"
     volumes:
       - ./data:/app/data
     restart: unless-stopped
