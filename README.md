@@ -1,12 +1,12 @@
 # Papirus AI Landing
 
-Papirus AI Landing, sınav kağıdı okuma ürününün ana uygulamadan bağımsız tanıtım ve içerik yönetimi projesidir.
+Papirus AI Landing, akademisyenlerin sınav okuma sürecini hızlandıran ürün için bağımsız tanıtım projesidir.
 
 ## Amaç
 
-- Öğretmen cevap kağıdı, öğrenci teslimleri ve puanlama raporu konseptini anlaşılır biçimde sunmak.
-- Landing içeriğini kod değiştirmeden `/admin` panelinden düzenlenebilir yapmak.
+- Referans cevap kağıdı, öğrenci teslimleri ve değerlendirme özeti fikrini sade biçimde anlatmak.
 - Ana Papirus AI uygulamasından bağımsız Docker ve deploy hattına sahip olmak.
+- Cloud Pages gibi statik/edge odaklı ortamlara kolayca taşınabilecek temiz bir landing yapısı sunmak.
 
 ## Lokal Çalıştırma
 
@@ -17,9 +17,13 @@ npm run dev
 
 Uygulama varsayılan olarak `http://localhost:7332` adresinde açılır.
 
-## Admin Paneli
+## Yerel İçerik Kontrolü
 
-Admin paneli: `http://localhost:7332/admin`
+İçerik düzenleme ekranı sadece lokal kullanım içindir:
+
+```text
+http://localhost:7332/admin
+```
 
 Geliştirme ortamında varsayılan şifre:
 
@@ -34,8 +38,6 @@ ADMIN_PASSWORD="guclu-bir-sifre"
 ADMIN_SESSION_SECRET="uzun-rastgele-bir-secret"
 ADMIN_COOKIE_SECURE="false"
 ```
-
-Admin paneli landing içeriğini `data/site-content.json` dosyasına kaydeder.
 
 Canlı HTTPS ortamında `ADMIN_COOKIE_SECURE="true"` kullan.
 

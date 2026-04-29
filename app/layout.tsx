@@ -13,9 +13,9 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Papirus AI | SÄ±nav KaÄŸÄ±dÄ± Okuma AsistanÄ±",
+  title: "Papirus AI | Akademisyenler İçin Sınav Okuma",
   description:
-    "Hocalar ve asistanlar iÃ§in sÄ±nav kaÄŸÄ±tlarÄ±nÄ± okuyup soru bazlÄ± deÄŸerlendirme akÄ±ÅŸÄ±na hazÄ±rlayan landing sistemi.",
+    "Papirus AI, akademisyenlerin sınav kağıtlarını daha hızlı okuması, soruları ayırması ve değerlendirme kontrolünü düzenlemesi için geliştirilir.",
 };
 
 export default function RootLayout({

@@ -112,15 +112,15 @@ export function AdminConsole({ initialContent, isAuthenticated }: AdminConsolePr
     return (
       <section className="admin-login-card">
         <div>
-          <p className="eyebrow">Admin girişi</p>
-          <h1>Landing’i kontrol etmek için giriş yap.</h1>
+          <p className="eyebrow">Yerel içerik girişi</p>
+          <h1>Landing içeriğini düzenlemek için giriş yap.</h1>
           <p>
             Varsayılan geliştirme şifresi <strong>admin123</strong>. Yayına çıkmadan önce
             <code> ADMIN_PASSWORD </code> ortam değişkenini değiştir.
           </p>
         </div>
         <form onSubmit={handleLogin}>
-          <label htmlFor="password">Admin şifresi</label>
+          <label htmlFor="password">Kontrol şifresi</label>
           <input
             id="password"
             name="password"
@@ -142,9 +142,9 @@ export function AdminConsole({ initialContent, isAuthenticated }: AdminConsolePr
     <section className="admin-console">
       <div className="admin-heading">
         <div>
-          <p className="eyebrow">Yönetim paneli</p>
-          <h1>Landing içeriğini buradan düzenle.</h1>
-          <p>Hero metni, video konsepti ve tüm JSON içerik tek dosyada saklanır.</p>
+          <p className="eyebrow">İçerik kontrolü</p>
+          <h1>Landing metinlerini buradan düzenle.</h1>
+          <p>Hero metni, video konsepti ve JSON içerik tek dosyada saklanır.</p>
         </div>
         <button className="button ghost" onClick={handleLogout} type="button">
           Çıkış yap
@@ -237,16 +237,10 @@ export function AdminConsole({ initialContent, isAuthenticated }: AdminConsolePr
 
         <aside className="json-panel">
           <h2>Gelişmiş JSON editörü</h2>
-          <p>
-            Belge kartları, sık sorular, akış adımları ve özellikler bu JSON bloktan değiştirilebilir.
-          </p>
-          <textarea
-            spellCheck={false}
-            value={jsonDraft}
-            onChange={(event) => setJsonDraft(event.target.value)}
-          />
+          <p>Belge kartları, sık sorular, akış adımları ve özellikler bu JSON bloktan değiştirilebilir.</p>
+          <textarea spellCheck={false} value={jsonDraft} onChange={(event) => setJsonDraft(event.target.value)} />
           <button className="button ghost" onClick={loadJsonDraft} type="button">
-            JSON’u forma yükle
+            JSON'u forma yükle
           </button>
         </aside>
       </div>

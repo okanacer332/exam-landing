@@ -12,14 +12,14 @@ export default async function AdminPage() {
     <main className="admin-shell">
       <header className="admin-topbar">
         <Link className="brand-mark" href="/">
-          <span className="brand-orbit" />
+          <span className="brand-symbol">P</span>
           <span>
             <strong>{content.brand.name}</strong>
-            <small>Landing kontrol paneli</small>
+            <small>Yerel içerik kontrolü</small>
           </span>
         </Link>
         <Link className="button ghost" href="/">
-          Landing’e dön
+          Landing'e dön
         </Link>
       </header>
 

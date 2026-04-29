@@ -1,20 +1,20 @@
-﻿import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { SiteContent } from "@/types/content";
 
 const fallbackContent: SiteContent = {
   brand: {
     name: "Papirus AI",
-    shortDescription: "SÄ±nav kaÄŸÄ±dÄ± okuma ve deÄŸerlendirme asistanÄ±",
+    shortDescription: "Akademisyenler için sınav akışı",
   },
   hero: {
-    eyebrow: "Hocalar ve asistanlar iÃ§in sÄ±nav okuma motoru",
-    title: "SÄ±nav kaÄŸÄ±tlarÄ±nÄ± okunabilir veriye Ã§evirin.",
-    accent: "Referans kaÄŸÄ±dÄ±, Ã¶ÄŸrenci teslimleri ve puanlama tek akÄ±ÅŸta.",
+    eyebrow: "Akademisyenler için zaman kazandıran sınav okuma",
+    title: "Sınav kağıtlarını daha hızlı ve düzenli inceleyin.",
+    accent: "Referans cevap, öğrenci yanıtı ve puanlama aynı akışta.",
     description:
-      "Ã–ÄŸretmen cevap kaÄŸÄ±dÄ±nÄ± yÃ¼kleyin; sistem sorularÄ±, puanlarÄ± ve metinleri anlamlÄ± bloklara ayÄ±rsÄ±n.",
-    primaryCta: "Demo akÄ±ÅŸÄ±nÄ± incele",
-    secondaryCta: "Admin paneline git",
+      "Papirus AI, öğretim üyeleri ve asistanların sınav kağıtlarını daha hızlı incelemesi için geliştirilen bir okuma ve kontrol aracıdır.",
+    primaryCta: "Demo akışını gör",
+    secondaryCta: "Nasıl çalışır?",
   },
   metrics: [],
   audiences: [],
@@ -22,11 +22,11 @@ const fallbackContent: SiteContent = {
   features: [],
   documents: [],
   video: {
-    title: "Demo konsepti",
-    description: "Referans kaÄŸÄ±dÄ±ndan rapora uzanan kÄ±sa Ã¼rÃ¼n videosu.",
+    title: "Kısa ürün demosu",
+    description: "Referans cevap kağıdından son kontrole uzanan sade ürün demosu.",
     duration: "03:00",
     url: "",
-    posterHint: "SÄ±nav kaÄŸÄ±tlarÄ± ve OCR bloklarÄ±.",
+    posterHint: "Sınav kağıtları, ayrılmış soru blokları ve puan kontrol alanı.",
   },
   adminPitch: [],
   faq: [],
@@ -41,13 +41,13 @@ function isObject(value: unknown): value is Record<string, unknown> {
 
 export function normalizeSiteContent(value: unknown): SiteContent {
   if (!isObject(value)) {
-    throw new Error("Ä°Ã§erik nesnesi geÃ§ersiz.");
+    throw new Error("İçerik nesnesi geçersiz.");
   }
 
   const content = value as Partial<SiteContent>;
 
   if (!isObject(content.brand) || !isObject(content.hero) || !isObject(content.video)) {
-    throw new Error("Brand, hero ve video alanlarÄ± zorunludur.");
+    throw new Error("Brand, hero ve video alanları zorunludur.");
   }
 
   return {
