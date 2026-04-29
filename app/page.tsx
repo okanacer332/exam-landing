@@ -121,38 +121,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ─── Documents ──────────────────────────────── */}
-      <section className="section split-section" id="belgeler">
-        <div>
-          <span className="eyebrow">Süreç</span>
-          <h2>Referans, yanıt ve değerlendirme tek akışta.</h2>
-        </div>
-        <div className="document-stack">
-          {content.documents.map((document) => (
-            <article className="card" key={document.title}>
-              <span className="eyebrow" style={{ fontSize: "0.7rem" }}>{document.tag}</span>
-              <h3>{document.title}</h3>
-              <p>{document.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
-      {/* ─── Features ───────────────────────────────── */}
-      <section className="section" aria-labelledby="features-title">
-        <div className="section-heading">
-          <span className="eyebrow">Temel Vaat</span>
-          <h2 id="features-title">Daha az yorgunluk, daha şeffaf değerlendirme.</h2>
-        </div>
-        <div className="feature-grid">
-          {content.features.map((feature) => (
-            <article className="card" key={feature.title}>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {/* ─── Demo / Video ───────────────────────────── */}
       <section className="section" id="demo">
@@ -183,8 +152,8 @@ export default async function Home() {
       {/* ─── FAQ ────────────────────────────────────── */}
       <section className="section" id="sss">
         <div className="section-heading">
-          <span className="eyebrow">Kısa Cevaplar</span>
-          <h2>Asistanınızın sınırlarını şeffafça çiziyoruz.</h2>
+          <span className="eyebrow">Sık Sorulan Sorular</span>
+          <h2>Papirus AI Hakkında Merak Ettikleriniz</h2>
         </div>
         <div className="faq-list">
           {content.faq.map((item) => (

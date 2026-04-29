@@ -116,6 +116,10 @@
   "adminPitch": [],
   "faq": [
     {
+      "question": "Sistem öğrenci yanıtlarını nasıl değerlendiriyor?",
+      "answer": "Öğrenci yanıtlarını sisteme yüklediğiniz referans anahtar ile satır satır karşılaştırarak, eksik ve doğru alanları titizlikle tespit eder."
+    },
+    {
       "question": "Sistem otomatik olarak not mu veriyor?",
       "answer": "Hayır. Papirus AI, sizin belirlediğiniz cevap anahtarına göre bir ön değerlendirme ve öneri sunar. Nihai not, daima sizin tarafınızdan onaylandıktan sonra kesinleşir."
     },
@@ -126,6 +130,10 @@
     {
       "question": "Sistemin önerdiği puanı değiştirebilir miyim?",
       "answer": "Elbette. Akademik karar yetkisi tamamen size aittir. Sistem önerilerini inceleyebilir, istediğiniz alanda düzeltme yaparak notu yeniden belirleyebilirsiniz."
+    },
+    {
+      "question": "Geçmiş sınav değerlendirmelerime daha sonra ulaşabilir miyim?",
+      "answer": "Evet, tüm sınav dönemi değerlendirmeleriniz ileride dönüp incelenebilecek şekilde düzenli ve güvenli bir arşivde tutulur."
     }
   ]
 }
