@@ -338,14 +338,13 @@ nav a:hover {
   font-size: clamp(1.5rem, 4vw, 2.4rem);
 }
 
-/* Grid Layouts */
+/* Grid Layouts — mobile first (1 col), desktop override below */
 .feature-grid,
-.timeline,
 .faq-list,
 .document-stack {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
 }
 
 .card {
@@ -638,81 +637,62 @@ details[open] p {
   white-space: pre;
 }
 
-@media (max-width: 980px) {
+/* =================================================================
+   DESKTOP OVERRIDES — min-width: 768px
+   Mobile = 1 column (set above). Desktop = side by side.
+   ================================================================= */
+@media (min-width: 768px) {
 
-  .topbar,
-  .admin-topbar,
-  .admin-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
+  /* Topbar */
+  .topbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
   }
 
-  nav {
-    flex-wrap: wrap;
-  }
-
-  .hero-grid,
-  .split-section,
-  .video-frame,
-  .admin-login-card,
-  .admin-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .metric-row,
-  .feature-grid,
-  .feature-grid.three,
-  .timeline {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .site-shell,
-  .admin-shell {
-    padding: 16px;
-  }
-
-  .auth-actions {
-    border-radius: 22px;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .auth-actions .button {
-    flex: 1 1 130px;
-  }
-
+  /* Hero */
   .hero-grid {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
   }
 
-  .hero-actions {
-    flex-direction: row;
-  }
-
+  /* Metrics — 3 side by side */
   .metric-row {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .feature-grid,
-  .faq-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  /* Audience — 3 side by side */
   .feature-grid.three {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Handled in mobile-first approach */
+  /* Features — 2 side by side */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  /* Features — explicit 4 col when 4 cards */
+  .feature-grid.four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* FAQ — 2 side by side */
+  .faq-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Documents — 3 side by side */
+  .document-stack {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Split sections */
   .split-section {
     grid-template-columns: 1fr 1fr;
   }
 
+  /* Video frame */
   .video-frame {
     flex-direction: row;
     text-align: left;
@@ -720,15 +700,58 @@ details[open] p {
     gap: 48px;
   }
 
+  /* Horizontal timeline */
+  .timeline {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    padding-left: 0;
+    padding-top: 60px;
+  }
+
+  .timeline::before {
+    left: calc(20px + (100% / 10));
+    right: calc(20px + (100% / 10));
+    top: 19px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), rgba(212, 175, 55, 0.2));
+  }
+
+  .timeline-card {
+    flex: 1;
+    padding-left: 0;
+    padding-top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-card .step-dot {
+    position: static;
+    margin-bottom: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  /* Footer */
   .footer {
     flex-direction: row;
     justify-content: space-between;
-    text-align: left;
+    align-items: flex-start;
   }
 }
 
 @media (min-width: 1024px) {
   .section {
     padding: 96px 0;
+  }
+
+  /* Features — 4 side by side on large screens */
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
