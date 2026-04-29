@@ -1,21 +1,21 @@
-﻿import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const display = Fraunces({
-  subsets: ["latin-ext"],
-  variable: "--font-display",
-});
-
-const body = Manrope({
+const inter = Inter({
   subsets: ["latin-ext"],
   variable: "--font-body",
 });
 
+const display = Inter({
+  subsets: ["latin-ext"],
+  variable: "--font-display",
+});
+
 export const metadata: Metadata = {
-  title: "Papirus AI | Akademisyenler İçin Sınav Okuma",
+  title: "Papirus AI | Öğretim Üyeleri İçin Sınav Asistanı",
   description:
-    "Papirus AI, akademisyenlerin sınav kağıtlarını daha hızlı okuması, soruları ayırması ve değerlendirme kontrolünü düzenlemesi için geliştirilir.",
+    "Papirus AI, öğretim üyelerinin sınav kağıtlarını daha hızlı ve adil okuması için geliştirilen bilge bir asistandır.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${display.variable} ${body.variable}`}>{children}</body>
+      <body className={`${display.variable} ${inter.variable}`}>{children}</body>
     </html>
   );
 }

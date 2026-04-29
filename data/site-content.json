@@ -1,121 +1,131 @@
 {
   "brand": {
     "name": "Papirus AI",
-    "shortDescription": "Akademisyenler için sınav akışı"
+    "shortDescription": "Öğretim Üyeleri İçin Akıllı Sınav Asistanı"
   },
   "hero": {
-    "eyebrow": "Akademisyenler için zaman kazandıran sınav okuma",
-    "title": "Sınav kağıtlarını daha hızlı ve düzenli inceleyin.",
-    "accent": "Referans cevap, öğrenci yanıtı ve puanlama aynı akışta.",
-    "description": "Papirus AI, öğretim üyeleri ve asistanların sınav kağıtlarını daha hızlı incelemesi için geliştirilen bir okuma ve kontrol aracıdır. Kağıttaki metni çıkarır, soruları ayırır ve karşılaştırma için düzenli bir çalışma alanı hazırlar.",
-    "primaryCta": "Demo akışını gör",
-    "secondaryCta": "Nasıl çalışır?"
+    "eyebrow": "Sınav Değerlendirme Sürecinizde Güvenilir Yardımcınız",
+    "title": "Zamanınızı bilime ayırın,",
+    "accent": "sınav kontrollerini asistanınıza bırakın.",
+    "description": "Papirus AI, öğretim üyeleri ve asistanlar için tasarlanmış bilge bir yardımcıdır. Öğrenci sınav kağıtlarını titizlikle inceler, referans kağıdınızla karşılaştırır ve size adil bir ön değerlendirme sunarak son kararı sizin uzmanlığınıza bırakır.",
+    "primaryCta": "Sistemi İnceleyin",
+    "secondaryCta": "Nasıl Çalışır?"
   },
   "metrics": [
     {
-      "value": "1",
-      "label": "referans cevap kağıdıyla sınav yapısını çıkarma"
+      "value": "Hızlı",
+      "label": "yüzlerce kağıdı dakikalar içinde işleme"
     },
     {
-      "value": "Toplu",
-      "label": "öğrenci teslimlerini aynı düzende okuma"
+      "value": "Adil",
+      "label": "tüm öğrencilere eşit standartta ön inceleme"
     },
     {
       "value": "Kontrollü",
-      "label": "son kararı hocada bırakan değerlendirme"
+      "label": "uzmanlık ve son söz daima sizde"
     }
   ],
   "audiences": [
     {
-      "title": "Öğretim üyeleri",
-      "description": "Cevap anahtarı, soru puanları ve öğrenci yanıtlarını daha az dağınıklıkla kontrol eder."
+      "title": "Öğretim Üyeleri",
+      "description": "Değerli vaktinizi operasyonel tekrarlar yerine araştırmalarınıza ayırmanızı sağlar."
     },
     {
-      "title": "Araştırma görevlileri",
-      "description": "Toplu kağıt okuma dönemlerinde sınıflandırma, ilk kontrol ve raporlama yükünü azaltır."
+      "title": "Araştırma Görevlileri",
+      "description": "Toplu sınav dönemlerindeki ağır iş yükünü hafifleterek, ilk okuma ve tasnif süreçlerini hızlandırır."
     },
     {
-      "title": "Bölüm ekipleri",
-      "description": "Aynı sınava bakan birden fazla kişinin ortak bir değerlendirme yapısı kullanmasına yardımcı olur."
+      "title": "Bölüm Başkanlıkları",
+      "description": "Sınav değerlendirme süreçlerinde şeffaflığı ve bölümler arası standardizasyonu kolaylaştırır."
     }
   ],
   "workflow": [
     {
+      "step": "intro",
+      "title": "Sisteme Giriş",
+      "description": "Öğretim üyesi, güvenli bir şekilde sisteme giriş yaparak değerlendirme çalışma alanına erişir. Bu noktadan itibaren tüm süreç tek bir akışta toplanır."
+    },
+    {
       "step": "01",
-      "title": "Referans kağıt yüklenir",
-      "description": "Soru numaraları, puan değerleri ve beklenen cevap metinleri ayrıştırılır."
+      "title": "Sınav Yaratma",
+      "description": "Değerlendirilecek ders veya sınav için yeni bir oturum oluşturulur."
     },
     {
       "step": "02",
-      "title": "Öğrenci yanıtları okunur",
-      "description": "El yazısı ve basılı metin aynı sınav yapısına bağlanacak şekilde düzenlenir."
+      "title": "Cevap Anahtarı Yükleme",
+      "description": "Sınavın referans cevap kağıdı ve puanlama kriterleri sisteme yüklenir."
     },
     {
       "step": "03",
-      "title": "Karşılaştırma hazırlanır",
-      "description": "Sistem benzerlikleri, eksikleri ve dikkat isteyen alanları hocanın kontrolüne sunar."
+      "title": "Belgelerin Taranması",
+      "description": "Öğrencilerin sınav kağıtlarının fotoğrafları çekilir veya taranarak sisteme aktarılır."
     },
     {
       "step": "04",
-      "title": "Son kontrol yapılır",
-      "description": "Puan önerileri ve açıklamalar gözden geçirilir, nihai karar akademisyende kalır."
+      "title": "Karşılaştırma ve Öneri",
+      "description": "Sistem, her öğrencinin kağıdını referans cevaplarla karşılaştırır ve adil bir not puanı önerir."
+    },
+    {
+      "step": "05",
+      "title": "Uzman Onayı",
+      "description": "Öğretim üyesi öneriyi inceler, nihai kararı vererek onaylar veya gerekli gördüğü düzeltmeleri yapar."
     }
   ],
   "features": [
     {
-      "title": "Soru ve puan ayrıştırma",
-      "description": "\"1. Soru (30)\" gibi ifadeleri soru, puan ve cevap alanı olarak düzenlemeye odaklanır."
+      "title": "Titiz Karşılaştırma",
+      "description": "Öğrenci yanıtlarını referans anahtar ile satır satır karşılaştırarak eksik ve doğru alanları tespit eder."
     },
     {
-      "title": "El yazısı ve basılı metin",
-      "description": "Öğrenci kağıtlarındaki farklı yazı tiplerini aynı değerlendirme akışına hazırlamak için tasarlanır."
+      "title": "Format Bağımsızlığı",
+      "description": "El yazısı veya basılı metin fark etmeksizin tüm sınav kağıtlarını yüksek doğrulukla okuyabilir."
     },
     {
-      "title": "Hoca onaylı yapay zeka",
-      "description": "Yapay zeka öneri üretir; not verme sorumluluğu ve son karar her zaman hocada kalır."
+      "title": "Uzman İnisiyatifi",
+      "description": "Asistan yalnızca öneride bulunur; akademik değerlendirme sorumluluğu ve son karar daima hocadadır."
     },
     {
-      "title": "Düzenli sınav arşivi",
-      "description": "Referans kağıt, teslimler, kontrol notları ve raporlar tek sınav yapısı altında tutulur."
+      "title": "Düzenli Arşiv",
+      "description": "Tüm sınav dönemi değerlendirmeleri, ileride dönüp incelenebilecek şekilde düzenli ve güvenli tutulur."
     }
   ],
   "documents": [
     {
-      "title": "Referans cevap kağıdı",
-      "tag": "Kaynak",
-      "description": "Sorular, puanlar, beklenen cevaplar ve hocanın açıklamaları için temel belge."
+      "title": "Referans Anahtarı",
+      "tag": "Temel",
+      "description": "Değerlendirmenin temelini oluşturan, doğruluğu kesin referans bilgi."
     },
     {
-      "title": "Öğrenci teslimleri",
-      "tag": "Okuma",
-      "description": "Tek tek ya da toplu yüklenen cevap kağıtları aynı sınav yapısına yerleştirilir."
+      "title": "Öğrenci Belgeleri",
+      "tag": "İnceleme",
+      "description": "Farklı formatlardaki öğrenci kağıtlarının asistan tarafından işlenmiş hali."
     },
     {
-      "title": "Değerlendirme özeti",
-      "tag": "Kontrol",
-      "description": "Eksikler, güçlü yanıtlar ve puan önerileri hocanın son kontrolü için özetlenir."
+      "title": "Taslak Rapor",
+      "tag": "Onay",
+      "description": "Sizin uzman bakışınıza sunulan ön değerlendirme ve puan önerileri."
     }
   ],
   "video": {
-    "title": "Kısa ürün demosu",
-    "description": "Bir hocanın referans cevap kağıdını yüklediği, öğrenci yanıtlarını aynı yapı üzerinde gördüğü ve son kontrolünü yaptığı sade bir demo.",
+    "title": "Asistanınızın Çalışma Prensibi",
+    "description": "Referans kağıdınızı sisteme yüklemenizden, nihai puanı onaylamanıza kadar geçen sürecin zarif bir demosu.",
     "duration": "03:00",
     "url": "",
-    "posterHint": "Masa üzerinde sınav kağıtları, ekranda ayrılmış soru blokları ve sade puan kontrol alanı."
+    "posterHint": "Düzenli bir masaüstü, taranmış sınav kağıtları ve sade, anlaşılır bir kontrol arayüzü."
   },
   "adminPitch": [],
   "faq": [
     {
-      "question": "Papirus AI otomatik not mu verir?",
-      "answer": "İlk hedef otomatik hüküm vermek değil; metni çıkarmak, soruları düzenlemek ve hocanın karar sürecini hızlandırmaktır."
+      "question": "Sistem otomatik olarak not mu veriyor?",
+      "answer": "Hayır. Papirus AI, sizin belirlediğiniz cevap anahtarına göre bir ön değerlendirme ve öneri sunar. Nihai not, daima sizin tarafınızdan onaylandıktan sonra kesinleşir."
     },
     {
-      "question": "El yazısı desteklenecek mi?",
-      "answer": "Evet. Ürün yönü el yazısı ve basılı metni birlikte okuyup soru bazlı parçalara ayırmak üzerine kuruludur."
+      "question": "El yazısını okuyabiliyor mu?",
+      "answer": "Evet. Gelişmiş okuma modellerimiz sayesinde karmaşık el yazıları dahil olmak üzere öğrenci yanıtlarını yüksek doğrulukla ayırt edebilir ve metne dökebilir."
     },
     {
-      "question": "Hoca son kararı değiştirebilir mi?",
-      "answer": "Evet. Papirus AI öneri ve düzenleme desteği verir; değerlendirme kontrolü her zaman akademisyendedir."
+      "question": "Sistemin önerdiği puanı değiştirebilir miyim?",
+      "answer": "Elbette. Akademik karar yetkisi tamamen size aittir. Sistem önerilerini inceleyebilir, istediğiniz alanda düzeltme yaparak notu yeniden belirleyebilirsiniz."
     }
   ]
 }
