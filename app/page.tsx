@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { getSiteContent } from "@/lib/content";
 import CountdownBar from "./components/CountdownBar";
 
@@ -7,32 +7,36 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const content = await getSiteContent();
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:7331";
+  const authUrl = `${appUrl.replace(/\/$/, "")}/giris`;
 
   return (
     <main className="site-shell container">
-      
       <CountdownBar />
 
-      {/* ─── Header ─────────────────────────────────── */}
       <header className="topbar">
         <Link className="brand-mark" href="/" aria-label="Papirus AI Ana Sayfa">
-          <Image
-            src="/papirus-logo.svg"
-            alt="Papirus AI logosu"
-            width={140}
-            height={28}
-            priority
-          />
+          <Image src="/papirus-logo.svg" alt="Papirus AI logosu" width={140} height={28} priority />
         </Link>
-        <nav aria-label="Ana menü">
-          <a href="#akis">Nasıl Çalışır?</a>
-          <a href="#belgeler">Süreç</a>
-          <a href="#demo">Önizleme</a>
-          <a href="#sss">SSS</a>
-        </nav>
+
+        <div className="topbar-actions">
+          <nav aria-label="Ana menü">
+            <a href="#akis">Nasıl çalışır?</a>
+            <a href="#belgeler">Süreç</a>
+            <a href="#demo">Önizleme</a>
+            <a href="#sss">SSS</a>
+          </nav>
+          <div className="auth-actions" aria-label="Hesap işlemleri">
+            <a className="button small ghost" href={authUrl}>
+              Giriş yap
+            </a>
+            <a className="button small primary" href={authUrl}>
+              Kayıt ol
+            </a>
+          </div>
+        </div>
       </header>
 
-      {/* ─── Hero ───────────────────────────────────── */}
       <section className="hero-section" aria-labelledby="hero-heading">
         <div className="hero-grid">
           <div className="hero-copy">
@@ -42,25 +46,21 @@ export default async function Home() {
             </h1>
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
-              <a className="button primary" href="#demo">
-                {content.hero.primaryCta}
+              <a className="button primary" href={authUrl}>
+                Kayıt ol
               </a>
               <a className="button ghost" href="#akis">
                 {content.hero.secondaryCta}
               </a>
             </div>
-
           </div>
-
-
         </div>
       </section>
 
-      {/* ─── Audience ───────────────────────────────── */}
       <section className="section" aria-labelledby="audience-title">
         <div className="section-heading">
-          <span className="eyebrow">Kimler İçin Tasarlandı?</span>
-          <h2 id="audience-title">Akademik Değerlendirmede Güvenilir Asistanınız.</h2>
+          <span className="eyebrow">Kimler için tasarlandı?</span>
+          <h2 id="audience-title">Akademik değerlendirmede güvenilir asistanınız.</h2>
         </div>
         <div className="feature-grid three">
           {content.audiences.map((audience) => (
@@ -72,44 +72,47 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ─── Workflow / Timeline ─────────────────────── */}
       <section className="section" id="akis" aria-labelledby="workflow-title">
         <div className="section-heading">
-          <span className="eyebrow">Nasıl Çalışır?</span>
-          <h2 id="workflow-title">Beş Adımda Değerlendirme Süreciniz.</h2>
+          <span className="eyebrow">Nasıl çalışır?</span>
+          <h2 id="workflow-title">Beş adımda daha düzenli değerlendirme süreci.</h2>
           <p style={{ marginTop: "12px", maxWidth: "640px" }}>
-            Papirus AI, değerlendirme sürecinizi tek bir şeffaf akışta toplar. Kararınızı devralmaz; karara varmanız için gereken bilgiyi sizin uzmanlığınıza sunar.
+            Papirus AI, sınav değerlendirme sürecini tek bir şeffaf akışta toplar. Kararınızı devralmaz;
+            karara varmanız için gereken bilgiyi uzmanlığınıza sunar.
           </p>
         </div>
 
-        {/* Intro step — plain text, no dot */}
-        {content.workflow.filter(w => w.step === "intro").map(item => (
-          <div key={item.step} className="workflow-intro">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
-
-        {/* Numbered steps — dot + line timeline */}
-        <div className="timeline" role="list">
-          {content.workflow.filter(w => w.step !== "intro").map((item) => (
-            <article className="timeline-card" key={item.step} role="listitem">
-              <span className="step-dot" aria-hidden="true">{item.step}</span>
+        {content.workflow
+          .filter((item) => item.step === "intro")
+          .map((item) => (
+            <div key={item.step} className="workflow-intro">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-            </article>
+            </div>
           ))}
+
+        <div className="timeline" role="list">
+          {content.workflow
+            .filter((item) => item.step !== "intro")
+            .map((item) => (
+              <article className="timeline-card" key={item.step} role="listitem">
+                <span className="step-dot" aria-hidden="true">
+                  {item.step}
+                </span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
         </div>
       </section>
 
-
-
-      {/* ─── Demo / Video ───────────────────────────── */}
       <section className="section" id="demo">
         <div className="video-frame">
           <div className="play-button" aria-label="Demo videosunu oynat" role="button" tabIndex={0} />
           <div>
-            <span className="eyebrow" style={{ color: "rgba(255,255,255,0.75)" }}>{content.video.duration}</span>
+            <span className="eyebrow" style={{ color: "rgba(255,255,255,0.75)" }}>
+              {content.video.duration}
+            </span>
             <h2 style={{ color: "var(--paper)" }}>{content.video.title}</h2>
             <p style={{ color: "rgba(255,255,255,0.75)" }}>{content.video.description}</p>
             {content.video.url ? (
@@ -119,10 +122,17 @@ export default async function Home() {
                 rel="noreferrer"
                 style={{ display: "inline-block", marginTop: "16px", color: "var(--accent)", fontWeight: "bold" }}
               >
-                Videoyu Aç
+                Videoyu aç
               </a>
             ) : (
-              <small style={{ display: "block", marginTop: "16px", color: "rgba(255,255,255,0.55)", fontSize: "0.875rem" }}>
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.55)",
+                  display: "block",
+                  fontSize: "0.875rem",
+                  marginTop: "16px",
+                }}
+              >
                 {content.video.posterHint}
               </small>
             )}
@@ -130,11 +140,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ─── FAQ ────────────────────────────────────── */}
       <section className="section" id="sss">
         <div className="section-heading">
-          <span className="eyebrow">Sık Sorulan Sorular</span>
-          <h2>Papirus AI Hakkında Merak Ettikleriniz</h2>
+          <span className="eyebrow">Sık sorulan sorular</span>
+          <h2>Papirus AI hakkında merak ettikleriniz</h2>
         </div>
         <div className="faq-list">
           {content.faq.map((item) => (
@@ -146,16 +155,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ─── Footer ─────────────────────────────────── */}
       <footer className="footer">
         <div className="footer-brand">
-          <Image
-            src="/papirus-logo.svg"
-            alt="Papirus AI logosu"
-            width={120}
-            height={24}
-          />
-          <p style={{ marginTop: "10px", fontSize: "0.85rem" }}>
+          <Image src="/papirus-logo.svg" alt="Papirus AI logosu" width={120} height={24} />
+          <p style={{ fontSize: "0.85rem", marginTop: "10px" }}>
             © {new Date().getFullYear()} Papirus AI. Tüm hakları saklıdır.
           </p>
         </div>
@@ -166,7 +169,6 @@ export default async function Home() {
           <a href="mailto:destek@papirus-ai.com">İletişim</a>
         </div>
       </footer>
-
     </main>
   );
 }
