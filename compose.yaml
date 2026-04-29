@@ -1,0 +1,15 @@
+services:
+  papirus-ai-landing:
+    build:
+      context: .
+    container_name: papirus-ai-landing
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      ADMIN_SESSION_SECRET: ${ADMIN_SESSION_SECRET:-local-dev-secret-change-me}
+      ADMIN_COOKIE_SECURE: ${ADMIN_COOKIE_SECURE:-false}
+      PORT: 7332
+    ports:
+      - "7332:7332"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

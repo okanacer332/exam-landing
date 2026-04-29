@@ -1,0 +1,134 @@
+﻿{
+  "brand": {
+    "name": "Papirus AI",
+    "shortDescription": "SÄ±nav kaÄŸÄ±dÄ± okuma ve deÄŸerlendirme asistanÄ±"
+  },
+  "hero": {
+    "eyebrow": "Hocalar ve asistanlar iÃ§in sÄ±nav okuma motoru",
+    "title": "SÄ±nav kaÄŸÄ±tlarÄ±nÄ± okunabilir, karÅŸÄ±laÅŸtÄ±rÄ±labilir ve puanlanabilir veriye Ã§evirin.",
+    "accent": "El yazÄ±sÄ±, basÄ±lÄ± metin, cevap anahtarÄ± ve Ã¶ÄŸrenci teslimleri tek akÄ±ÅŸta.",
+    "description": "Ã–ÄŸretmen referans kaÄŸÄ±dÄ±nÄ± yÃ¼kleyin; sistem sorularÄ±, puanlarÄ± ve cevap metinlerini parÃ§alara ayÄ±rsÄ±n. ArdÄ±ndan Ã¶ÄŸrenci kaÄŸÄ±tlarÄ±nÄ± aynÄ± yapÄ± Ã¼zerinden karÅŸÄ±laÅŸtÄ±rÄ±p kontrol etmeniz iÃ§in hazÄ±r hale getirsin.",
+    "primaryCta": "Demo akÄ±ÅŸÄ±nÄ± incele",
+    "secondaryCta": "Admin paneline git"
+  },
+  "metrics": [
+    {
+      "value": "1",
+      "label": "referans kaÄŸÄ±dÄ± ile sÄ±nav ÅŸablonu Ã§Ä±karma"
+    },
+    {
+      "value": "3",
+      "label": "adÄ±mda Ã¶ÄŸrenci cevaplarÄ±nÄ± kontrol akÄ±ÅŸÄ±na alma"
+    },
+    {
+      "value": "100%",
+      "label": "hocanÄ±n son kontrolÃ¼nÃ¼ merkezde tutan yaklaÅŸÄ±m"
+    }
+  ],
+  "audiences": [
+    {
+      "title": "Hocalar",
+      "description": "Cevap anahtarÄ±nÄ±, soru puanlarÄ±nÄ± ve deÄŸerlendirme notlarÄ±nÄ± tek merkezde takip eder."
+    },
+    {
+      "title": "AraÅŸtÄ±rma gÃ¶revlileri",
+      "description": "YÄ±ÄŸÄ±n halinde gelen kaÄŸÄ±tlarÄ± tarama, ayÄ±klama ve ilk kontrol iÃ§in dÃ¼zenli bir sÄ±raya sokar."
+    },
+    {
+      "title": "BÃ¶lÃ¼m ekipleri",
+      "description": "SÄ±nav arÅŸivi, rubrik ve raporlama dilini standartlaÅŸtÄ±rmak iÃ§in ortak bir ekran saÄŸlar."
+    }
+  ],
+  "workflow": [
+    {
+      "step": "01",
+      "title": "Referans kaÄŸÄ±dÄ± yÃ¼klenir",
+      "description": "Soru numaralarÄ±, puan deÄŸerleri, baÅŸlÄ±klar ve cevap metinleri anlamlÄ± bloklara ayrÄ±lÄ±r."
+    },
+    {
+      "step": "02",
+      "title": "Ã–ÄŸrenci kaÄŸÄ±tlarÄ± okunur",
+      "description": "El yazÄ±sÄ± ve bilgisayar yazÄ±sÄ± aynÄ± sÄ±nav ÅŸablonuna baÄŸlanÄ±r."
+    },
+    {
+      "step": "03",
+      "title": "KarÅŸÄ±laÅŸtÄ±rma hazÄ±rlanÄ±r",
+      "description": "Yapay zeka, benzerlikleri ve eksikleri iÅŸaretler; son karar hocada kalÄ±r."
+    },
+    {
+      "step": "04",
+      "title": "Kontrol ve dÄ±ÅŸa aktarÄ±m yapÄ±lÄ±r",
+      "description": "NotlandÄ±rma, aÃ§Ä±klama ve rapor Ã§Ä±ktÄ±larÄ± ekip iÃ§inde paylaÅŸÄ±labilir hale gelir."
+    }
+  ],
+  "features": [
+    {
+      "title": "Soru ve puan yakalama",
+      "description": "Ã–rneÄŸin '1. Soru (30)' gibi ifadeleri soru-puan iliÅŸkisine dÃ¶nÃ¼ÅŸtÃ¼rmek iÃ§in tasarlandÄ±."
+    },
+    {
+      "title": "Ã‡oklu yazÄ± tipi okuma",
+      "description": "El yazÄ±sÄ±, basÄ±lÄ± metin, Ã§izelge ve Ã¶ÄŸretmen notlarÄ±nÄ± ayrÄ± parÃ§alar olarak ele alÄ±r."
+    },
+    {
+      "title": "Ä°nsan onaylÄ± yapay zeka",
+      "description": "Sistem Ã¶nerir, hoca karar verir. AmaÃ§ otomatik hÃ¼kÃ¼m deÄŸil, gÃ¼venli hÄ±z kazanmaktÄ±r."
+    },
+    {
+      "title": "SÄ±nav arÅŸivi mantÄ±ÄŸÄ±",
+      "description": "Her sÄ±nav; referans kaÄŸÄ±dÄ±, teslimler, deÄŸerlendirme ve rapor katmanlarÄ±yla saklanÄ±r."
+    }
+  ],
+  "documents": [
+    {
+      "title": "Ã–ÄŸretmen cevap kaÄŸÄ±dÄ±",
+      "tag": "Referans",
+      "description": "Sorular, puanlar, beklenen cevaplar ve aÃ§Ä±klamalar iÃ§in ana kaynak."
+    },
+    {
+      "title": "Ã–ÄŸrenci teslimleri",
+      "tag": "Okuma",
+      "description": "Tek tek ya da toplu yÃ¼klenen cevap kaÄŸÄ±tlarÄ± aynÄ± sÄ±nav ÅŸablonuna oturtulur."
+    },
+    {
+      "title": "DeÄŸerlendirme raporu",
+      "tag": "Ã‡Ä±ktÄ±",
+      "description": "Kontrol edilen cevaplar, puan Ã¶nerileri ve hocanÄ±n nihai notlarÄ± raporlanÄ±r."
+    }
+  ],
+  "video": {
+    "title": "3 dakikalÄ±k demo konsepti",
+    "description": "Bir hocanÄ±n referans kaÄŸÄ±dÄ± yÃ¼klediÄŸi, Ã¶ÄŸrencilerin cevaplarÄ±nÄ± karÅŸÄ±laÅŸtÄ±rdÄ±ÄŸÄ± ve son kontrol ekranÄ±nda karar verdiÄŸi kÄ±sa Ã¼rÃ¼n videosu.",
+    "duration": "03:12",
+    "url": "",
+    "posterHint": "Masa Ã¼zerinde cevap kaÄŸÄ±tlarÄ±, saÄŸda canlÄ± OCR bloklarÄ± ve altta puanlama zaman Ã§izgisi."
+  },
+  "adminPitch": [
+    {
+      "title": "Ä°Ã§erik kontrolÃ¼",
+      "description": "Landing metinleri, video konsepti, belge kartlarÄ± ve sÄ±k sorular admin panelinden deÄŸiÅŸtirilebilir."
+    },
+    {
+      "title": "AyrÄ± deploy hattÄ±",
+      "description": "Bu repo ana sÄ±nav uygulamasÄ±ndan baÄŸÄ±msÄ±zdÄ±r; Docker veya cloud pages tarafÄ±nda ayrÄ± yÃ¶netilebilir."
+    },
+    {
+      "title": "Ä°leri Ã¶zelliklere hazÄ±r",
+      "description": "Form toplama, demo talebi, analitik, CRM ve Ã¶deme entegrasyonlarÄ± iÃ§in temiz bir baÅŸlangÄ±Ã§ noktasÄ±dÄ±r."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Bu sistem otomatik not mu verir?",
+      "answer": "Ä°lk hedef otomatik hÃ¼kÃ¼m vermek deÄŸil; kaÄŸÄ±tlarÄ± dÃ¼zenlemek, metni Ã§Ä±karmak ve hocanÄ±n kararÄ±nÄ± hÄ±zlandÄ±rmaktÄ±r."
+    },
+    {
+      "question": "El yazÄ±sÄ± desteklenecek mi?",
+      "answer": "Evet. ÃœrÃ¼n yÃ¶nÃ¼ el yazÄ±sÄ± ve bilgisayar yazÄ±sÄ±nÄ± birlikte okuyup soru bazlÄ± parÃ§alara ayÄ±rmak Ã¼zerine kuruludur."
+    },
+    {
+      "question": "Landing ayrÄ± mÄ± Ã§alÄ±ÅŸÄ±yor?",
+      "answer": "Evet. Bu proje ana uygulamadan baÄŸÄ±msÄ±z bir repo ve Docker servisi olarak hazÄ±rlandÄ±."
+    }
+  ]
+}
