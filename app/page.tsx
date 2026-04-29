@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSiteContent } from "@/lib/content";
+import CountdownBar from "./components/CountdownBar";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,8 @@ export default async function Home() {
 
   return (
     <main className="site-shell container">
+      
+      <CountdownBar />
 
       {/* ─── Header ─────────────────────────────────── */}
       <header className="topbar">
