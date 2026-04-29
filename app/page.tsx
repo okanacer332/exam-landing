@@ -63,7 +63,7 @@ export default async function Home() {
                 <b>Soru 2 (25 Puan)</b>
                 <p>Kısmi doğru. Birim dönüştürme adımı eksik.</p>
               </div>
-              <div className="question-block" style={{ background: "rgba(212, 175, 55, 0.05)" }}>
+              <div className="question-block" style={{ background: "rgba(67, 56, 202, 0.05)" }}>
                 <b>Asistan Önerisi: 85/100</b>
                 <p>Nihai kararınızı bekliyor.</p>
               </div>

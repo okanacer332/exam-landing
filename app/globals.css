@@ -7,13 +7,13 @@
   --paper: #F9F6F0;
   /* Alabaster / Marble White */
   --card: #FFFFFF;
-  --accent: #D4AF37;
-  /* Bronze / Gold for Ancient Greek feel */
-  --ai-glow: #4A90E2;
-  /* Electric Blue for AI Modernity */
+  --accent: #4338CA;
+  /* Indigo for academic / modern feel */
+  --ai-glow: #6366F1;
+  /* Soft Indigo for accents */
   --line: rgba(15, 23, 42, 0.08);
   --shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
-  --shadow-hover: 0 15px 50px rgba(74, 144, 226, 0.15);
+  --shadow-hover: 0 15px 50px rgba(67, 56, 202, 0.15);
   /* Modern tech shadow */
 }
 
@@ -221,9 +221,9 @@ nav a:hover {
 
 .button.primary:hover {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--paper);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 20px rgba(67, 56, 202, 0.3);
 }
 
 .button.accent {
@@ -289,7 +289,7 @@ nav a:hover {
   right: -50px;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, rgba(74, 144, 226, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -321,7 +321,7 @@ nav a:hover {
 
 .question-block.active {
   border-color: var(--ai-glow);
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
   background: #fff;
 }
 
@@ -383,7 +383,7 @@ nav a:hover {
   top: 20px;
   bottom: 20px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent), rgba(212, 175, 55, 0.15));
+  background: linear-gradient(to bottom, var(--accent), rgba(67, 56, 202, 0.15));
   border-radius: 2px;
 }
 
@@ -442,7 +442,7 @@ nav a:hover {
     bottom: auto;
     width: auto;
     height: 2px;
-    background: linear-gradient(to right, var(--accent), rgba(212, 175, 55, 0.2));
+    background: linear-gradient(to right, var(--accent), rgba(67, 56, 202, 0.2));
   }
 
   .timeline-card {
@@ -496,7 +496,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 20px rgba(67, 56, 202, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -716,7 +716,7 @@ details[open] p {
     bottom: auto;
     width: auto;
     height: 2px;
-    background: linear-gradient(to right, var(--accent), rgba(212, 175, 55, 0.2));
+    background: linear-gradient(to right, var(--accent), rgba(67, 56, 202, 0.2));
   }
 
   .timeline-card {
