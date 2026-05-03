@@ -1,34 +1,31 @@
 # Papirus AI Landing
 
-Papirus AI Landing, akademisyenlerin sınav okuma sürecini hızlandıran ürün için bağımsız tanıtım projesidir.
+Papirus AI icin Cloudflare Pages uzerinde yayinlanan landing page projesi.
 
-## Amaç
-
-- Referans cevap kağıdı, öğrenci teslimleri ve değerlendirme özeti fikrini sade biçimde anlatmak.
-- Ana Papirus AI uygulamasından bağımsız deploy hattına sahip olmak.
-- `papirus-ai.com` alan adı altında hızlı ve kontrol edilebilir bir tanıtım sitesi sunmak.
-
-## Lokal Çalıştırma
+## Komutlar
 
 ```bash
 npm install
 npm run dev
+npm run build
 ```
 
-Landing yerelde standart Next adresi olan `http://localhost:3000` ile çalışır.
+## Cloudflare Pages
 
-Canlı landing alan adı: `https://papirus-ai.com`
-
-Kayıt ve giriş butonları konsola gider:
-
-```text
-https://konsol.papirus-ai.com/giris
-```
-
-## Docker
+Build command:
 
 ```bash
-docker compose up --build
+npm run build
 ```
 
-Docker yalnızca gerektiğinde çalıştırılır. Günlük geliştirmede landing container'ı açık tutulmaz.
+Build output:
+
+```text
+dist
+```
+
+Production domain:
+
+```text
+https://papirus-ai.com
+```
