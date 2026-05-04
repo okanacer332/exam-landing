@@ -32,7 +32,7 @@ export function RegistrationModal({ open, onOpenChange }: RegistrationModalProps
                 Ücretsiz Denemenizi Başlatın
               </Dialog.Title>
               <Dialog.Description className="text-muted-foreground">
-                Papirus AI hesabınızı gerçek Gmail oturumuyla güvenli şekilde oluşturun.
+                5 kağıt okuma hakkınızı kullanmak için Papirus AI hesabınızı güvenli şekilde oluşturun.
               </Dialog.Description>
             </div>
 

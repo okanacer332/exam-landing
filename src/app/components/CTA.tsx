@@ -19,7 +19,7 @@ export function CTA({ onTryClick }: CTAProps) {
           Değerlendirme Sürecinizi Dönüştürmeye Hazır mısınız?
         </h2>
         <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-          Ücretsiz denemenizi bugün başlatın. Kredi kartı gerektirmez.
+          5 kağıt okuma hakkı ile ücretsiz denemenizi bugün başlatın. Kredi kartı gerektirmez.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 mb-8">
@@ -43,7 +43,7 @@ export function CTA({ onTryClick }: CTAProps) {
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 sm:gap-6 text-white/90">
           <div className="flex items-center gap-2">
             <Check className="w-5 h-5" />
-            <span>14 günlük ücretsiz deneme</span>
+            <span>5 kağıt okuma hakkı</span>
           </div>
           <div className="flex items-center gap-2">
             <Check className="w-5 h-5" />

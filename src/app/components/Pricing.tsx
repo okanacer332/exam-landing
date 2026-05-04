@@ -8,7 +8,7 @@ const plans = [
     description: "Sistemin hızını ve doğruluğunu kendi sınav kağıtlarınızla test edin.",
     price: "Ücretsiz",
     billing: "Kredi kartı gerekmez",
-    scope: "5 Sınav Kağıdı Kredisi",
+    scope: "5 Kağıt Okuma",
     highlight: "Kurumsal (.edu.tr) e-posta ile hızlı başlangıç",
     features: [
       "Yapay Zeka Destekli El Yazısı Analizi",
@@ -18,35 +18,53 @@ const plans = [
     popular: false,
   },
   {
-    name: "Bireysel Akademisyen",
-    description: "Dersleri ve asistanlık süreçlerini tek başına yöneten akademisyenler için.",
-    price: "10.000 TL",
-    billing: "Yıllık (2 ay bizden hediye) veya Aylık 1.000 TL",
-    scope: "Yıllık 1.500 Kağıt Kredisi",
-    highlight: "Kişisel kullanım ve akademik bütçeler için ideal",
+    name: "Başlangıç",
+    description: "Dönem içinde birkaç sınavını hızlıca değerlendirmek isteyen akademisyenler için.",
+    price: "₺1.999",
+    billing: "Tek seferlik kullanım paketi",
+    scope: "350 Kağıt Okuma",
+    highlight: "Küçük sınıflar ve dönemlik denemeler için ideal",
     features: [
-      "Kişiye Özel Güvenli Oturum",
-      "Bölüm ve Ders Bazlı Özelleştirme",
-      "Excel/CSV İle Kolay Not Aktarımı",
-      "7/24 Öncelikli Teknik Destek",
+      "Öğretmen cevap anahtarı okuma",
+      "Öğrenci kağıdı okuma ve puanlama",
+      "Geçmiş sınav arşivi",
+      "Sonuç raporu ve soru bazlı geri bildirim",
     ],
-    buttonText: "Hemen Başlayın",
+    buttonText: "Paketi Seç",
+    popular: false,
+  },
+  {
+    name: "Akademik",
+    description: "Birden fazla ders ve kalabalık sınıflar için en dengeli kullanım paketi.",
+    price: "₺4.999",
+    billing: "Tek seferlik kullanım paketi",
+    scope: "1000 Kağıt Okuma",
+    highlight: "En çok tercih edilen akademisyen paketi",
+    features: [
+      "Öğretmen cevap anahtarı okuma",
+      "Toplu öğrenci kağıdı yükleme",
+      "Geçmiş sınav arşivi",
+      "Soru bazlı puanlama dökümü",
+      "Excel/CSV ile not aktarımı",
+    ],
+    buttonText: "En Çok Satılan Paketi Seç",
     popular: true,
   },
   {
-    name: "Araştırma Grubu & Kürsü",
-    description: "Asistan ekibiyle ortak ders yürüten ve yoğun sınav yapan kürsüler için.",
-    price: "35.000 TL",
-    billing: "Yıllık",
-    scope: "Yıllık 6.000 Kağıt Kredisi",
-    highlight: "Kredileri asistanlarınızla ortak havuzda kullanın",
+    name: "Kurumsal",
+    description: "Yoğun sınav dönemleri, bölüm ekipleri ve büyük sınıflar için yüksek hacimli paket.",
+    price: "₺19.999",
+    billing: "Tek seferlik kullanım paketi",
+    scope: "5000 Kağıt Okuma",
+    highlight: "Bölüm, kürsü ve asistan ekipleri için geniş kullanım alanı",
     features: [
-      "1 Yönetici ve 3 Asistan Hesabı",
-      "Ekip İçi Ortak Kredi Havuzu",
-      "Sınav Paylaşımı ve Ortak Onay Sistemi",
-      "Gelişmiş Başarı Analizi ve İstatistikler",
+      "Öğretmen cevap anahtarı okuma",
+      "Toplu öğrenci kağıdı yükleme",
+      "Geçmiş sınav arşivi",
+      "Soru bazlı puanlama dökümü",
+      "Ekip kullanımı için yüksek hacim",
     ],
-    buttonText: "Ekiple Başlayın",
+    buttonText: "Kurumsal Paketi Seç",
     popular: false,
   },
 ];
@@ -72,7 +90,7 @@ export function Pricing({ onTryClick }: PricingProps) {
           </motion.div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-6">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -92,7 +110,7 @@ export function Pricing({ onTryClick }: PricingProps) {
               
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground h-10">{plan.description}</p>
+                <p className="text-sm text-muted-foreground min-h-14">{plan.description}</p>
               </div>
 
               <div className="mb-6">
@@ -114,7 +132,7 @@ export function Pricing({ onTryClick }: PricingProps) {
                 <p className="text-sm font-medium mb-4">Özellikler:</p>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => {
-                    const isHighlighted = feature === "Ekip İçi Ortak Kredi Havuzu" || feature === "Sınav Paylaşımı ve Ortak Onay Sistemi" || feature === "Bölüm ve Ders Bazlı Özelleştirme";
+                    const isHighlighted = feature === "Toplu öğrenci kağıdı yükleme" || feature === "Excel/CSV ile not aktarımı" || feature === "Ekip kullanımı için yüksek hacim";
                     return (
                       <li key={i} className="flex items-start gap-3">
                         {isHighlighted ? (
@@ -150,13 +168,13 @@ export function Pricing({ onTryClick }: PricingProps) {
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-xl font-bold text-foreground">Kotanız mı doldu? Dilediğiniz kadar ek kredi alın.</h3>
+              <h3 className="text-xl font-bold text-foreground">Kağıt okuma hakkınız mı doldu? Ek paket alın.</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed">Sınav dönemlerinde limitlere takılmayın. Mevcut paketinize anında ek kredi tanımlayarak değerlendirme sürecinize kesintisiz devam edebilirsiniz.</p>
+            <p className="text-muted-foreground leading-relaxed">Sınav dönemlerinde limitlere takılmayın. İhtiyaç duyduğunuzda yeni kağıt okuma paketi alarak değerlendirme sürecinize kesintisiz devam edebilirsiniz.</p>
           </div>
           <div className="w-full min-w-0 text-center md:w-auto md:min-w-[200px] md:text-right">
-            <div className="text-2xl font-bold text-foreground">+500 Kağıt</div>
-            <div className="text-lg text-primary font-semibold">3.500 TL</div>
+            <div className="text-2xl font-bold text-foreground">350 Kağıt Okuma</div>
+            <div className="text-lg text-primary font-semibold">₺1.999</div>
           </div>
         </motion.div>
 
