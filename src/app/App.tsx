@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-import { CTA } from "./components/CTA";
-import { FAQ } from "./components/FAQ";
-import { Features } from "./components/Features";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
 import { PageLoader } from "./components/PageLoader";
-import { Pricing } from "./components/Pricing";
-import { ProcessSteps } from "./components/ProcessSteps";
+import { PremiumLanding } from "./components/premium/PremiumLanding";
 import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
 import { SecurityPolicy } from "./components/policies/SecurityPolicy";
 import { TermsOfUse } from "./components/policies/TermsOfUse";
@@ -60,24 +53,15 @@ export default function App() {
     if (hash === "#guvenlik-politikasi") return <SecurityPolicy />;
 
     return (
-      <>
-        <Hero onTryClick={() => goToConsole("trial")} />
-        <ProcessSteps />
-        <Features />
-        <Pricing onTryClick={() => goToConsole("trial")} />
-        <FAQ />
-        <CTA onTryClick={() => goToConsole("trial")} />
-      </>
+      <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
     );
   };
 
   return (
     <>
       {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
-      <div className="flex min-h-screen flex-col bg-white">
-        <Header onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
+      <div className="min-h-screen">
         <main className="flex-1">{renderContent()}</main>
-        <Footer />
       </div>
     </>
   );

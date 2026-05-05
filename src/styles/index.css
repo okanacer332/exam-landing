@@ -1,13 +1,24 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+@import './premium.css';
 
 html,
 body,
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+}
+
+html,
+body {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+#root {
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 * {

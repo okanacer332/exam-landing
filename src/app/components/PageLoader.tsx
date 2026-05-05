@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 interface PageLoaderProps {
@@ -28,9 +28,9 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
       <motion.div
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-gradient-to-br from-background via-white to-secondary flex items-center justify-center"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-[#0A0A0B] text-[#F5F5F7]"
       >
-        <div className="text-center space-y-6">
+        <div className="space-y-6 text-center">
           <motion.div
             animate={{
               scale: [1, 1.1, 1],
@@ -41,26 +41,26 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto shadow-2xl"
+            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-[#2997FF] shadow-2xl shadow-[#2997FF]/25"
           >
-            <img src="/papirus-logo.svg" alt="Papirus AI" className="w-10 h-10 brightness-0 invert" />
+            <img src="/papirus-logo.svg" alt="Papirus AI" className="h-10 w-10 brightness-0 invert" />
           </motion.div>
 
           <div>
-            <h2 className="text-2xl text-foreground mb-2">Papirus AI</h2>
-            <p className="text-muted-foreground">Sisteminiz hazırlanıyor...</p>
+            <h2 className="mb-2 text-2xl text-[#F5F5F7]">Papirus AI</h2>
+            <p className="text-[#F5F5F7]/60">Premium çalışma alanı hazırlanıyor...</p>
           </div>
 
-          <div className="w-64 h-2 bg-border rounded-full overflow-hidden mx-auto">
+          <div className="mx-auto h-1 w-64 overflow-hidden rounded-full bg-white/10">
             <motion.div
-              className="h-full bg-primary"
+              className="h-full bg-[#2997FF]"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.2 }}
             />
           </div>
 
-          <div className="text-sm text-muted-foreground">%{progress}</div>
+          <div className="text-sm text-[#F5F5F7]/50">%{progress}</div>
         </div>
       </motion.div>
     </AnimatePresence>
