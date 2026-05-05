@@ -1,46 +1,65 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { CTA } from "./components/CTA";
+import { FAQ } from "./components/FAQ";
+import { Features } from "./components/Features";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { ProcessSteps } from "./components/ProcessSteps";
-import { Features } from "./components/Features";
-import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
-import { TermsOfUse } from "./components/policies/TermsOfUse";
-import { SecurityPolicy } from "./components/policies/SecurityPolicy";
-import { FAQ } from "./components/FAQ";
-import { Pricing } from "./components/Pricing";
-import { CTA } from "./components/CTA";
-import { Footer } from "./components/Footer";
-import { RegistrationModal } from "./components/RegistrationModal";
 import { PageLoader } from "./components/PageLoader";
+import { Pricing } from "./components/Pricing";
+import { ProcessSteps } from "./components/ProcessSteps";
+import { AuthIntent, RegistrationModal } from "./components/RegistrationModal";
+import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
+import { SecurityPolicy } from "./components/policies/SecurityPolicy";
+import { TermsOfUse } from "./components/policies/TermsOfUse";
+
+function getRouteIntent(pathname: string): AuthIntent | null {
+  const normalizedPath = pathname.replace(/\/$/, "");
+  if (normalizedPath === "/giris" || normalizedPath === "/login") return "login";
+  if (normalizedPath === "/kayit" || normalizedPath === "/register") return "trial";
+  return null;
+}
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [authIntent, setAuthIntent] = useState<AuthIntent>("trial");
   const [isLoading, setIsLoading] = useState(true);
-
   const [hash, setHash] = useState(window.location.hash);
+
+  const openAuthModal = (intent: AuthIntent) => {
+    setAuthIntent(intent);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const onHashChange = () => {
       setHash(window.location.hash);
       window.scrollTo(0, 0);
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  useEffect(() => {
+    const routeIntent = getRouteIntent(window.location.pathname);
+    if (routeIntent) {
+      openAuthModal(routeIntent);
+    }
   }, []);
 
   const renderContent = () => {
-    if (hash === '#gizlilik-politikasi') return <PrivacyPolicy />;
-    if (hash === '#kullanim-kosullari') return <TermsOfUse />;
-    if (hash === '#guvenlik-politikasi') return <SecurityPolicy />;
-    
+    if (hash === "#gizlilik-politikasi") return <PrivacyPolicy />;
+    if (hash === "#kullanim-kosullari") return <TermsOfUse />;
+    if (hash === "#guvenlik-politikasi") return <SecurityPolicy />;
+
     return (
       <>
-        <Hero onTryClick={() => setIsModalOpen(true)} />
+        <Hero onTryClick={() => openAuthModal("trial")} />
         <ProcessSteps />
         <Features />
-        <Pricing onTryClick={() => setIsModalOpen(true)} />
+        <Pricing onTryClick={() => openAuthModal("trial")} />
         <FAQ />
-        <CTA onTryClick={() => setIsModalOpen(true)} />
+        <CTA onTryClick={() => openAuthModal("trial")} />
       </>
     );
   };
@@ -48,13 +67,16 @@ export default function App() {
   return (
     <>
       {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
-      <div className="min-h-screen bg-white flex flex-col">
-        <Header onTryClick={() => setIsModalOpen(true)} />
-        <main className="flex-1">
-          {renderContent()}
-        </main>
+      <div className="flex min-h-screen flex-col bg-white">
+        <Header onLoginClick={() => openAuthModal("login")} onTryClick={() => openAuthModal("trial")} />
+        <main className="flex-1">{renderContent()}</main>
         <Footer />
-        <RegistrationModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+        <RegistrationModal
+          open={isModalOpen}
+          intent={authIntent}
+          onOpenChange={setIsModalOpen}
+          onIntentChange={setAuthIntent}
+        />
       </div>
     </>
   );
