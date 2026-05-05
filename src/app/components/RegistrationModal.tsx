@@ -33,6 +33,7 @@ export function RegistrationModal({ open, intent, onOpenChange, onIntentChange }
 
   const handleGoogleSignIn = () => {
     window.location.href = buildConsoleLoginUrl({
+      auto: "1",
       auth: "google",
       intent: isTrial ? "signup" : "signin",
     });
