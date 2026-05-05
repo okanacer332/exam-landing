@@ -9,7 +9,7 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
   return (
     <header className="premium-header">
       <a className="premium-brand" href="#top" aria-label="Papirus AI">
-        <span className="premium-brand-mark" aria-hidden="true">P</span>
+        <img className="premium-brand-mark" src="/brand/papirus-mark.svg" alt="" aria-hidden="true" />
         <span>Papirus AI</span>
       </a>
 
@@ -17,7 +17,8 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
         <a href="#scan">Tarama</a>
         <a href="#compare">Karşılaştırma</a>
         <a href="#dashboard">Analiz</a>
-        <a href="#pricing">Paketler</a>
+        <a href="#faq">SSS</a>
+        <a href="#pricing">Fiyatlandırma</a>
       </nav>
 
       <div className="premium-header-actions">

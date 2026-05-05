@@ -41,9 +41,9 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-[#2997FF] shadow-2xl shadow-[#2997FF]/25"
+            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl shadow-2xl shadow-[#2997FF]/25"
           >
-            <img src="/papirus-logo.svg" alt="Papirus AI" className="h-10 w-10 brightness-0 invert" />
+            <img src="/brand/papirus-mark.svg" alt="Papirus AI" className="h-20 w-20" />
           </motion.div>
 
           <div>

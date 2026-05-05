@@ -37,8 +37,8 @@ const storyPanels = [
   {
     id: "dashboard",
     eyebrow: "The Result",
-    title: "Sınıfın röntgeni elinizde.",
-    text: "Kağıtlar arka plana çekilir, Tesla paneli hissindeki analiz metrikleri yükselir.",
+    title: "Sınıfın akademik performans profili tek ekranda netleşir.",
+    text: "Papirus; soru bazlı başarıyı, kazanım kırılımlarını ve kontrol gerektiren yanıtları öğretim elemanının denetimine hazır bir özet halinde sunar.",
   },
 ];
 
@@ -116,7 +116,7 @@ export function ScrollStory({ onTryClick }: ScrollStoryProps) {
         .to(comparisonRef.current, { autoAlpha: 0, scale: 0.9, y: -68, duration: 0.42 }, 3.14)
         .to(dashboardRef.current, { autoAlpha: 1, y: 0, scale: 1, duration: 0.54 }, 3.24)
         .to(".dashboard-hero-metric, .dashboard-status, .dashboard-metrics article", { autoAlpha: 1, y: 0, stagger: 0.06, duration: 0.32 }, 3.32)
-        .fromTo(".dashboard-chart span", { scaleY: 0.18 }, { scaleY: 1, transformOrigin: "bottom", stagger: 0.05, duration: 0.42 }, 3.4);
+        .fromTo(".dashboard-bar span", { scaleY: 0.18 }, { scaleY: 1, transformOrigin: "bottom", stagger: 0.05, duration: 0.42 }, 3.4);
     }, root);
 
     return () => context.revert();

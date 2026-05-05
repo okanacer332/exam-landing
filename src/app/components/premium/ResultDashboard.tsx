@@ -1,7 +1,15 @@
+const questionScores = [
+  { label: "S1", value: 84 },
+  { label: "S2", value: 72 },
+  { label: "S3", value: 91 },
+  { label: "S4", value: 58 },
+  { label: "S5", value: 76 },
+];
+
 const metrics = [
-  { label: "Ortalama", value: "78.4", detail: "100 üzerinden" },
-  { label: "En zor soru", value: "Soru 4", detail: "%41 başarı" },
-  { label: "Kontrol", value: "12 dk", detail: "taslak inceleme" },
+  { label: "Kontrol bekleyen", value: "3 yanıt", detail: "akademisyen onayı" },
+  { label: "Riskli kazanım", value: "Soru 4", detail: "%58 sınıf başarısı" },
+  { label: "Rubrik uyumu", value: "%92", detail: "anahtar ile eşleşme" },
 ];
 
 export function ResultDashboard() {
@@ -10,20 +18,35 @@ export function ResultDashboard() {
       <div className="dashboard-orbit" />
       <div className="dashboard-gridline" aria-hidden="true" />
       <div className="dashboard-hero-metric">
-        <span>Sınıf başarısı</span>
-        <strong>86%</strong>
+        <span>Genel ortalama</span>
+        <strong>78.4</strong>
+        <p>100 puan üzerinden sınıf ortalaması</p>
       </div>
       <div className="dashboard-status">
         <span />
-        <p>12 kağıt kontrol edildi</p>
+        <p>12 kağıt analiz edildi</p>
       </div>
-      <div className="dashboard-chart" aria-hidden="true">
-        <span style={{ height: "58%" }} />
-        <span style={{ height: "74%" }} />
-        <span style={{ height: "42%" }} />
-        <span style={{ height: "88%" }} />
-        <span style={{ height: "66%" }} />
+
+      <div className="dashboard-chart" aria-label="Soru bazlı başarı oranı">
+        <div className="dashboard-chart-head">
+          <div>
+            <span>Soru bazlı başarı oranı</span>
+            <strong>Değerlendirme özeti</strong>
+          </div>
+          <p>Ortalama çizgisi %78</p>
+        </div>
+        <div className="dashboard-bars" aria-hidden="true">
+          <div className="dashboard-average-line" />
+          {questionScores.map((score) => (
+            <div className="dashboard-bar" key={score.label}>
+              <strong>{score.value}%</strong>
+              <span style={{ height: `${score.value}%` }} />
+              <p>{score.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
+
       <div className="dashboard-metrics">
         {metrics.map((metric) => (
           <article key={metric.label}>
