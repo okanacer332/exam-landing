@@ -16,6 +16,14 @@ function getRouteIntent(pathname: string): AuthIntent | null {
   return null;
 }
 
+function getPolicyRoute(pathname: string, hash: string) {
+  const normalizedPath = pathname.replace(/\/$/, "");
+  if (normalizedPath === "/gizlilik-politikasi" || hash === "#gizlilik-politikasi") return "privacy";
+  if (normalizedPath === "/kullanim-kosullari" || hash === "#kullanim-kosullari") return "terms";
+  if (normalizedPath === "/guvenlik-politikasi" || hash === "#guvenlik-politikasi") return "security";
+  return null;
+}
+
 function getConsoleLoginUrl(intent: AuthIntent) {
   const url = new URL("/giris", consoleBaseUrl);
   url.searchParams.set("auth", "google");
@@ -26,6 +34,7 @@ function getConsoleLoginUrl(intent: AuthIntent) {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [hash, setHash] = useState(window.location.hash);
+  const [pathname, setPathname] = useState(window.location.pathname);
 
   const goToConsole = (intent: AuthIntent) => {
     window.location.href = getConsoleLoginUrl(intent);
@@ -34,10 +43,20 @@ export default function App() {
   useEffect(() => {
     const onHashChange = () => {
       setHash(window.location.hash);
+      setPathname(window.location.pathname);
+      window.scrollTo(0, 0);
+    };
+    const onPopState = () => {
+      setHash(window.location.hash);
+      setPathname(window.location.pathname);
       window.scrollTo(0, 0);
     };
     window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onPopState);
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("popstate", onPopState);
+    };
   }, []);
 
   useEffect(() => {
@@ -48,9 +67,10 @@ export default function App() {
   }, []);
 
   const renderContent = () => {
-    if (hash === "#gizlilik-politikasi") return <PrivacyPolicy />;
-    if (hash === "#kullanim-kosullari") return <TermsOfUse />;
-    if (hash === "#guvenlik-politikasi") return <SecurityPolicy />;
+    const policyRoute = getPolicyRoute(pathname, hash);
+    if (policyRoute === "privacy") return <PrivacyPolicy />;
+    if (policyRoute === "terms") return <TermsOfUse />;
+    if (policyRoute === "security") return <SecurityPolicy />;
 
     return (
       <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />

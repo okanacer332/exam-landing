@@ -1,14 +1,14 @@
 import { Mail, ShieldCheck } from "lucide-react";
 
 const legalLinks = [
-  ["Kullanım Koşulları", "#kullanim-kosullari"],
-  ["Gizlilik Politikası", "#gizlilik-politikasi"],
+  ["Kullanım Koşulları", "/kullanim-kosullari"],
+  ["Gizlilik Politikası", "/gizlilik-politikasi"],
   ["KVKK Aydınlatma Metni", "#kvkk-aydinlatma-metni"],
   ["Çerez Politikası", "#cerez-politikasi"],
   ["Mesafeli Satış Sözleşmesi", "#mesafeli-satis-sozlesmesi"],
   ["Ön Bilgilendirme Formu", "#on-bilgilendirme-formu"],
   ["İade ve İptal Politikası", "#iade-iptal-politikasi"],
-  ["Güvenlik Politikası", "#guvenlik-politikasi"],
+  ["Güvenlik Politikası", "/guvenlik-politikasi"],
 ];
 
 const membershipLinks = [
