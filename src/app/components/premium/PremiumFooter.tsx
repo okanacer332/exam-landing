@@ -1,14 +1,14 @@
 import { Mail, ShieldCheck } from "lucide-react";
 
 const legalLinks = [
-  ["Kullanım Koşulları", "/kullanim-kosullari"],
-  ["Gizlilik Politikası", "/gizlilik-politikasi"],
+  ["Kullanım Koşulları", "/kullanim-kosullari/"],
+  ["Gizlilik Politikası", "/gizlilik-politikasi/"],
   ["KVKK Aydınlatma Metni", "#kvkk-aydinlatma-metni"],
   ["Çerez Politikası", "#cerez-politikasi"],
   ["Mesafeli Satış Sözleşmesi", "#mesafeli-satis-sozlesmesi"],
   ["Ön Bilgilendirme Formu", "#on-bilgilendirme-formu"],
   ["İade ve İptal Politikası", "#iade-iptal-politikasi"],
-  ["Güvenlik Politikası", "/guvenlik-politikasi"],
+  ["Güvenlik Politikası", "/guvenlik-politikasi/"],
 ];
 
 const membershipLinks = [
@@ -35,7 +35,15 @@ function FooterColumn({ title, links }: { title: string; links: string[][] }) {
     <nav className="premium-footer__column" aria-label={title}>
       <h2>{title}</h2>
       {links.map(([label, href]) => (
-        <a href={href} key={label}>
+        <a
+          href={href}
+          key={label}
+          onClick={(event) => {
+            if (!href.startsWith("/")) return;
+            event.preventDefault();
+            window.location.assign(href);
+          }}
+        >
           {label}
         </a>
       ))}
