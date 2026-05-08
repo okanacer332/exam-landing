@@ -4,6 +4,11 @@ import { PremiumLanding } from "./components/premium/PremiumLanding";
 import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
 import { SecurityPolicy } from "./components/policies/SecurityPolicy";
 import { TermsOfUse } from "./components/policies/TermsOfUse";
+import { KvkkPolicy } from "./components/policies/KvkkPolicy";
+import { CookiePolicy } from "./components/policies/CookiePolicy";
+import { DistanceSalesContract } from "./components/policies/DistanceSalesContract";
+import { PreliminaryInfoForm } from "./components/policies/PreliminaryInfoForm";
+import { RefundPolicy } from "./components/policies/RefundPolicy";
 
 type AuthIntent = "login" | "trial";
 
@@ -17,10 +22,15 @@ function getRouteIntent(pathname: string): AuthIntent | null {
 }
 
 function getPolicyRoute(pathname: string, hash: string) {
-  const normalizedPath = pathname.replace(/\/$/, "");
-  if (normalizedPath === "/gizlilik-politikasi" || hash === "#gizlilik-politikasi") return "privacy";
-  if (normalizedPath === "/kullanim-kosullari" || hash === "#kullanim-kosullari") return "terms";
-  if (normalizedPath === "/guvenlik-politikasi" || hash === "#guvenlik-politikasi") return "security";
+  const p = pathname.replace(/\/$/, "");
+  if (p === "/gizlilik-politikasi" || hash === "#gizlilik-politikasi") return "privacy";
+  if (p === "/kullanim-kosullari" || hash === "#kullanim-kosullari") return "terms";
+  if (p === "/guvenlik-politikasi" || hash === "#guvenlik-politikasi") return "security";
+  if (p === "/kvkk-aydinlatma-metni" || hash === "#kvkk-aydinlatma-metni") return "kvkk";
+  if (p === "/cerez-politikasi" || hash === "#cerez-politikasi") return "cookie";
+  if (p === "/mesafeli-satis-sozlesmesi" || hash === "#mesafeli-satis-sozlesmesi") return "distance-sales";
+  if (p === "/on-bilgilendirme-formu" || hash === "#on-bilgilendirme-formu") return "preliminary-info";
+  if (p === "/iade-iptal-politikasi" || hash === "#iade-iptal-politikasi") return "refund";
   return null;
 }
 
@@ -71,6 +81,11 @@ export default function App() {
     if (policyRoute === "privacy") return <PrivacyPolicy />;
     if (policyRoute === "terms") return <TermsOfUse />;
     if (policyRoute === "security") return <SecurityPolicy />;
+    if (policyRoute === "kvkk") return <KvkkPolicy />;
+    if (policyRoute === "cookie") return <CookiePolicy />;
+    if (policyRoute === "distance-sales") return <DistanceSalesContract />;
+    if (policyRoute === "preliminary-info") return <PreliminaryInfoForm />;
+    if (policyRoute === "refund") return <RefundPolicy />;
 
     return (
       <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
