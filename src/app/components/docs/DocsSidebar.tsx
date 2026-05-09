@@ -11,7 +11,7 @@ export function DocsSidebar({ currentSlug, onNavigate }: DocsSidebarProps) {
   // Hangi section'lar açık — varsayılan: currentSlug'ın bulunduğu section + ilk ikisi
   const defaultOpen = docsNav.reduce<Record<string, boolean>>((acc, sec) => {
     const hasActive = sec.items.some((i) => i.slug === currentSlug);
-    acc[sec.section] = hasActive || sec.section === "Başlarken" || sec.section === "Hızlı Başlangıç";
+    acc[sec.section] = hasActive || sec.section === "Başlarken";
     return acc;
   }, {});
 

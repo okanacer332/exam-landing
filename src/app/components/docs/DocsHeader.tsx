@@ -2,9 +2,10 @@ import { ArrowRight, ExternalLink, Search } from "lucide-react";
 
 interface DocsHeaderProps {
   onMenuClick: () => void;
+  onSearchClick: () => void;
 }
 
-export function DocsHeader({ onMenuClick }: DocsHeaderProps) {
+export function DocsHeader({ onMenuClick, onSearchClick }: DocsHeaderProps) {
   return (
     <header className="docs-header">
       {/* Mobil hamburger */}
@@ -34,7 +35,7 @@ export function DocsHeader({ onMenuClick }: DocsHeaderProps) {
       <div className="docs-header-spacer" />
 
       {/* Arama (placeholder) */}
-      <button type="button" className="docs-header-search" aria-label="Dokümantasyonda ara">
+      <button type="button" className="docs-header-search" aria-label="Dokümantasyonda ara" onClick={onSearchClick}>
         <Search className="docs-header-search-icon" />
         <span className="docs-header-search-text">Ara...</span>
         <span className="docs-header-search-kbd">

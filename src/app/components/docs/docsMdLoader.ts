@@ -28,6 +28,13 @@ export function getDocContent(slug: string): string {
 }
 
 /**
+ * Tüm içerikleri döner (arama özelliği için)
+ */
+export function getAllDocsContent(): Record<string, string> {
+  return mdModules;
+}
+
+/**
  * Markdown içindeki relative image path'leri absolute path'lere dönüştürür.
  * ../medya/screenshots/... → /docs-media/screenshots/...
  * ./medya/screenshots/... → /docs-media/screenshots/...

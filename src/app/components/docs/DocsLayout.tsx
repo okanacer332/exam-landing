@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { DocsHeader } from "./DocsHeader";
 import { DocsSidebar } from "./DocsSidebar";
 import { DocsContent } from "./DocsContent";
+import { DocsSearchModal } from "./DocsSearchModal";
 import "../../../styles/docs.css";
 
 /** /dokuman URL'inden slug'ı ayıkla */
@@ -13,6 +14,7 @@ function extractSlug(pathname: string): string {
 export function DocsLayout() {
   const [slug, setSlug] = useState(() => extractSlug(window.location.pathname));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // Tarayıcı geri/ileri düğmeleri
   useEffect(() => {
@@ -24,14 +26,34 @@ export function DocsLayout() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const handleNavigate = (newSlug: string) => {
     setSlug(newSlug);
     setMobileMenuOpen(false);
+    setSearchOpen(false);
   };
 
   return (
     <div className="docs-shell">
-      <DocsHeader onMenuClick={() => setMobileMenuOpen((v) => !v)} />
+      <DocsHeader 
+        onMenuClick={() => setMobileMenuOpen((v) => !v)} 
+        onSearchClick={() => setSearchOpen(true)}
+      />
+
+      <DocsSearchModal 
+        isOpen={searchOpen} 
+        onClose={() => setSearchOpen(false)} 
+      />
 
       <div className="docs-body">
         {/* Desktop sidebar */}
