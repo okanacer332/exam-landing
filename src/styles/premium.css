@@ -2405,40 +2405,46 @@
 }
 
 /* ============================================================
-   Logo stilleri — papi-logo.png (beyaz bg üzeri gri kontur)
-   Dark header/footer için filter:invert(1) ile beyaz yapılır
+   Logo stilleri — papi-logo.png (beyaz bg + gri outline)
+   Dark header için:
+   invert(1)          → bg siyah, yazı açık griye dönüşür
+   brightness(10)     → griyı tam beyaza çeker
+   mix-blend-mode:screen → siyah bg dark temada transparan
    ============================================================ */
 
-/* Header logosu: yazı içeride okunabilecek boyut */
+/* Header logosu */
 .premium-brand-logo {
   display: block;
-  height: 2.6rem;          /* ~41px — yazı netçe okunur */
+  height: 3.5rem;           /* ~56px — yazı rahat okunur */
   width: auto;
-  max-width: 9.5rem;       /* taşmayı önler */
+  max-width: 13rem;
   object-fit: contain;
-  /* Gri kontur logoyu koyu arka planda beyaz göster */
-  filter: invert(1);
+  filter: invert(1) brightness(10);
+  mix-blend-mode: screen;
   flex-shrink: 0;
 }
 
 /* Footer alt bar logosu */
 .premium-footer__logo {
   display: block;
-  height: 2.2rem;
+  height: 2.4rem;
   width: auto;
-  max-width: 9rem;
+  max-width: 10rem;
   object-fit: contain;
-  filter: invert(0.85);   /* hafif gri ton — footer'a soft uyum */
+  filter: invert(1) brightness(10);
+  mix-blend-mode: screen;
+  opacity: 0.7;
 }
 
-/* PageLoader logosu */
+/* PageLoader logosu (tamamen siyah arka plan) */
 .loader-logo {
   display: block;
-  width: 9rem;
+  width: 11rem;
   height: auto;
-  max-height: 9rem;
+  max-height: 11rem;
   object-fit: contain;
-  filter: invert(1);       /* dark yükleme ekranı */
+  filter: invert(1) brightness(10);
+  mix-blend-mode: screen;
 }
 
 /* ============================================================
