@@ -94,6 +94,9 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
               <a href="#pricing" className="mobile-menu-link" onClick={() => handleNavClick("#pricing")}>
                 <span>Fiyatlandırma</span>
               </a>
+              <a href="/dokuman/" className="mobile-menu-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                <span>Döküman</span>
+              </a>
 
               <div className="mobile-menu-actions">
                 <button
