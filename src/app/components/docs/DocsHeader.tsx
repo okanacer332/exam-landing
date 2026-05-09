@@ -24,7 +24,7 @@ export function DocsHeader({ onMenuClick }: DocsHeaderProps) {
       {/* Logo */}
       <a href="/" className="docs-header-brand" aria-label="Papirus AI ana sayfa">
         <img
-          src="/papi-logo.png"
+          src="/papi-logo-web.png"
           alt="Papirus AI"
           className="docs-header-brand-logo"
         />

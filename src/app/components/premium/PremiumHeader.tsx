@@ -35,7 +35,7 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
       <header className="premium-header">
         {/* Logo */}
         <a className="premium-brand" href="#top" aria-label="Papirus AI" onClick={closeMenu}>
-          <img className="premium-brand-logo" src="/papi-logo.png" alt="Papirus AI" />
+          <img className="premium-brand-logo" src="/papi-logo-web.png" alt="Papirus AI" />
         </a>
 
         {/* Masaüstü nav */}

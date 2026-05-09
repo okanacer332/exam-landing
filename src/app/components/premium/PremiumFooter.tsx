@@ -82,7 +82,7 @@ export function PremiumFooter() {
 
         <div className="premium-footer__bottom">
           <a href="#top" className="premium-footer__brand" aria-label="Papirus AI ana sayfa">
-            <img src="/papi-logo.png" alt="Papirus AI" className="premium-footer__logo" />
+            <img src="/papi-logo-web.png" alt="Papirus AI" className="premium-footer__logo" />
           </a>
           <p>Copyright © 2026 Papirus AI. Tüm hakları saklıdır.</p>
           <span className="premium-footer__secure">

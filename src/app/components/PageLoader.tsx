@@ -43,7 +43,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
             }}
             className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl shadow-2xl shadow-[#2997FF]/25"
           >
-            <img src="/papi-logo.png" alt="Papirus AI" className="loader-logo" />
+            <img src="/papi-logo-web.png" alt="Papirus AI" className="loader-logo" />
           </motion.div>
 
           <div>

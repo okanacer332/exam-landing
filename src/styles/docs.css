@@ -76,9 +76,9 @@
   height: 1.9rem;
   width: auto;
   max-width: 7rem;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  /* papi-logo.png beyaz bg — dark olmadığı için filter gerekmez */
+  filter: invert(1) brightness(0.26) contrast(1.45);
 }
 
 .docs-header-badge {

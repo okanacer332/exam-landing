@@ -46,22 +46,13 @@
   display: none;
 }
 
-/*
-  Logo resmi: papi-logo.png kare canvas, metin ortada ~%60x%25 bölgede
-  object-fit: cover ile kare canvas'dan yatay bant kesilir:
-    • width: 9rem  → içerikteki metin ~5.4rem genişlikte görünür (okunabilir)
-    • height: 2.6rem → kare canvas'dan sadece merkez %29 görünür (metin tam burada)
-  filter: invert+brightness → gri metin parlak beyaza dönüşür
-  mix-blend-mode: screen → siyah bg dark header'da transparan görünür
-*/
 .premium-brand-logo {
   display: block;
-  width: 9.5rem;          /* 152px — metin rahatça okunur */
-  height: 2.6rem;         /* 41.6px — merkez bant: metin burada */
-  object-fit: cover;
+  width: 10.25rem;
+  height: 2.6rem;
+  object-fit: contain;
   object-position: center center;
-  filter: invert(1) brightness(8);
-  mix-blend-mode: screen;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.28));
 }
 
 /* Nav — orta sütun, kendini ortalar */
@@ -2433,24 +2424,20 @@
 /* Footer alt bar logosu */
 .premium-footer__logo {
   display: block;
-  width: 8rem;
+  width: 8.5rem;
   height: 2.2rem;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  filter: invert(1) brightness(8);
-  mix-blend-mode: screen;
   opacity: 0.8;
 }
 
 /* PageLoader logosu (siyah arka plan — object-fit:contain kullan) */
 .loader-logo {
   display: block;
-  width: 12rem;
-  height: 3.6rem;
-  object-fit: cover;
+  width: 10rem;
+  height: 3.2rem;
+  object-fit: contain;
   object-position: center;
-  filter: invert(1) brightness(8);
-  mix-blend-mode: screen;
 }
 
 /* ============================================================
