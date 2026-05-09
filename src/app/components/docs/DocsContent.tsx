@@ -63,7 +63,7 @@ export function DocsContent({ slug, onNavigate }: DocsContentProps) {
             </div>
             <h1 className="docs-hero-title">Papirus-AI Dokümantasyonu</h1>
             <p className="docs-hero-subtitle">
-              Yapay zekâ destekli yazılı sınav değerlendirme platformu.
+              Yapay zeka destekli yazılı sınav değerlendirme platformu.
             </p>
             <p className="docs-hero-desc">
               Yazılı sınav kağıtlarını yükleyin, değerlendirme kriterlerini tanımlayın,
@@ -100,7 +100,7 @@ export function DocsContent({ slug, onNavigate }: DocsContentProps) {
             <div className="docs-trust-grid">
               <div className="docs-trust-card">
                 <Cpu className="docs-trust-card-icon" size={22} />
-                <h3>Yapay Zekâ Destekli Değerlendirme</h3>
+                <h3>Yapay Zeka Destekli Değerlendirme</h3>
                 <p>Rubric tabanlı AI analizi ile açık uçlu soruları otomatik değerlendirin.</p>
               </div>
               <div className="docs-trust-card">
