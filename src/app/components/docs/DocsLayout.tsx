@@ -7,7 +7,7 @@ import "../../../styles/docs.css";
 /** /dokuman URL'inden slug'ı ayıkla */
 function extractSlug(pathname: string): string {
   const after = pathname.replace(/^\/dokuman\/?/, "");
-  return after || "giris/papirus-ai-nedir";
+  return after || "giris/index";
 }
 
 export function DocsLayout() {

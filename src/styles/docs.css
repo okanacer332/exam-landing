@@ -328,6 +328,57 @@
   padding: 2.5rem 2rem 5rem;
 }
 
+.docs-content-wrapper--landing {
+  max-width: 860px;
+}
+
+/* ── Hero bölümü (sadece landing) ──────────────────────────── */
+.docs-hero {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--docs-border);
+}
+
+.docs-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--docs-accent-bg);
+  color: var(--docs-accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(41, 151, 255, 0.2);
+  margin-bottom: 1.25rem;
+}
+
+.docs-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--docs-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.docs-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--docs-text-muted);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.docs-hero-desc {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
 /* ── Breadcrumb ─────────────────────────────────────────────── */
 .docs-breadcrumb {
   display: flex;
@@ -356,9 +407,14 @@
   color: var(--docs-text-muted);
 }
 
-/* ── Markdown içerik ────────────────────────────────────────── */
+/* ── Markdown içerik — typography güçlendirilmiş ────────────── */
 .docs-prose {
   line-height: 1.75;
+  max-width: 68ch;    /* okunabilirlik: ~70 karakter/satır */
+}
+
+.docs-prose--landing h1:first-child {
+  display: none;  /* hero'da zaten gösteriliyor */
 }
 
 .docs-prose h1 {
@@ -372,7 +428,7 @@
 
 .docs-prose h2 {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 750;
   letter-spacing: -0.02em;
   color: var(--docs-text);
   margin: 2.5rem 0 0.75rem;
@@ -398,6 +454,7 @@
   margin: 0 0 1rem;
   color: #374151;
   font-size: 0.9375rem;
+  line-height: 1.8;
 }
 
 .docs-prose a {
@@ -425,29 +482,31 @@
 
 .docs-prose code {
   font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
-  font-size: 0.85em;
-  background: var(--docs-bg-subtle);
-  border: 1px solid var(--docs-border);
-  border-radius: 5px;
-  padding: 0.1em 0.4em;
-  color: #1d4ed8;
+  font-size: 0.84em;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.15em 0.45em;
+  color: #0f172a;
 }
 
 .docs-prose pre {
-  background: #1e1e2e;
-  border-radius: 12px;
-  border: 1px solid #2d2d3f;
+  background: #0f172a;
+  border-radius: 14px;
+  border: 1px solid #1e293b;
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .docs-prose pre code {
   background: none;
   border: none;
   padding: 0;
-  color: #cdd6f4;
+  color: #e2e8f0;
   font-size: 0.875rem;
+  line-height: 1.7;
 }
 
 .docs-prose blockquote {
@@ -723,7 +782,19 @@
     font-size: 1.6rem;
   }
 
+  .docs-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .docs-hero-subtitle {
+    font-size: 1rem;
+  }
+
   .docs-page-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-trust-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -744,5 +815,75 @@
 
   .docs-content-wrapper {
     padding: 1.25rem 0.875rem 3rem;
+  }
+
+  .docs-hero-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ── Kurumsal güven bölümü ──────────────────────────────────── */
+.docs-trust {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--docs-border);
+}
+
+.docs-trust-title {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: var(--docs-text);
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.docs-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.docs-trust-card {
+  padding: 1.25rem;
+  border: 1px solid var(--docs-border);
+  border-radius: 12px;
+  background: var(--docs-bg-subtle);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.docs-trust-card:hover {
+  border-color: var(--docs-accent);
+  box-shadow: 0 0 0 3px var(--docs-accent-bg);
+}
+
+.docs-trust-card-icon {
+  color: var(--docs-accent);
+  margin-bottom: 0.75rem;
+}
+
+.docs-trust-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--docs-text);
+  margin: 0 0 0.35rem;
+}
+
+.docs-trust-card p {
+  font-size: 0.82rem;
+  color: var(--docs-text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .docs-trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .docs-trust-grid {
+    grid-template-columns: 1fr;
   }
 }

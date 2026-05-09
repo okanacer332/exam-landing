@@ -14,6 +14,7 @@ export const docsNav: DocSection[] = [
     section: "Başlarken",
     icon: "🚀",
     items: [
+      { title: "Genel Bakış",                 slug: "giris/index" },
       { title: "Papirus AI Nedir?",           slug: "giris/papirus-ai-nedir" },
       { title: "Nasıl Çalışır?",              slug: "giris/nasil-calisir" },
       { title: "Temel Özellikler",            slug: "giris/temel-ozellikler" },
