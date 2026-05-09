@@ -18,12 +18,24 @@ export function getDocContent(slug: string): string {
     const key = `/docs/${slug}.md`;
     const raw = mdModules[key];
     if (typeof raw === "string" && raw.trim() !== "") {
-      return raw;
+      return transformImagePaths(raw);
     }
   } catch {
     // glob hatasını sessizce yakala
   }
   return generatePlaceholder(slug);
+}
+
+/**
+ * Markdown içindeki relative image path'leri absolute path'lere dönüştürür.
+ * ../medya/screenshots/... → /docs-media/screenshots/...
+ * ./medya/screenshots/... → /docs-media/screenshots/...
+ */
+function transformImagePaths(md: string): string {
+  return md
+    .replace(/!\[([^\]]*)\]\(\.\.\/medya\//g, "![$1](/docs-media/")
+    .replace(/!\[([^\]]*)\]\(\.\/medya\//g, "![$1](/docs-media/")
+    .replace(/!\[([^\]]*)\]\(medya\//g, "![$1](/docs-media/");
 }
 
 function generatePlaceholder(slug: string): string {

@@ -4,8 +4,14 @@ import { getDocContent } from "./docsMdLoader";
 import { docsNav, getAdjacentDocs } from "./docsNav";
 import { BookOpen, Shield, Cpu, Users, BarChart3, FileCheck } from "lucide-react";
 
-// marked ayarları
-marked.setOptions({ gfm: true, breaks: false });
+// marked ayarları + custom renderer
+const renderer = new marked.Renderer();
+renderer.image = function ({ href, title, text }) {
+  const alt = text || "";
+  const titleAttr = title ? ` title="${title}"` : "";
+  return `<img src="${href}" alt="${alt}"${titleAttr} class="docs-screenshot" loading="lazy" />`;
+};
+marked.setOptions({ gfm: true, breaks: false, renderer });
 
 interface DocsContentProps {
   slug: string;
