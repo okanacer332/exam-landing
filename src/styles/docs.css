@@ -731,7 +731,7 @@
 
 .docs-page-nav-btn--next {
   text-align: right;
-  margin-left: auto;
+  align-items: flex-end;
 }
 
 .docs-page-nav-label {
