@@ -81,9 +81,9 @@ export function PremiumFooter() {
         </div>
 
         <div className="premium-footer__bottom">
-          <a href="#top" className="premium-footer__brand" aria-label="Papirus AI ana sayfa">
+          <a href="#top" className="premium-footer__brand" aria-label="Papirus AI ana sayfa" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.2rem' }}>
             <img src="/papi-logo-web.png" alt="Papirus AI" className="premium-footer__logo" />
-            <span className="premium-footer__beta-badge">BETA</span>
+            <span className="premium-beta-badge">BETA</span>
           </a>
           <p>Copyright © 2026 Papirus AI. Tüm hakları saklıdır.</p>
           <span className="premium-footer__secure">
