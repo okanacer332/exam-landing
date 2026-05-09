@@ -54,6 +54,9 @@ export function PremiumPricing({ onTryClick }: PremiumPricingProps) {
                 </li>
               ))}
             </ul>
+            <div className="premium-pricing-beta-notice">
+              Beta sürümü devam etmektedir...
+            </div>
             <button type="button" className="premium-secondary-button" onClick={onTryClick}>
               5 krediyle deneyin
               <ArrowRight aria-hidden="true" />
