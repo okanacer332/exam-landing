@@ -189,6 +189,21 @@
   cursor: pointer;
 }
 
+/* Mobil menü butonu — varsayılan gizli, 768px altında görünür */
+.docs-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--docs-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--docs-text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
 /* ── Docs body (sidebar + content) ──────────────────────────── */
 .docs-body {
   display: flex;
