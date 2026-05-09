@@ -1,6 +1,6 @@
 # Papirus-AI Dokümantasyonu
 
-Papirus-AI, akademisyenlerin yazılı ve açık uçlu sınav kağıtlarını yapay zekâ desteğiyle değerlendirmesine yardımcı olan modern bir sınav değerlendirme platformudur.
+Papirus-AI, akademisyenlerin yazılı ve açık uçlu sınav kağıtlarını yapay zeka desteğiyle değerlendirmesine yardımcı olan modern bir sınav değerlendirme platformudur.
 
 Klasik yazılı sınav süreçleri; kağıt okuma, puanlama, kontrol etme ve sonuçları düzenleme gibi zaman alan işlemler içerir. Papirus-AI bu süreci dijitalleştirerek değerlendirme süreçlerini daha hızlı, daha düzenli ve daha ölçeklenebilir hale getirir.
 
