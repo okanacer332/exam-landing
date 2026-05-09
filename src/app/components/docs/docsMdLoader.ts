@@ -3,6 +3,7 @@
  * ?raw query → dosyayı ham string olarak import eder (URL değil, içerik)
  * eager: true → build time'da bundle'a dahil edilir
  */
+// @ts-ignore — Vite'a özel API, TypeScript tanımıyor ama build'de çalışır
 const mdModules = import.meta.glob("/docs/**/*.md", {
   eager: true,
   query: "?raw",
