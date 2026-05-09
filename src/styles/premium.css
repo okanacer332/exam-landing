@@ -1787,12 +1787,6 @@
   font-weight: 880;
 }
 
-.premium-footer__brand img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 8px;
-  object-fit: cover;
-}
 
 .premium-footer__secure {
   display: inline-flex;

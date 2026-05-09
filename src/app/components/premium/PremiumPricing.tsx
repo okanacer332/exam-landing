@@ -43,24 +43,9 @@ export function PremiumPricing({ onTryClick }: PremiumPricingProps) {
           <article className={plan.featured ? "is-featured" : ""} key={plan.name}>
             {plan.featured ? <em>Önerilen</em> : null}
             <span>{plan.name}</span>
-            <strong>{plan.price}</strong>
-            <p>{plan.period}</p>
-            <small>{plan.description}</small>
-            <ul>
-              {plan.features.map((feature) => (
-                <li key={feature}>
-                  <Check aria-hidden="true" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <div className="premium-pricing-beta-notice">
+            <div className="premium-pricing-beta-notice" style={{ marginTop: '1rem', marginBottom: 0 }}>
               Beta sürümü devam etmektedir...
             </div>
-            <button type="button" className="premium-secondary-button" onClick={onTryClick}>
-              5 krediyle deneyin
-              <ArrowRight aria-hidden="true" />
-            </button>
           </article>
         ))}
       </div>
