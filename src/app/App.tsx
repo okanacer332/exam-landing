@@ -44,6 +44,17 @@ function getConsoleLoginUrl(intent: AuthIntent) {
 }
 
 export default function App() {
+  /* ── Docs route'u: PageLoader olmadan, anında render ── */
+  const isDocsRoute = window.location.pathname.replace(/\/$/, "").startsWith("/dokuman");
+  if (isDocsRoute) {
+    return <DocsLayout />;
+  }
+
+  return <AppShell />;
+}
+
+/** Landing + Policy sayfaları (PageLoader dahil) */
+function AppShell() {
   const [isLoading, setIsLoading] = useState(true);
   const [hash, setHash] = useState(window.location.hash);
   const [pathname, setPathname] = useState(window.location.pathname);
@@ -88,7 +99,6 @@ export default function App() {
     if (policyRoute === "distance-sales") return <DistanceSalesContract />;
     if (policyRoute === "preliminary-info") return <PreliminaryInfoForm />;
     if (policyRoute === "refund") return <RefundPolicy />;
-    if (policyRoute === "docs") return <DocsLayout />;
 
     return (
       <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
