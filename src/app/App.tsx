@@ -45,8 +45,8 @@ function getConsoleLoginUrl(intent: AuthIntent) {
 
 export default function App() {
   /* ── Docs route'u: PageLoader olmadan, anında render ── */
-  const isDocsRoute = window.location.pathname.replace(/\/$/, "").startsWith("/dokuman");
-  if (isDocsRoute) {
+  const p = window.location.pathname;
+  if (p === "/dokuman" || p === "/dokuman/" || p.startsWith("/dokuman/")) {
     return <DocsLayout />;
   }
 

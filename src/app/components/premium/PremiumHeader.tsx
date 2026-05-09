@@ -45,7 +45,7 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
           <a href="#dashboard">Analiz</a>
           <a href="#faq">SSS</a>
           <a href="#pricing">Fiyatlandırma</a>
-          <a href="/dokuman" target="_blank" rel="noopener noreferrer" className="docs-nav-link">Döküman</a>
+          <a href="/dokuman/" target="_blank" rel="noopener noreferrer">Döküman</a>
         </nav>
 
         {/* Masaüstü aksiyonlar */}
