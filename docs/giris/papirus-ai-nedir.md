@@ -1,122 +1,127 @@
 # Papirus AI Nedir?
 
-Papirus AI, akademisyenlerin yazılı ve açık uçlu sınav kagitlarini yapay zeka destegiyle degerlendirmesine yardimci olan modern bir sinav degerlendirme platformudur.
+Papirus AI, akademisyenlerin yazılı ve açık uçlu sınav kağıtlarını yapay zeka desteğiyle değerlendirmesine yardımcı olan modern bir sınav değerlendirme platformudur.
 
-Klasik yazili sinav süreçleri; kagit okuma, puanlama, kontrol etme ve raporlama gibi zaman alan islemler içerir. Papirus AI bu süreci dijitallestirerek daha hizli, daha düzenli ve daha ölçeklenebilir hale getirir.
+Klasik yazılı sınav süreçleri; kağıt okuma, puanlama, kontrol etme ve raporlama gibi zaman alan işlemler içerir. Papirus AI bu süreci dijitalleştirerek daha hızlı, daha düzenli ve daha ölçeklenebilir hale getirir.
 
----
-
-## Bu Bölümde Neler Ögreneceksiniz?
-
-- Papirus AI'nin temel amaci
-- Hangi problemleri çözdügü
-- Kimler için gelistirildigi
-- Platformun temel çalisma mantigi
-- Yapay zeka destekli degerlendirme yaklasimi
+![Papirus AI Platformu](../medya/screenshots/genel/platform-home.png)
 
 ---
 
-## Papirus AI Ne Ise Yarar?
+## Bu Bölümde Neler Öğreneceksiniz?
 
-Papirus AI, yazili ve açik uçlu sinav kagitlarinin dijital ortamda analiz edilmesini ve degerlendirilmesini kolaylastirir.
+Bu bölümde Papirus AI platformunun temel amacı ve çalışma yaklaşımı hakkında genel bilgi edineceksiniz.
+
+- Papirus AI'nin ne işe yaradığı
+- Hangi problemleri çözmeyi hedeflediği
+- Kimler için geliştirildiği
+- Platformun temel çalışma mantığı
+- Yapay zeka destekli değerlendirme yaklaşımı
+
+---
+
+## Papirus AI Ne İşe Yarar?
+
+Papirus AI, yazılı ve açık uçlu sınav kağıtlarının dijital ortamda analiz edilmesini ve değerlendirilmesini kolaylaştırır.
 
 Platform sayesinde:
 
-- Yazili sinav kagitlari sisteme yüklenebilir
-- Sorular için rubric tanimlanabilir
-- Yapay zeka destekli ön puanlama alinabilir
+- Yazılı sınav kağıtları sisteme yüklenebilir
+- Sorular için rubric tanımlanabilir
+- Yapay zeka destekli ön değerlendirme alınabilir
 - Sonuçlar manuel olarak incelenebilir
-- Raporlama ve analiz islemleri yapilabilir
+- Raporlama ve analiz işlemleri yapılabilir
 
-[SCREENSHOT]
+Papirus AI özellikle çok sayıda sınav kağıdının değerlendirildiği süreçlerde akademisyenlerin iş yükünü azaltmayı hedefler.
 
 ---
 
 ## Hangi Problemleri Çözer?
 
-Klasik sinav degerlendirme süreçleri genellikle:
+Klasik sınav değerlendirme süreçleri genellikle:
 
-- Çok fazla zaman alir
-- Tutarsiz puanlamalara neden olabilir
-- Büyük siniflarda yönetilmesi zor hale gelir
-- Tekrarlayan manuel islemler içerir
+- Çok fazla zaman alır
+- Tekrarlayan manuel işlemler içerir
+- Büyük sınıflarda yönetilmesi zor hale gelir
+- Tutarsız puanlamalara neden olabilir
+- Sonuçların analiz edilmesini zorlaştırabilir
 
-Papirus AI bu süreci optimize ederek akademisyenlerin degerlendirme yükünü azaltmayi hedefler.
-
-[SCREENSHOT]
+Papirus AI bu süreçleri daha yönetilebilir hale getirerek değerlendirme akışını hızlandırmayı amaçlar.
 
 ---
 
-## Kimler Için Gelistirildi?
+## Kimler İçin Geliştirildi?
 
 Papirus AI özellikle:
 
 - Üniversiteler
 - Özel okullar
 - Kurs merkezleri
-- Açik uçlu sinav yapan egitim kurumlari
+- Açık uçlu sınav yapan eğitim kurumları
 - Akademisyenler
-- Ögretmenler
+- Öğretmenler
 
-için gelistirilmistir.
+için geliştirilmiştir.
+
+Platform, yoğun değerlendirme süreçlerinde daha kontrollü ve daha düzenli bir çalışma yapısı oluşturmayı hedefler.
 
 ---
 
-## Platformun Temel Yaklasimi
+## Platformun Temel Yaklaşımı
 
-Papirus AI tamamen otomatik karar veren bir sistem degildir.
+Papirus AI tamamen otomatik karar veren bir sistem değildir.
 
-Platformun temel yaklasimi:
+Platformun temel yaklaşımı:
 
 - Yapay zeka destekli analiz
 - Akademisyen kontrolü
 - Manuel inceleme
 - Düzenlenebilir puanlama
 
-mantigi üzerine kuruludur.
+mantığı üzerine kuruludur.
 
-Son karar her zaman egitmene aittir.
-
-[SCREENSHOT]
+Sistem akademisyene yardımcı olacak ön değerlendirme üretir ancak nihai karar her zaman eğitmene aittir.
 
 ---
 
-## Papirus AI Is Akisi
+## Papirus AI İş Akışı
 
-Platform genel olarak su adimlarla çalisir:
+Platform genel olarak aşağıdaki süreç üzerinden çalışır:
 
 ```txt
-1. Sinav olustur
-2. Sorulari tanimla
-3. Rubric belirle
-4. Kagitlari yükle
-5. Yapay zeka analizini baslat
-6. Sonuçlari incele
-7. Rapor olustur
+1. Sınav oluştur
+2. Soruları tanımla
+3. Rubric oluştur
+4. Kağıtları yükle
+5. Yapay zeka analizini başlat
+6. Sonuçları incele
+7. Rapor oluştur
 ```
+
+Bu yapı değerlendirme sürecinin daha sistemli ve daha takip edilebilir hale gelmesini sağlar.
 
 ---
 
-## Yapay Zeka Destekli Degerlendirme
+## Yapay Zeka Destekli Değerlendirme
 
-Papirus AI, ögrenci cevaplarini:
+Papirus AI, öğrenci cevaplarını:
 
-- Soru içerigi
+- Soru içeriği
 - Beklenen cevap
-- Rubric yapisi
+- Rubric yapısı
 - Anlamsal benzerlik
-- Degerlendirme kriterleri
+- Değerlendirme kriterleri
 
 üzerinden analiz eder.
 
-Bu süreç akademisyenlerin daha hizli ve daha tutarli degerlendirme yapmasina yardimci olur.
+Bu süreç akademisyenlerin daha hızlı ve daha tutarlı değerlendirme yapmasına yardımcı olur.
 
-[SCREENSHOT]
+Papirus AI'nin amacı akademisyenin yerine karar vermek değil, değerlendirme sürecini desteklemektir.
 
 ---
 
-## Sonraki Adim
+## Sonraki Adım
 
-Bir sonraki bölümde platformun teknik ve operasyonel çalisma mantigini inceleyebilirsiniz.
+Bir sonraki bölümde platformun teknik ve operasyonel çalışma mantığını daha detaylı inceleyebilirsiniz.
 
-→ Nasil Çalisir?
+→ [Nasıl Çalışır?](./nasil-calisir)
