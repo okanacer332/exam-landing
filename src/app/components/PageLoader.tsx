@@ -33,8 +33,8 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
         <div className="space-y-6 text-center">
           <motion.div
             animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 5, -5, 0],
+              scale: [1, 1.08, 1],
+              rotate: [0, 4, -4, 0],
             }}
             transition={{
               duration: 2,
@@ -43,7 +43,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
             }}
             className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl shadow-2xl shadow-[#2997FF]/25"
           >
-            <img src="/brand/papirus-mark.svg" alt="Papirus AI" className="h-20 w-20" />
+            <img src="/papi-logo.png" alt="Papirus AI" className="h-20 w-20 rounded-2xl object-contain" />
           </motion.div>
 
           <div>
