@@ -1,159 +1,148 @@
-# Nasil Çalisir?
+# Nasıl Çalışır?
 
-Papirus AI, yazili ve açik uçlu sinav kagitlarini dijital ortamda analiz ederek yapay zeka destekli degerlendirme süreci olusturur.
+Papirus AI, yazılı ve açık uçlu sınav kağıtlarını yapay zeka destekli analiz süreçleri ile değerlendirmeye yardımcı olur.
 
-Bu bölümde sistemin genel is akisinin nasil çalistigini inceleyeceksiniz.
+Platformun çalışma yapısı; cevap anahtarının yüklenmesi, rubric oluşturulması, öğrenci kağıtlarının okunması ve sonuçların değerlendirilmesi üzerine kuruludur.
 
----
-
-## Bu Bölümde Neler Ögreneceksiniz?
-
-- Platformun genel çalisma mantigi
-- Degerlendirme sürecinin adimlari
-- Yapay zeka analiz akisi
-- Akademisyen kontrol mekanizmasi
+Bu bölümde Papirus AI'nin gerçek değerlendirme akışını adım adım inceleyebilirsiniz.
 
 ---
 
-## Genel Sistem Akisi
+## Bu Bölümde Neler Öğreneceksiniz?
 
-Papirus AI temel olarak su süreçlerden olusur:
+- Cevap anahtarı yükleme süreci
+- Rubric oluşturma yapısı
+- Öğrenci kağıdı yükleme yöntemleri
+- Sınıf kuyruğu sistemi
+- AI destekli puanlama süreci
+- Sonuç inceleme ve PDF çıktısı
+
+---
+
+## Genel Sistem Akışı
+
+Papirus AI temel olarak aşağıdaki süreç üzerinden çalışır:
 
 ```txt
-Sinav Olusturma
+Cevap Anahtarı Yükleme
       ↓
-Soru ve Rubric Tanimlama
+Rubric ve Puanlama Yapısı Oluşturma
       ↓
-Kagit Yükleme
+Öğrenci Kağıtlarını Yükleme
       ↓
-OCR ve Veri Isleme
+Sınıf Kuyruğu Oluşturma
       ↓
-Yapay Zeka Analizi
+AI Destekli Kağıt Okuma
       ↓
-Sonuç Inceleme
+Sonuç İnceleme ve Puanlama
       ↓
-Raporlama
+PDF ve Raporlama
 ```
 
-[SCREENSHOT]
+![Papirus AI Genel Sistem Akışı](/docs-media/screenshots/genel/dashboard-overview-new.png)
+---
+
+## 1. Cevap Anahtarı Yükleme
+
+Değerlendirme süreci öğretmenin cevap anahtarını sisteme yüklemesi ile başlar.
+
+Kullanıcı isterse:
+
+- Daha önce yüklediği cevap anahtarlarını seçebilir
+- Yeni bir öğretmen kağıdı yükleyebilir
+
+Bu yapı aynı ders veya sınav için tekrar kullanılabilir değerlendirme süreçleri oluşturulmasını sağlar.
+
+<!-- SCREENSHOT: Cevap anahtarı seçim ekranı -->
 
 ---
 
-## 1. Sinav Olusturma
+## 2. Rubric ve Puanlama Yapısı Oluşturma
 
-Ilk adimda yeni bir sinav olusturulur.
-
-Bu süreçte:
-
-- Ders adi
-- Sinav tipi
-- Açiklama
-- Toplam puan
-- Sinif bilgileri
-
-gibi bilgiler tanimlanabilir.
-
-[SCREENSHOT]
-
----
-
-## 2. Soru ve Rubric Tanimlama
+Cevap anahtarı yüklendikten sonra sistem içerisinden soru bazlı puanlama yapısı oluşturulur.
 
 Her soru için:
 
-- Maksimum puan
+- Soru başlığı
+- Toplam puan
 - Beklenen cevap
-- Degerlendirme kriterleri
-- Rubric detaylari
+- Puanlama kriterleri
+- Rubric detayları
 
-eklenebilir.
+tanımlanabilir.
 
-Bu bilgiler yapay zeka analiz sürecinin temelini olusturur.
+Bu yapı AI değerlendirme sürecinin temelini oluşturur.
 
-[SCREENSHOT]
-
----
-
-## 3. Kagit Yükleme
-
-Ögrenci kagitlari sisteme:
-
-- PDF
-- JPG
-- PNG
-
-formatlarinda yüklenebilir.
-
-Platform yüklenen belgeleri analiz ederek soru alanlarini belirler.
-
-[SCREENSHOT]
+<!-- SCREENSHOT: Rubric ve puanlama ekranı -->
 
 ---
 
-## 4. OCR ve Veri Isleme
+## 3. Öğrenci Kağıtlarını Yükleme
 
-Sistem yüklenen kagitlari OCR teknolojisi ile analiz eder.
+Öğrenci kağıtları cevap anahtarına bağlı şekilde sisteme yüklenir.
 
-Bu süreçte:
+Platform farklı yükleme yöntemlerini destekler:
 
-- Metin tanima
-- El yazisi okuma
-- Soru ayirma
-- Cevap eslestirme
+- Manuel dosya yükleme
+- Google Drive entegrasyonu
+- Google Classroom entegrasyonu
 
-islemleri gerçeklestirilir.
+Bu süreç sayesinde çok sayıda öğrenci kağıdı hızlı şekilde sisteme aktarılabilir.
 
-[SCREENSHOT]
-
----
-
-## 5. Yapay Zeka Analizi
-
-Yapay zeka modeli ögrenci cevaplarini:
-
-- Rubric yapisi
-- Beklenen cevap
-- Anlamsal benzerlik
-- Degerlendirme kurallari
-
-üzerinden analiz eder.
-
-Sonuç olarak ön puanlama olusturulur.
-
-[SCREENSHOT]
+<!-- SCREENSHOT: Öğrenci kağıdı yükleme ekranı -->
 
 ---
 
-## 6. Manuel Inceleme
+## 4. Sınıf Kuyruğu ve Toplu Okuma
+
+Yüklenen öğrenci kağıtları sınıf kuyruğuna alınır.
 
 Akademisyen isterse:
 
-- Puanlari düzenleyebilir
-- Yorum ekleyebilir
-- Sonuçlari kontrol edebilir
+- Kağıtları tek tek okuyabilir
+- Belirli öğrencileri seçebilir
+- Tüm sınıfı toplu şekilde okutabilir
 
-Bu sayede nihai karar her zaman egitmende kalir.
+Bu yapı büyük sınıflarda değerlendirme sürecini hızlandırır.
 
-[SCREENSHOT]
-
----
-
-## 7. Raporlama
-
-Degerlendirme tamamlandiginda:
-
-- Ögrenci bazli raporlar
-- Soru bazli analizler
-- Puan dagilimlari
-
-olusturulabilir.
-
-[SCREENSHOT]
+<!-- SCREENSHOT: Tüm sınıfı oku ekranı -->
 
 ---
 
-## Sonraki Adim
+## 5. AI Destekli Değerlendirme
 
-Bir sonraki bölümde Papirus AI'nin öne çikan temel özelliklerini inceleyebilirsiniz.
+Papirus AI öğrenci cevaplarını:
 
-→ Temel Özellikler
+- Beklenen cevap
+- Rubric yapısı
+- Puanlama kriterleri
+- Anlamsal benzerlik
+
+üzerinden analiz eder.
+
+Sistem öğrenci cevaplarını değerlendirerek açıklamalı puanlama oluşturur ve kağıt üzerinde ilgili alanları işaretler.
+
+<!-- SCREENSHOT: AI değerlendirme sonucu -->
+
+---
+
+## 6. Sonuç İnceleme ve PDF Çıktısı
+
+Okuma işlemi tamamlandıktan sonra akademisyen:
+
+- Öğrenci puanlarını inceleyebilir
+- AI açıklamalarını görüntüleyebilir
+- Kağıt üzerindeki işaretlemeleri kontrol edebilir
+- Sonuçları PDF olarak indirebilir
+
+Bu süreç değerlendirme sonuçlarının daha şeffaf ve daha kontrol edilebilir hale gelmesini sağlar.
+
+<!-- SCREENSHOT: Sonuç ve PDF ekranı -->
+
+---
+
+## Sonraki Adım
+
+Bir sonraki bölümde Papirus AI platformunun öne çıkan temel özelliklerini inceleyebilirsiniz.
+
+→ [Temel Özellikler](./temel-ozellikler)

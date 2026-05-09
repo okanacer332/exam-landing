@@ -4,7 +4,7 @@ Papirus-AI, akademisyenlerin yazılı ve açık uçlu sınav kağıtlarını yap
 
 Klasik yazılı sınav süreçleri; kağıt okuma, puanlama, kontrol etme ve sonuçları düzenleme gibi zaman alan işlemler içerir. Papirus-AI bu süreci dijitalleştirerek değerlendirme süreçlerini daha hızlı, daha düzenli ve daha ölçeklenebilir hale getirir.
 
-![Papirus-AI Dashboard](../medya/screenshots/genel/dashboard-overview-new.png)
+![Papirus-AI Dashboard](/docs-media/screenshots/genel/dashboard-overview-new.png)
 
 ---
 
