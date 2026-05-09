@@ -1,109 +1,267 @@
-# Sik Sorulan Sorular
+# Sık Sorulan Sorular
 
-Bu bölümde Papirus AI hakkinda en sik sorulan sorulari bulabilirsiniz.
+Bu bölümde Papirus AI hakkında en sık sorulan soruları ve platformun kullanım süreçleriyle ilgili temel bilgileri bulabilirsiniz.
 
 ---
 
 ## Papirus AI tamamen otomatik not mu verir?
 
-Hayir.
+Hayır.
 
-Papirus AI yapay zeka destekli ön degerlendirme olusturur. Nihai kontrol her zaman akademisyene aittir.
+Papirus AI yapay zeka destekli değerlendirme sistemi sunar ancak nihai karar her zaman akademisyene aittir.
 
----
+Sistem:
 
-## El yazisini okuyabiliyor mu?
+- Ön değerlendirme oluşturabilir
+- Açıklamalı puanlama sunabilir
+- İşlem analizi yapabilir
+- Eksik veya hatalı alanları işaretleyebilir
 
-Platform belirli seviyede el yazisi analizi yapabilir.
-
-Ancak:
-- yazinin okunabilir olmasi
-- görüntünün netligi
-- tarama kalitesi
-
-sonuçlari dogrudan etkiler.
+Ancak sonuçlar manuel olarak incelenebilir ve değiştirilebilir.
 
 ---
 
-## Hangi dosya formatlari destekleniyor?
+## Papirus AI hangi sınav türlerini destekler?
 
-Papirus AI su formatlari destekler:
+Platform özellikle:
+
+- Yazılı sınavlar
+- Açık uçlu sorular
+- İşlem gerektiren sorular
+- Yoruma dayalı cevaplar
+- Sayısal çözüm soruları
+
+için uygundur.
+
+Detaylı bilgi için:
+→ Desteklenen Sınav Türleri bölümünü inceleyebilirsiniz.
+
+---
+
+## El yazısı okunabiliyor mu?
+
+Papirus AI OCR ve el yazısı analiz süreçlerini destekler.
+
+Ancak sonuç kalitesi:
+
+- Yazının okunabilirliğine
+- Tarama kalitesine
+- Görüntü netliğine
+
+bağlı olarak değişebilir.
+
+Daha net belgeler daha başarılı analiz sonuçları üretir.
+
+---
+
+## Hangi dosya formatları destekleniyor?
+
+Papirus AI şu formatları destekler:
 
 - PDF
-- PNG
 - JPG
 - JPEG
+- PNG
+
+Belgelerin okunabilir ve düzgün taranmış olması önerilir.
 
 ---
 
-## Açik uçlu sorular destekleniyor mu?
+## Google Drive ve Classroom desteği var mı?
 
 Evet.
 
-Platform özellikle açik uçlu ve yorum gerektiren sorularin analizine odaklanir.
+Platform:
+
+- Manuel dosya yükleme
+- Google Drive entegrasyonu
+- Google Classroom entegrasyonu
+
+gibi farklı yükleme yöntemlerini destekleyebilir.
 
 ---
 
-## AI puanlarini düzenleyebilir miyim?
+## Aynı anda tüm sınıf okutulabilir mi?
 
 Evet.
 
-Akademisyenler:
-- puanlari düzenleyebilir
-- yorum ekleyebilir
-- manuel inceleme yapabilir
+Öğrenci kağıtları sınıf kuyruğuna alınabilir ve akademisyen isterse:
+
+- Tek öğrenci
+- Belirli öğrenciler
+- Tüm sınıf
+
+için toplu değerlendirme başlatabilir.
+
+Bu yapı özellikle kalabalık sınıflarda zaman kazandırır.
 
 ---
 
-## Büyük siniflarda kullanilabilir mi?
+## Rubric sistemi nasıl çalışır?
+
+Papirus AI değerlendirme sürecini rubric yapısına göre yönetebilir.
+
+Rubric içerisinde:
+
+- Puanlama kriterleri
+- Beklenen cevaplar
+- İşlem adımları
+- Kısmi puan kuralları
+
+tanımlanabilir.
+
+Sistem değerlendirme sürecini bu yapıya göre analiz etmeye yardımcı olur.
+
+---
+
+## AI değerlendirme nasıl çalışır?
+
+Sistem öğrenci cevaplarını:
+
+- Beklenen cevap
+- Rubric yapısı
+- Anlamsal benzerlik
+- Çözüm yöntemi
+- İşlem adımları
+
+üzerinden analiz etmeye yardımcı olur.
+
+Amaç akademisyene destek olacak daha hızlı ve daha tutarlı değerlendirme süreçleri oluşturmaktır.
+
+---
+
+## Sonuçlar düzenlenebilir mi?
 
 Evet.
 
-Papirus AI toplu kagit isleme süreçlerini destekler.
+Akademisyen isterse:
 
-Bu sayede yüksek hacimli sinav süreçlerinde zaman kazanci saglanabilir.
+- Puanları değiştirebilir
+- Açıklamaları düzenleyebilir
+- Sonuçları tekrar inceleyebilir
+- Nihai değerlendirmeyi güncelleyebilir
+
+Kontrol her zaman kullanıcıdadır.
 
 ---
 
-## OCR sistemi nasil çalisir?
-
-Platform yüklenen belgeleri OCR teknolojisi ile analiz ederek metinleri algilar ve soru bazli ayirma islemleri yapar.
-
----
-
-## Internet baglantisi gerekli mi?
+## PDF çıktısı alınabilir mi?
 
 Evet.
 
-Platformun çalismasi için aktif internet baglantisi gereklidir.
+Değerlendirme sonuçları PDF olarak dışa aktarılabilir.
+
+Bu çıktılar:
+
+- Arşivleme
+- Öğrenci paylaşımı
+- Sonuç raporlama
+- Akademik kayıt
+
+amaçlarıyla kullanılabilir.
 
 ---
 
-## Sonuçlar disa aktarilabilir mi?
+## Öğrenci bilgileri saklanıyor mu?
+
+Platform içerisinde öğrenci bilgileri değerlendirme sürecinin bir parçası olarak tutulabilir.
+
+Örneğin:
+
+- Öğrenci adı
+- Numara
+- Sınıf bilgisi
+- Sınav geçmişi
+- Okuma sonuçları
+
+Ancak veri yönetimi kurumun kullanım politikasına bağlıdır.
+
+---
+
+## Platform internet bağlantısı olmadan çalışır mı?
+
+Papirus AI web tabanlı bir platformdur.
+
+Bu nedenle sistemin kullanılabilmesi için internet bağlantısı gereklidir.
+
+---
+
+## Düşük kaliteli taramalar çalışır mı?
+
+Düşük kaliteli belgelerde değerlendirme doğruluğu azalabilir.
+
+Özellikle:
+
+- Eğik sayfalar
+- Silik yazılar
+- Düşük çözünürlük
+- Bozuk el yazıları
+
+OCR ve AI analiz süreçlerini etkileyebilir.
+
+---
+
+## Çok büyük sınıflarda kullanılabilir mi?
 
 Evet.
 
-Degerlendirme sonuçlari raporlama süreçlerinde kullanilmak üzere disa aktarilabilir.
+Papirus AI özellikle yüksek hacimli sınav süreçlerini desteklemek üzere tasarlanmıştır.
+
+Platform:
+
+- Toplu sınıf okuma
+- Kuyruk sistemi
+- Çoklu değerlendirme akışı
+
+gibi özelliklerle büyük sınıflarda kullanılabilir.
 
 ---
 
-## Yapay zeka sonuçlari her zaman dogru mudur?
+## Papirus AI hangi kurumlar için uygundur?
 
-Yapay zeka destekli analiz süreçleri yardimci araç olarak tasarlanmistir.
+Platform özellikle:
+
+- Üniversiteler
+- Özel okullar
+- Kurs merkezleri
+- Eğitim kurumları
+- Akademisyenler
+- Öğretmenler
+
+için uygundur.
+
+---
+
+## Yapay zeka her zaman doğru sonuç verir mi?
+
+Hayır.
+
+AI değerlendirme sistemi yardımcı araç olarak tasarlanmıştır.
 
 Bu nedenle:
-- manuel kontrol
-- akademisyen incelemesi
-- son onay süreci
+
+- Manuel kontrol
+- Akademisyen incelemesi
+- Nihai değerlendirme süreci
 
 önemlidir.
 
+Papirus AI değerlendirme sürecini hızlandırmayı hedefler ancak son karar her zaman eğitmene aittir.
+
 ---
 
-## Teknik destek alabilir miyim?
+## Destek veya geri bildirim gönderebilir miyim?
 
 Evet.
 
-Destek süreçleri için platform üzerinden veya iletisim kanallari araciligiyla yardim alinabilir.
+Papirus AI geliştirme süreci devam eden bir platformdur.
 
-[SCREENSHOT]
+Geri bildirimler ve kullanım deneyimleri sistemin geliştirilmesine katkı sağlayabilir.
+
+---
+
+## Özet
+
+Papirus AI; yazılı ve açık uçlu sınav değerlendirme süreçlerini daha hızlı, daha düzenli ve daha yönetilebilir hale getirmeyi amaçlayan AI destekli bir platformdur.
+
+Sistem akademisyenin yerine karar vermek yerine değerlendirme sürecini destekleyen yardımcı bir yapı sunar.

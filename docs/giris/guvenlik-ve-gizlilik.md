@@ -1,125 +1,251 @@
 # Güvenlik ve Gizlilik
 
-Papirus AI içerisinde islenen sinav belgeleri ve akademik veriler güvenlik odakli yaklasimlarla korunur.
+Papirus AI içerisinde işlenen sınav belgeleri, öğrenci bilgileri ve değerlendirme sonuçları akademik süreçlerin önemli parçalarıdır.
 
-Bu bölümde platformun veri güvenligi ve gizlilik yaklasimini inceleyebilirsiniz.
+Bu nedenle platform geliştirilirken veri güvenliği, erişim kontrolü ve değerlendirme süreçlerinin gizliliği öncelikli konular arasında ele alınmıştır.
 
----
-
-## Bu Bölümde Neler Ögreneceksiniz?
-
-- Veri güvenligi yaklasimi
-- Belge gizliligi
-- Kullanici yetkilendirme
-- Akademik veri koruma süreçleri
+Papirus AI yalnızca değerlendirme sürecini hızlandırmayı değil, aynı zamanda bu süreci daha kontrollü ve daha güvenli hale getirmeyi hedefler.
 
 ---
 
-## Akademik Veri Güvenligi
+## Bu Bölümde Neler Öğreneceksiniz?
 
-Papirus AI akademik belgelerin güvenli sekilde islenmesini hedefler.
+Bu bölümde Papirus AI'nin güvenlik ve gizlilik yaklaşımını inceleyebilirsiniz.
 
-Platform:
-- sinav kagitlari
-- ögrenci bilgileri
-- degerlendirme sonuçlari
-
-gibi hassas verileri kontrollü sekilde yönetir.
-
-[SCREENSHOT]
-
----
-
-## Yetkilendirme ve Erisim Kontrolü
-
-Platform üzerinde kullanici erisimleri kontrol altinda tutulabilir.
-
-Bu kapsamda:
-- kullanici rolleri
-- erisim seviyeleri
-- yönetici yetkileri
-
-tanimlanabilir.
-
-[SCREENSHOT]
+- Akademik veri güvenliği
+- Öğrenci bilgilerinin korunması
+- Erişim kontrol mekanizmaları
+- Kağıt ve belge yönetimi
+- AI değerlendirme güvenliği
+- Kurumsal kullanım süreçleri
+- Kullanıcı sorumlulukları
 
 ---
 
-## Belge Gizliligi
+## Akademik Veri Güvenliği
 
-Yüklenen sinav belgeleri sadece yetkili kullanicilar tarafindan görüntülenebilir.
+Papirus AI içerisinde işlenen veriler akademik süreçlerin parçasıdır.
 
-Bu süreç:
-- erisim kontrolü
-- güvenli depolama
-- oturum yönetimi
+Platform üzerinde:
 
-gibi mekanizmalarla desteklenir.
+- Öğrenci kağıtları
+- Cevap anahtarları
+- Puanlama bilgileri
+- Rubric yapıları
+- Değerlendirme sonuçları
+- Sınıf kayıtları
 
-[SCREENSHOT]
+gibi veriler işlenebilir.
 
----
-
-## Veri Isleme Süreci
-
-Papirus AI içerisinde yüklenen belgeler analiz sürecinde kontrollü olarak islenir.
-
-Bu süreçte:
-- OCR analizi
-- AI degerlendirme
-- raporlama
-
-gibi islemler gerçeklestirilir.
-
-[SCREENSHOT]
+Bu nedenle sistem, değerlendirme sürecinin daha kontrollü ilerlemesini sağlayacak şekilde tasarlanmıştır.
 
 ---
 
-## Manuel Kontrol Yaklasimi
+## Öğrenci Bilgilerinin Korunması
 
-Papirus AI tamamen otomatik karar mekanizmasi olarak tasarlanmamistir.
+Papirus AI içerisinde işlenen öğrenci bilgileri yalnızca değerlendirme süreçlerinin yürütülmesi amacıyla kullanılır.
 
-Nihai kontrol:
-- akademisyen
-- egitmen
-- kurum yetkilisi
+Öğrenciye ait:
 
-tarafindan gerçeklestirilir.
+- İsim
+- Numara
+- Sınıf bilgisi
+- Sınav sonuçları
+- Okuma geçmişi
 
-[SCREENSHOT]
+gibi bilgiler değerlendirme sisteminin parçası olarak tutulabilir.
+
+Bu bilgilerin paylaşımı ve yönetimi kurumun kullanım politikalarına bağlıdır.
 
 ---
 
-## Güvenli Kullanim Önerileri
+## Erişim Kontrolü
 
-Daha güvenli kullanim için:
+Papirus AI içerisinde farklı kullanıcılar farklı yetkilere sahip olabilir.
 
-- Güçlü parola kullanin
-- Yetkisiz hesap paylasimindan kaçinin
-- Belgeleri güvenli cihazlardan yükleyin
-- Yönetici izinlerini kontrollü dagitin
+Örneğin:
+
+- Akademisyenler
+- Kurum yöneticileri
+- Eğitim asistanları
+- Sınıf sorumluları
+
+farklı erişim seviyeleri ile sisteme dahil edilebilir.
+
+Bu yapı değerlendirme süreçlerinin daha kontrollü ilerlemesine yardımcı olur.
+
+---
+
+## Cevap Anahtarı ve Rubric Güvenliği
+
+Cevap anahtarları ve rubric yapıları değerlendirme sürecinin temelini oluşturur.
+
+Bu nedenle platform:
+
+- Referans kağıtlarının
+- Rubric tanımlarının
+- Puanlama kurallarının
+
+kontrollü şekilde yönetilmesini destekler.
+
+Bu yapı değerlendirme tutarlılığı açısından önemlidir.
+
+---
+
+## Öğrenci Kağıdı Yönetimi
+
+Yüklenen öğrenci kağıtları değerlendirme sürecine dahil edilir ve sınıf yapısına göre organize edilebilir.
+
+Platform üzerinden:
+
+- Öğrenci kağıtları takip edilebilir
+- Okuma durumları görüntülenebilir
+- Geçmiş değerlendirmeler incelenebilir
+- PDF çıktıları oluşturulabilir
+
+Bu yapı sınav süreçlerinin daha düzenli yönetilmesini sağlar.
+
+---
+
+## AI Değerlendirme Güvenliği
+
+Papirus AI değerlendirme sürecinde yapay zeka destekli analizler kullanır.
+
+Ancak sistem tamamen otomatik karar veren bir yapı değildir.
+
+AI değerlendirmeleri:
+
+- Ön analiz
+- Yardımcı puanlama
+- Açıklamalı yorum
+- İşlem analizi
+
+üretmeye yardımcı olur.
+
+Nihai kontrol her zaman akademisyene aittir.
+
+Bu yapı değerlendirme sürecindeki insan kontrolünü korumayı amaçlar.
+
+---
+
+## Akademisyen Kontrolü
+
+Papirus AI içerisinde akademisyenler değerlendirme sonuçlarını manuel olarak inceleyebilir.
+
+İstenirse:
+
+- Puanlar düzenlenebilir
+- AI yorumları kontrol edilebilir
+- Sonuçlar yeniden değerlendirilebilir
+- Nihai karar değiştirilebilir
+
+Bu yapı yanlış veya eksik değerlendirmelerin kontrol edilmesini kolaylaştırır.
+
+---
+
+## PDF ve Rapor Güvenliği
+
+Platform üzerinden oluşturulan PDF çıktıları ve değerlendirme raporları akademik süreçlerin parçası olarak kullanılabilir.
+
+Kurumlar:
+
+- Sonuç arşivleme
+- Öğrenci paylaşımı
+- Sınav raporlama
+- Akademik kayıt süreçleri
+
+için bu çıktıları kullanabilir.
+
+Bu nedenle çıktıların kontrollü paylaşılması önerilir.
+
+---
+
+## Kurumsal Kullanım Yaklaşımı
+
+Papirus AI özellikle:
+
+- Üniversiteler
+- Eğitim kurumları
+- Kurs merkezleri
+- Akademik değerlendirme yapan organizasyonlar
+
+için geliştirilmektedir.
+
+Kurumsal kullanım süreçlerinde:
+
+- Erişim yönetimi
+- Sınıf organizasyonu
+- Öğrenci kayıt yapısı
+- Değerlendirme süreçleri
+
+daha kontrollü şekilde yönetilebilir.
+
+---
+
+## Kullanıcı Sorumlulukları
+
+Papirus AI kullanılırken yüklenen içeriklerin sorumluluğu kullanıcıya aittir.
+
+Kullanıcıların:
+
+- Yetkisiz veri paylaşmaması
+- Öğrenci bilgilerini dikkatli yönetmesi
+- Güçlü hesap güvenliği kullanması
+- Doğru ve okunabilir belge yüklemesi
 
 önerilir.
 
 ---
 
-## Veri Gizliligi Yaklasimi
+## Veri Kalitesi ve Güvenilirlik
 
-Papirus AI akademik süreçlerde veri gizliligine önem verir.
+AI değerlendirme kalitesi yüklenen içeriklerin kalitesinden doğrudan etkilenebilir.
 
-Kurumlar:
-- belge yönetimi
-- kullanici kontrolü
-- veri saklama süreçleri
+Özellikle:
 
-üzerinde daha kontrollü çalisabilir.
+- Düşük kaliteli taramalar
+- Okunamayan el yazıları
+- Eksik sayfalar
+- Hatalı rubric yapıları
 
-[SCREENSHOT]
+değerlendirme sonuçlarını etkileyebilir.
+
+Bu nedenle manuel kontrol süreci önemlidir.
 
 ---
 
-## Sonraki Adim
+## Şeffaf Değerlendirme Yaklaşımı
 
-Bir sonraki bölümde sik sorulan sorulari inceleyebilirsiniz.
+Papirus AI yalnızca sonuç üretmeye değil, değerlendirme sürecini görünür hale getirmeye de odaklanır.
 
-→ SSS
+Platform:
+
+- Açıklamalı puanlama
+- Kağıt üzeri işaretleme
+- Soru bazlı değerlendirme
+- İşlem analizi
+
+gibi özelliklerle değerlendirme sürecini daha şeffaf hale getirmeyi hedefler.
+
+---
+
+## Özet
+
+Papirus AI, değerlendirme süreçlerini hızlandırırken akademik kontrolü korumayı amaçlayan bir platformdur.
+
+Güvenlik ve gizlilik yaklaşımının temelinde:
+
+- Akademisyen kontrolü
+- Kontrollü erişim
+- Şeffaf değerlendirme
+- Düzenli veri yönetimi
+
+yaklaşımı bulunur.
+
+---
+
+## Sonraki Adım
+
+Bir sonraki bölümde sık sorulan soruları inceleyebilirsiniz.
+
+→ [SSS](./sss)
