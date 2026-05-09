@@ -82,7 +82,7 @@ gibi ek bilgiler sisteme tanımlanabilir.
 
 Bu yapı sayesinde Papirus AI zamanla dersin değerlendirme yaklaşımına daha uygun sonuçlar üretmeye yardımcı olur.
 
-![Rubric ve Puanlama Yapısı](/docs-media/screenshots/soru-ve-rubric/rubric-structure.png)
+![Rubric ve Puanlama Yapısı](/docs-media/screenshots/sinav-olusturma/rubric-structure.png)
 
 ---
 
@@ -102,7 +102,7 @@ Yüklenen öğrenci kağıtları ilgili cevap anahtarı ile eşleştirilir ve de
 
 Platform özellikle kalabalık sınıflarda ve yüksek hacimli sınav süreçlerinde toplu işlem akışını kolaylaştıracak şekilde tasarlanmıştır.
 
-![Öğrenci Kağıdı Yükleme](/docs-media/screenshots/kagit-yukleme/student-paper-upload.png)
+![Öğrenci Kağıdı Yükleme](/docs-media/screenshots/sinav-olusturma/student-paper-upload.png)
 
 ---
 
@@ -122,7 +122,7 @@ Sistem aynı anda çok sayıda öğrenci kağıdını işleyerek değerlendirme 
 
 Toplu okuma süreci boyunca öğrencilerin durumları takip edilebilir ve değerlendirme akışı kontrol altında tutulabilir.
 
-![Sınıf Kuyruğu ve Toplu Okuma](/docs-media/screenshots/kagit-yukleme/class-queue-processing.png)
+![Sınıf Kuyruğu ve Toplu Okuma](/docs-media/screenshots/sinav-olusturma/class-queue-processing.png)
 
 ---
 
@@ -154,7 +154,7 @@ Akademisyen isterse sonuçları inceleyebilir, düzenleyebilir ve değerlendirme
 
 Papirus AI'nin amacı akademisyenin yerine karar vermek değil, değerlendirme sürecini hızlandıran ve daha tutarlı hale getiren bir yardımcı sistem sunmaktır.
 
-![AI Destekli Değerlendirme](/docs-media/screenshots/ai-analizi/ai-evaluation-result.png)
+![AI Destekli Değerlendirme](/docs-media/screenshots/sinav-olusturma/ai-evaluation-result.png)
 
 ---
 
