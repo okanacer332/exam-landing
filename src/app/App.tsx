@@ -9,6 +9,7 @@ import { CookiePolicy } from "./components/policies/CookiePolicy";
 import { DistanceSalesContract } from "./components/policies/DistanceSalesContract";
 import { PreliminaryInfoForm } from "./components/policies/PreliminaryInfoForm";
 import { RefundPolicy } from "./components/policies/RefundPolicy";
+import { DocsLayout } from "./components/docs/DocsLayout";
 
 type AuthIntent = "login" | "trial";
 
@@ -31,6 +32,7 @@ function getPolicyRoute(pathname: string, hash: string) {
   if (p === "/mesafeli-satis-sozlesmesi" || hash === "#mesafeli-satis-sozlesmesi") return "distance-sales";
   if (p === "/on-bilgilendirme-formu" || hash === "#on-bilgilendirme-formu") return "preliminary-info";
   if (p === "/iade-iptal-politikasi" || hash === "#iade-iptal-politikasi") return "refund";
+  if (p.startsWith("/dokuman")) return "docs";
   return null;
 }
 
@@ -86,6 +88,7 @@ export default function App() {
     if (policyRoute === "distance-sales") return <DistanceSalesContract />;
     if (policyRoute === "preliminary-info") return <PreliminaryInfoForm />;
     if (policyRoute === "refund") return <RefundPolicy />;
+    if (policyRoute === "docs") return <DocsLayout />;
 
     return (
       <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
