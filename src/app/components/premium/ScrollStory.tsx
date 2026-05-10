@@ -43,10 +43,10 @@ const storyPanels = [
 ];
 
 type ScrollStoryProps = {
-  onTryClick: () => void;
+  tryUrl: string;
 };
 
-export function ScrollStory({ onTryClick }: ScrollStoryProps) {
+export function ScrollStory({ tryUrl }: ScrollStoryProps) {
   const rootRef = useRef<HTMLElement | null>(null);
   const progressRef = useRef<HTMLDivElement | null>(null);
   const paperRef = useRef<HTMLDivElement | null>(null);
@@ -165,10 +165,10 @@ export function ScrollStory({ onTryClick }: ScrollStoryProps) {
               <h1>{panel.title}</h1>
               <p>{panel.text}</p>
               {index === 0 ? (
-                <button type="button" className="premium-primary-button" onClick={onTryClick}>
+                <a href={tryUrl} className="premium-primary-button">
                   Ücretsiz deneyin
                   <ArrowRight aria-hidden="true" />
-                </button>
+                </a>
               ) : null}
             </article>
           ))}

@@ -101,7 +101,10 @@ function AppShell() {
     if (policyRoute === "refund") return <RefundPolicy />;
 
     return (
-      <PremiumLanding onLoginClick={() => goToConsole("login")} onTryClick={() => goToConsole("trial")} />
+      <PremiumLanding 
+        loginUrl={getConsoleLoginUrl("login")} 
+        tryUrl={getConsoleLoginUrl("trial")} 
+      />
     );
   };
 

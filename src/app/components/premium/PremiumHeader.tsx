@@ -2,11 +2,11 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 type PremiumHeaderProps = {
-  onLoginClick: () => void;
-  onTryClick: () => void;
+  loginUrl: string;
+  tryUrl: string;
 };
 
-export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) {
+export function PremiumHeader({ loginUrl, tryUrl }: PremiumHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Menü açıkken body scroll'u kilitle
@@ -51,13 +51,13 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
 
         {/* Masaüstü aksiyonlar */}
         <div className="premium-header-actions">
-          <button type="button" className="premium-link-button" onClick={onLoginClick}>
+          <a href={loginUrl} className="premium-link-button">
             Giriş
-          </button>
-          <button type="button" className="premium-primary-button premium-primary-button--small" onClick={onTryClick}>
+          </a>
+          <a href={tryUrl} className="premium-primary-button premium-primary-button--small">
             Deneyin
             <ArrowRight aria-hidden="true" />
-          </button>
+          </a>
 
           {/* Hamburger butonu — sadece mobilde görünür */}
           <button
@@ -100,21 +100,20 @@ export function PremiumHeader({ onLoginClick, onTryClick }: PremiumHeaderProps) 
               </a>
 
               <div className="mobile-menu-actions">
-                <button
-                  type="button"
+                <a
+                  href={loginUrl}
                   className="premium-link-button mobile-menu-action-btn"
-                  onClick={() => { closeMenu(); onLoginClick(); }}
+                  onClick={closeMenu}
                 >
                   Giriş Yap
-                </button>
-                <button
-                  type="button"
+                </a>
+                <a
+                  href={tryUrl}
                   className="premium-primary-button"
-                  onClick={() => { closeMenu(); onTryClick(); }}
+                  onClick={closeMenu}
                 >
                   Ücretsiz Deneyin
-                  <ArrowRight aria-hidden="true" />
-                </button>
+                </a>
               </div>
             </div>
           </nav>

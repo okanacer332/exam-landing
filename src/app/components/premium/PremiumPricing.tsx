@@ -26,10 +26,10 @@ const plans = [
 ];
 
 type PremiumPricingProps = {
-  onTryClick: () => void;
+  tryUrl?: string;
 };
 
-export function PremiumPricing({ onTryClick }: PremiumPricingProps) {
+export function PremiumPricing({ tryUrl }: PremiumPricingProps) {
   return (
     <section className="premium-pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="premium-section-heading">

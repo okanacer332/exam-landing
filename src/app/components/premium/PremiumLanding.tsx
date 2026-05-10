@@ -6,21 +6,21 @@ import { MobileStory } from "./MobileStory";
 import { PremiumPricing } from "./PremiumPricing";
 
 type PremiumLandingProps = {
-  onLoginClick: () => void;
-  onTryClick: () => void;
+  loginUrl: string;
+  tryUrl: string;
 };
 
-export function PremiumLanding({ onLoginClick, onTryClick }: PremiumLandingProps) {
+export function PremiumLanding({ loginUrl, tryUrl }: PremiumLandingProps) {
   return (
     <div className="premium-shell" id="top">
-      <PremiumHeader onLoginClick={onLoginClick} onTryClick={onTryClick} />
+      <PremiumHeader loginUrl={loginUrl} tryUrl={tryUrl} />
       <main>
         {/* Masaüstü: scroll-driven GSAP animasyonu — mobilde CSS ile gizlenir */}
-        <ScrollStory onTryClick={onTryClick} />
+        <ScrollStory tryUrl={tryUrl} />
         {/* Mobil: statik moment kartları — masaüstünde CSS ile gizlenir */}
         <MobileStory />
         <PremiumFAQ />
-        <PremiumPricing onTryClick={onTryClick} />
+        <PremiumPricing tryUrl={tryUrl} />
       </main>
       <PremiumFooter />
     </div>
