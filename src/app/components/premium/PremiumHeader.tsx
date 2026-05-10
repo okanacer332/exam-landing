@@ -51,10 +51,10 @@ export function PremiumHeader({ loginUrl, tryUrl }: PremiumHeaderProps) {
 
         {/* Masaüstü aksiyonlar */}
         <div className="premium-header-actions">
-          <a href={loginUrl} className="premium-link-button">
+          <a href={loginUrl} target="_blank" rel="noopener noreferrer" className="premium-link-button">
             Giriş
           </a>
-          <a href={tryUrl} className="premium-primary-button premium-primary-button--small">
+          <a href={tryUrl} target="_blank" rel="noopener noreferrer" className="premium-primary-button premium-primary-button--small">
             Deneyin
             <ArrowRight aria-hidden="true" />
           </a>
@@ -102,6 +102,8 @@ export function PremiumHeader({ loginUrl, tryUrl }: PremiumHeaderProps) {
               <div className="mobile-menu-actions">
                 <a
                   href={loginUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="premium-link-button mobile-menu-action-btn"
                   onClick={closeMenu}
                 >
@@ -109,6 +111,8 @@ export function PremiumHeader({ loginUrl, tryUrl }: PremiumHeaderProps) {
                 </a>
                 <a
                   href={tryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="premium-primary-button"
                   onClick={closeMenu}
                 >
