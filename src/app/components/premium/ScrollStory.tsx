@@ -165,7 +165,7 @@ export function ScrollStory({ tryUrl }: ScrollStoryProps) {
               <h1>{panel.title}</h1>
               <p>{panel.text}</p>
               {index === 0 ? (
-                <a href={tryUrl} target="_blank" rel="noopener noreferrer" className="premium-primary-button">
+                <a href={tryUrl} className="premium-primary-button">
                   Ücretsiz deneyin
                   <ArrowRight aria-hidden="true" />
                 </a>
