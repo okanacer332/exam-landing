@@ -60,10 +60,6 @@ export const docsNav: DocSection[] = [
       { title: "Sonuçları İnceleme", slug: "is-akislari/sonuclari-inceleme" },
       { title: "Sonuçları Onaylama", slug: "is-akislari/sonuclari-onaylama" },
       { title: "Sınıfım Modülü", slug: "is-akislari/sinifim-modulu" },
-      { title: "Puan Düzenleme", slug: "is-akislari/puan-duzenleme" },
-      { title: "Raporları Dışa Aktarma", slug: "is-akislari/raporlari-disa-aktarma" },
-      { title: "Sınavı Arşivleme", slug: "is-akislari/sinavi-arsivleme" },
-      { title: "Soru Tanımlama", slug: "is-akislari/soru-tanimlama" },
     ],
   },
   {
