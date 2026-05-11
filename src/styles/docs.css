@@ -8,32 +8,32 @@
 
 /* ── Token'lar ─────────────────────────────────────────────── */
 :root {
-  --docs-font:       Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --docs-sidebar-w:  272px;
-  --docs-toc-w:      220px;
+  --docs-font: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --docs-sidebar-w: 272px;
+  --docs-toc-w: 220px;
 
   /* Renkler */
-  --docs-bg:         #ffffff;
-  --docs-bg-subtle:  #f9fafb;
-  --docs-border:     #e5e7eb;
+  --docs-bg: #ffffff;
+  --docs-bg-subtle: #f9fafb;
+  --docs-border: #e5e7eb;
   --docs-border-focus: #2997FF;
 
-  --docs-text:       #111827;
+  --docs-text: #111827;
   --docs-text-muted: #6b7280;
-  --docs-text-soft:  #9ca3af;
+  --docs-text-soft: #9ca3af;
 
-  --docs-accent:     #2997FF;
-  --docs-accent-bg:  #eff6ff;
+  --docs-accent: #2997FF;
+  --docs-accent-bg: #eff6ff;
   --docs-accent-hover: #1a7ee0;
 
-  --docs-nav-active-bg:   #eff6ff;
+  --docs-nav-active-bg: #eff6ff;
   --docs-nav-active-text: #1d4ed8;
-  --docs-nav-hover-bg:    #f3f4f6;
+  --docs-nav-hover-bg: #f3f4f6;
 
   /* Screenshot standartı */
-  --ss-radius:  18px;
-  --ss-border:  1px solid #e5e7eb;
-  --ss-shadow:  0 10px 30px rgba(0, 0, 0, 0.08);
+  --ss-radius: 18px;
+  --ss-border: 1px solid #e5e7eb;
+  --ss-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Docs shell ─────────────────────────────────────────────── */
@@ -246,7 +246,7 @@
   margin-bottom: 0.25rem;
 }
 
-.docs-sidebar-section + .docs-sidebar-section {
+.docs-sidebar-section+.docs-sidebar-section {
   margin-top: 0.5rem;
 }
 
@@ -425,11 +425,13 @@
 /* ── Markdown içerik — typography güçlendirilmiş ────────────── */
 .docs-prose {
   line-height: 1.75;
-  max-width: 68ch;    /* okunabilirlik: ~70 karakter/satır */
+  max-width: 68ch;
+  /* okunabilirlik: ~70 karakter/satır */
 }
 
 .docs-prose--landing h1:first-child {
-  display: none;  /* hero'da zaten gösteriliyor */
+  display: none;
+  /* hero'da zaten gösteriliyor */
 }
 
 .docs-prose h1 {
@@ -661,7 +663,8 @@
   font-weight: 700;
   color: var(--docs-text);
   margin: 0 0 0.35rem;
-  line-height: 2rem; /* align with circle */
+  line-height: 2rem;
+  /* align with circle */
 }
 
 .docs-step-desc {
@@ -749,7 +752,8 @@
 
 /* ── Mobile overlay sidebar ─────────────────────────────────── */
 .docs-sidebar-overlay {
-  display: block;     /* React conditional render ile kontrol ediliyor */
+  display: block;
+  /* React conditional render ile kontrol ediliyor */
   position: fixed;
   inset: 0;
   z-index: 40;
@@ -765,7 +769,8 @@
   position: relative;
   height: 100%;
   z-index: 1;
-  display: block; /* media query'deki display: none'ı ezer */
+  display: block;
+  /* media query'deki display: none'ı ezer */
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
@@ -924,7 +929,7 @@
   width: 100%;
   max-width: 600px;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   max-height: 80vh;
@@ -1045,7 +1050,7 @@
   .docs-search-overlay {
     padding-top: 0;
   }
-  
+
   .docs-search-modal {
     max-width: 100%;
     height: 100vh;
@@ -1081,8 +1086,13 @@
 }
 
 @keyframes modal-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .docs-image-modal-close {
@@ -1122,6 +1132,7 @@
     opacity: 0;
     transform: scale(0.95) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1132,6 +1143,7 @@
   .docs-image-modal {
     padding: 1rem;
   }
+
   .docs-image-modal-close {
     top: 1rem;
     right: 1rem;
