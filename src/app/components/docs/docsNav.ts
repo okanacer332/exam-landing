@@ -78,6 +78,8 @@ export const docsNav: DocSection[] = [
       { title: "Çoklu Dil Desteği", slug: "ozellikler/coklu-dil-destegi" },
     ],
   },
+
+  /** 
   {
     section: "Arayüz",
     icon: "🖥️",
@@ -114,7 +116,7 @@ export const docsNav: DocSection[] = [
       { title: "Yanlış Puanlama", slug: "sorun-giderme/yanlis-puanlama" },
       { title: "Performans Sorunları", slug: "sorun-giderme/performans-sorunlari" },
     ],
-  },
+  }, */
 ];
 
 /** Tüm slug'ları düz liste olarak döner (arama için) */
