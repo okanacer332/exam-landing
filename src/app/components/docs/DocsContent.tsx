@@ -1,8 +1,8 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { marked } from "marked";
 import { getDocContent } from "./docsMdLoader";
 import { docsNav, getAdjacentDocs } from "./docsNav";
-import { BookOpen, Shield, Cpu, Users, BarChart3, FileCheck } from "lucide-react";
+import { BookOpen, Shield, Cpu, Users, BarChart3, FileCheck, X } from "lucide-react";
 
 // marked ayarları + custom renderer
 const renderer = new marked.Renderer();
@@ -50,6 +50,15 @@ export function DocsContent({ slug, onNavigate }: DocsContentProps) {
     window.history.pushState({}, "", `/dokuman/${targetSlug}`);
   };
 
+  const [zoomedImg, setZoomedImg] = useState<string | null>(null);
+
+  const handleProseClick = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName.toLowerCase() === "img" && target.classList.contains("docs-screenshot")) {
+      setZoomedImg((target as HTMLImageElement).src);
+    }
+  };
+
   return (
     <main className="docs-main">
       <div className={`docs-content-wrapper ${isLanding ? "docs-content-wrapper--landing" : ""}`}>
@@ -91,6 +100,7 @@ export function DocsContent({ slug, onNavigate }: DocsContentProps) {
         <article
           className={`docs-prose ${isLanding ? "docs-prose--landing" : ""}`}
           dangerouslySetInnerHTML={{ __html: html }}
+          onClick={handleProseClick}
         />
 
         {/* Kurumsal güven bölümü — sadece ana sayfada */}
@@ -161,6 +171,20 @@ export function DocsContent({ slug, onNavigate }: DocsContentProps) {
           )}
         </nav>
       </div>
+
+      {zoomedImg && (
+        <div 
+          className="docs-image-modal" 
+          onClick={() => setZoomedImg(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button className="docs-image-modal-close" onClick={() => setZoomedImg(null)}>
+            <X size={24} />
+          </button>
+          <img src={zoomedImg} alt="Büyütülmüş görsel" className="docs-image-modal-content" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </main>
   );
 }
