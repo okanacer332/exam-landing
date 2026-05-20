@@ -55,6 +55,7 @@ export const docsNav: DocSection[] = [
     icon: "🔄",
     items: [
       { title: "Cevap Anahtarı Oluşturma", slug: "is-akislari/cevap-anahtari-olusturma" },
+      { title: "Kaynak Havuzu", slug: "is-akislari/kaynak-havuzu-ile-degerlendirme" },
       { title: "Öğrenci Kağıdı Yükleme", slug: "is-akislari/ogrenci-kagidi-yukleme" },
       { title: "AI Değerlendirmesi Başlatma", slug: "is-akislari/ai-degerlendirmesi-baslatma" },
       { title: "Sonuçları İnceleme", slug: "is-akislari/sonuclari-inceleme" },

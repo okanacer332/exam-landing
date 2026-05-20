@@ -1,0 +1,65 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#F5F8FC"/>
+  <rect x="34" y="34" width="1132" height="692" rx="18" fill="white" stroke="#D9E3EE"/>
+  <rect x="34" y="34" width="230" height="692" rx="18" fill="#FBFCFE"/>
+  <path d="M264 34v692" stroke="#E4ECF5"/>
+  <rect x="58" y="58" width="34" height="34" rx="10" fill="white" stroke="#1F2A36" stroke-width="2"/>
+  <text x="105" y="81" fill="#0B1D33" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="800">Papirus AI</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="650">
+    <text x="62" y="134" fill="#60708A">Konsol</text>
+    <text x="62" y="180" fill="#60708A">Cevap Anahtarı Yükle</text>
+    <rect x="52" y="205" width="180" height="38" rx="10" fill="#E8FFF8" stroke="#B7EEE1"/>
+    <text x="62" y="229" fill="#047868">Kaynak Yükle</text>
+    <text x="62" y="276" fill="#60708A">Sınav Kağıdı Oku</text>
+    <text x="62" y="322" fill="#60708A">Sınıfım</text>
+    <text x="62" y="368" fill="#60708A">Kurum</text>
+    <text x="62" y="414" fill="#60708A">Ayarlar</text>
+  </g>
+  <text x="292" y="86" fill="#11243E" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="800">Kaynak havuzu</text>
+  <text x="292" y="112" fill="#6F7F96" font-family="Inter,Segoe UI,sans-serif" font-size="14">Kitap, PDF ve ders notlarını sınav değerlendirme kaynağına dönüştürün.</text>
+  <rect x="994" y="58" width="136" height="34" rx="17" fill="#E8FFF8" stroke="#9CE4D8"/>
+  <circle cx="1014" cy="75" r="4" fill="#13A38B"/>
+  <text x="1026" y="80" fill="#087263" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="750">4 kaynak işlendi</text>
+  <rect x="292" y="146" width="486" height="520" rx="14" fill="white" stroke="#DBE4EE"/>
+  <text x="316" y="180" fill="#13233A" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="800">Havuz oluştur</text>
+  <text x="316" y="219" fill="#5D6D84" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="750">Kaynak havuzu</text>
+  <rect x="316" y="230" width="420" height="44" rx="11" fill="white" stroke="#CFDBE8"/>
+  <text x="332" y="257" fill="#20344F" font-family="Inter,Segoe UI,sans-serif" font-size="14">Hemşirelik Temel Bakım Kaynakları</text>
+  <rect x="316" y="304" width="420" height="188" rx="14" fill="#F8FBFF" stroke="#B8C8DA" stroke-width="1.5" stroke-dasharray="7 7"/>
+  <text x="445" y="383" fill="#173250" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="800">PDF veya ders notu yükleyin</text>
+  <text x="393" y="411" fill="#61738D" font-family="Inter,Segoe UI,sans-serif" font-size="14">Aranabilir PDF'ler daha yüksek doğruluk verir.</text>
+  <rect x="316" y="518" width="132" height="40" rx="10" fill="#23456F"/>
+  <text x="337" y="543" fill="white" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="800">Kaynakları işle</text>
+  <rect x="460" y="518" width="108" height="40" rx="10" fill="#EEF4FB" stroke="#D4E0EC"/>
+  <text x="482" y="543" fill="#254363" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="800">Yeni havuz</text>
+  <rect x="800" y="146" width="330" height="520" rx="14" fill="white" stroke="#DBE4EE"/>
+  <text x="824" y="180" fill="#13233A" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="800">Kaynak durumu</text>
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <rect x="824" y="208" width="282" height="62" rx="12" fill="white" stroke="#E0E8F1"/>
+    <text x="840" y="233" fill="#172B45" font-size="14" font-weight="800">Temel Hemşirelik Bakımı.pdf</text>
+    <text x="840" y="253" fill="#718096" font-size="12">184 sayfa · metin çıkarıldı</text>
+    <rect x="1038" y="224" width="52" height="25" rx="12" fill="#E8FFF8"/>
+    <text x="1049" y="241" fill="#05786A" font-size="12" font-weight="800">Hazır</text>
+    <rect x="824" y="284" width="282" height="62" rx="12" fill="white" stroke="#E0E8F1"/>
+    <text x="840" y="309" fill="#172B45" font-size="14" font-weight="800">Hasta Güvenliği Rehberi.pdf</text>
+    <text x="840" y="329" fill="#718096" font-size="12">72 sayfa · kavramlar indekslendi</text>
+    <rect x="1038" y="300" width="52" height="25" rx="12" fill="#E8FFF8"/>
+    <text x="1049" y="317" fill="#05786A" font-size="12" font-weight="800">Hazır</text>
+    <rect x="824" y="360" width="282" height="62" rx="12" fill="white" stroke="#E0E8F1"/>
+    <text x="840" y="385" fill="#172B45" font-size="14" font-weight="800">Enfeksiyon Kontrol Notları.pdf</text>
+    <text x="840" y="405" fill="#718096" font-size="12">38 sayfa · kaynak parçaları oluşturuldu</text>
+    <rect x="1018" y="376" width="72" height="25" rx="12" fill="#EDF5FF"/>
+    <text x="1030" y="393" fill="#285E9B" font-size="12" font-weight="800">İşleniyor</text>
+  </g>
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <rect x="824" y="458" width="86" height="72" rx="12" fill="#FBFDFF" stroke="#E0E8F1"/>
+    <text x="846" y="493" fill="#12213B" font-size="24" font-weight="800">294</text>
+    <text x="849" y="514" fill="#708098" font-size="12">sayfa</text>
+    <rect x="922" y="458" width="86" height="72" rx="12" fill="#FBFDFF" stroke="#E0E8F1"/>
+    <text x="944" y="493" fill="#12213B" font-size="24" font-weight="800">812</text>
+    <text x="935" y="514" fill="#708098" font-size="12">kaynak parçası</text>
+    <rect x="1020" y="458" width="86" height="72" rx="12" fill="#FBFDFF" stroke="#E0E8F1"/>
+    <text x="1042" y="493" fill="#12213B" font-size="24" font-weight="800">96%</text>
+    <text x="1036" y="514" fill="#708098" font-size="12">metin kalitesi</text>
+  </g>
+</svg>

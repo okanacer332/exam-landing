@@ -19,6 +19,7 @@ Bu bölümde Papirus AI'nin hangi sınav türleriyle kullanılabileceğini ve ha
 - Sayısal ders sınavları
 - Yoruma dayalı sınavlar
 - Çok aşamalı çözüm soruları
+- Kaynak havuzu ile değerlendirilen sınavlar
 - Toplu sınıf değerlendirmeleri
 - Desteklenen dosya formatları
 
@@ -209,6 +210,26 @@ Papirus AI'nin temel çalışma mantığı cevap anahtarı üzerinden ilerler.
 Daha sonra öğrenci kağıtları bu cevap anahtarı ile ilişkilendirilerek değerlendirilir.
 
 Bu yapı sayesinde aynı sınav için çok sayıda öğrenci kağıdı daha düzenli şekilde okunabilir.
+
+---
+
+## Kaynak Havuzu ile Değerlendirilen Sınavlar
+
+Bazı sınavlarda öğretmenin hazır cevap anahtarı bulunmayabilir. Özellikle hemşirelik, sağlık bilimleri, hukuk, eğitim bilimleri ve mesleki derslerde değerlendirme belirli kitap, PDF, ders notu veya klinik rehberlere göre yapılabilir.
+
+Papirus AI bu senaryoda kaynak havuzu yaklaşımını destekler:
+
+- Öğretmen güvenilir kaynak belgelerini yükler
+- Sınav sorularını ve puan planını yazar
+- Sistem kaynaklardan cevap çerçevesi oluşturur
+- Öğrenci kağıtları bu çerçeveye göre değerlendirilir
+- Sonuçlar yine öğretmen kontrolüyle kesinleşir
+
+Bu yapı, cevap anahtarı olmayan ama kaynak dayanağı güçlü sınavlarda kullanılmak üzere tasarlanmıştır.
+
+Detaylı kullanım için:
+
+→ [Kaynak Havuzu ile Değerlendirme](../is-akislari/kaynak-havuzu-ile-degerlendirme)
 
 ---
 

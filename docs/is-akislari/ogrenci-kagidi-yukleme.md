@@ -2,7 +2,7 @@
 
 Papirus AI içerisindeki değerlendirme sürecinin ikinci ana adımı öğrenci kağıtlarının sisteme yüklenmesidir.
 
-Öğrenci kağıtları; daha önce oluşturulan cevap anahtarı ve rubric yapısı ile ilişkilendirilerek AI değerlendirme sürecine hazırlanır.
+Öğrenci kağıtları; daha önce oluşturulan cevap anahtarı, rubric yapısı veya kaynak havuzundan hazırlanan cevap çerçevesi ile ilişkilendirilerek AI değerlendirme sürecine hazırlanır.
 
 Platform bu süreçte:
 
@@ -37,7 +37,7 @@ hakkında bilgi edinebilirsiniz.
 Genel süreç şu şekilde ilerler:
 
 ```txt
-Cevap anahtarını seç
+Cevap anahtarını veya kaynak cevap çerçevesini seç
         ↓
 Öğrenci kağıtlarını yükle
         ↓
@@ -55,6 +55,8 @@ Bu yapı değerlendirme sürecinin düzenli ilerlemesini sağlar.
 ## Cevap Anahtarı ile Eşleştirme
 
 Öğrenci kağıtları yüklenmeden önce ilgili cevap anahtarı seçilir.
+
+Hazır cevap anahtarı olmayan sınavlarda ise daha önce **Kaynak Yükle** ekranında oluşturulan kaynak cevap çerçevesi seçilebilir. Bu durumda değerlendirme, öğretmenin yüklediği kaynaklardan çıkarılan beklenen cevap ve puan planına göre hazırlanır.
 
 Bu yapı sayesinde sistem:
 
