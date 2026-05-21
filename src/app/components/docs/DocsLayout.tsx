@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react";
-import type { Locale } from "../../i18n";
-import "../../../styles/docs.css";
-import { DocsContent } from "./DocsContent";
+import { useState, useEffect } from "react";
 import { DocsHeader } from "./DocsHeader";
-import { DocsSearchModal } from "./DocsSearchModal";
 import { DocsSidebar } from "./DocsSidebar";
+import { DocsContent } from "./DocsContent";
+import { DocsSearchModal } from "./DocsSearchModal";
+import "../../../styles/docs.css";
 
+/** /dokuman URL'inden slug'ı ayıkla */
 function extractSlug(pathname: string): string {
-  const normalized = pathname.replace(/^\/en\/docs\/?/, "").replace(/^\/dokuman\/?/, "");
-  return normalized || "giris/index";
+  const after = pathname.replace(/^\/dokuman\/?/, "");
+  return after || "giris/index";
 }
 
-export function DocsLayout({ locale }: { locale: Locale }) {
+export function DocsLayout() {
   const [slug, setSlug] = useState(() => extractSlug(window.location.pathname));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
+  // Tarayıcı geri/ileri düğmeleri
   useEffect(() => {
-    document.documentElement.lang = locale;
     const onPopState = () => {
       setSlug(extractSlug(window.location.pathname));
       setMobileMenuOpen(false);
     };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [locale]);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,18 +45,34 @@ export function DocsLayout({ locale }: { locale: Locale }) {
 
   return (
     <div className="docs-shell">
-      <DocsHeader locale={locale} onMenuClick={() => setMobileMenuOpen((v) => !v)} onSearchClick={() => setSearchOpen(true)} />
-      <DocsSearchModal isOpen={searchOpen} locale={locale} onClose={() => setSearchOpen(false)} />
+      <DocsHeader 
+        onMenuClick={() => setMobileMenuOpen((v) => !v)} 
+        onSearchClick={() => setSearchOpen(true)}
+      />
+
+      <DocsSearchModal 
+        isOpen={searchOpen} 
+        onClose={() => setSearchOpen(false)} 
+      />
 
       <div className="docs-body">
-        <DocsSidebar currentSlug={slug} locale={locale} onNavigate={handleNavigate} />
+        {/* Desktop sidebar */}
+        <DocsSidebar currentSlug={slug} onNavigate={handleNavigate} />
+
+        {/* Mobil overlay sidebar */}
         {mobileMenuOpen && (
-          <div className="docs-sidebar-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
-            <div className="docs-sidebar-overlay-backdrop" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
-            <DocsSidebar currentSlug={slug} locale={locale} onNavigate={handleNavigate} />
+          <div className="docs-sidebar-overlay" role="dialog" aria-modal="true" aria-label="Navigasyon menüsü">
+            <div
+              className="docs-sidebar-overlay-backdrop"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <DocsSidebar currentSlug={slug} onNavigate={handleNavigate} />
           </div>
         )}
-        <DocsContent locale={locale} slug={slug} onNavigate={handleNavigate} />
+
+        {/* İçerik */}
+        <DocsContent slug={slug} onNavigate={handleNavigate} />
       </div>
     </div>
   );

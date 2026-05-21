@@ -1,31 +1,28 @@
-import type { Locale } from "../../i18n";
-import { landingCopy } from "../../i18n";
-import { MobileStory } from "./MobileStory";
-import { PremiumFAQ } from "./PremiumFAQ";
-import { PremiumFooter } from "./PremiumFooter";
 import { PremiumHeader } from "./PremiumHeader";
-import { PremiumPricing } from "./PremiumPricing";
+import { PremiumFooter } from "./PremiumFooter";
+import { PremiumFAQ } from "./PremiumFAQ";
 import { ScrollStory } from "./ScrollStory";
+import { MobileStory } from "./MobileStory";
+import { PremiumPricing } from "./PremiumPricing";
 
 type PremiumLandingProps = {
-  docsUrl: string;
-  locale: Locale;
   loginUrl: string;
   tryUrl: string;
 };
 
-export function PremiumLanding({ docsUrl, locale, loginUrl, tryUrl }: PremiumLandingProps) {
-  const copy = landingCopy[locale];
+export function PremiumLanding({ loginUrl, tryUrl }: PremiumLandingProps) {
   return (
     <div className="premium-shell" id="top">
-      <PremiumHeader docsUrl={docsUrl} locale={locale} loginUrl={loginUrl} tryUrl={tryUrl} />
+      <PremiumHeader loginUrl={loginUrl} tryUrl={tryUrl} />
       <main>
-        <ScrollStory copy={copy} tryUrl={tryUrl} />
-        <MobileStory copy={copy} />
-        <PremiumFAQ copy={copy} />
-        <PremiumPricing copy={copy} />
+        {/* Masaüstü: scroll-driven GSAP animasyonu — mobilde CSS ile gizlenir */}
+        <ScrollStory tryUrl={tryUrl} />
+        {/* Mobil: statik moment kartları — masaüstünde CSS ile gizlenir */}
+        <MobileStory />
+        <PremiumFAQ />
+        <PremiumPricing tryUrl={tryUrl} />
       </main>
-      <PremiumFooter copy={copy} locale={locale} />
+      <PremiumFooter />
     </div>
   );
 }
