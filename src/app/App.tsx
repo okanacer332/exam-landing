@@ -1,84 +1,102 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageLoader } from "./components/PageLoader";
+import { DocsLayout } from "./components/docs/DocsLayout";
 import { PremiumLanding } from "./components/premium/PremiumLanding";
-import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
-import { SecurityPolicy } from "./components/policies/SecurityPolicy";
-import { TermsOfUse } from "./components/policies/TermsOfUse";
-import { KvkkPolicy } from "./components/policies/KvkkPolicy";
 import { CookiePolicy } from "./components/policies/CookiePolicy";
 import { DistanceSalesContract } from "./components/policies/DistanceSalesContract";
+import { KvkkPolicy } from "./components/policies/KvkkPolicy";
 import { PreliminaryInfoForm } from "./components/policies/PreliminaryInfoForm";
+import { PrivacyPolicy } from "./components/policies/PrivacyPolicy";
 import { RefundPolicy } from "./components/policies/RefundPolicy";
-import { DocsLayout } from "./components/docs/DocsLayout";
+import { SecurityPolicy } from "./components/policies/SecurityPolicy";
+import { TermsOfUse } from "./components/policies/TermsOfUse";
+import { getLocaleFromPath, normalizeLocale, stripLocalePrefix, withLocalePath, type Locale } from "./i18n";
 
 type AuthIntent = "login" | "trial";
 
 const consoleBaseUrl = (import.meta.env.VITE_CONSOLE_URL || "https://konsol.papirus-ai.com").replace(/\/$/, "");
 
 function getRouteIntent(pathname: string): AuthIntent | null {
-  const normalizedPath = pathname.replace(/\/$/, "");
+  const normalizedPath = stripLocalePrefix(pathname).replace(/\/$/, "");
   if (normalizedPath === "/giris" || normalizedPath === "/login") return "login";
   if (normalizedPath === "/kayit" || normalizedPath === "/register") return "trial";
   return null;
 }
 
 function getPolicyRoute(pathname: string, hash: string) {
-  const p = pathname.replace(/\/$/, "");
-  if (p === "/gizlilik-politikasi" || hash === "#gizlilik-politikasi") return "privacy";
-  if (p === "/kullanim-kosullari" || hash === "#kullanim-kosullari") return "terms";
-  if (p === "/guvenlik-politikasi" || hash === "#guvenlik-politikasi") return "security";
-  if (p === "/kvkk-aydinlatma-metni" || hash === "#kvkk-aydinlatma-metni") return "kvkk";
-  if (p === "/cerez-politikasi" || hash === "#cerez-politikasi") return "cookie";
-  if (p === "/mesafeli-satis-sozlesmesi" || hash === "#mesafeli-satis-sozlesmesi") return "distance-sales";
-  if (p === "/on-bilgilendirme-formu" || hash === "#on-bilgilendirme-formu") return "preliminary-info";
-  if (p === "/iade-iptal-politikasi" || hash === "#iade-iptal-politikasi") return "refund";
-  if (p.startsWith("/dokuman")) return "docs";
+  const p = stripLocalePrefix(pathname).replace(/^\/docs/, "/dokuman").replace(/\/$/, "");
+  if (p === "/gizlilik-politikasi" || p === "/privacy-policy" || hash === "#gizlilik-politikasi") return "privacy";
+  if (p === "/kullanim-kosullari" || p === "/terms" || hash === "#kullanim-kosullari") return "terms";
+  if (p === "/guvenlik-politikasi" || p === "/security-policy" || hash === "#guvenlik-politikasi") return "security";
+  if (p === "/kvkk-aydinlatma-metni" || p === "/kvkk-notice" || hash === "#kvkk-aydinlatma-metni") return "kvkk";
+  if (p === "/cerez-politikasi" || p === "/cookie-policy" || hash === "#cerez-politikasi") return "cookie";
+  if (p === "/mesafeli-satis-sozlesmesi" || p === "/distance-sales-contract" || hash === "#mesafeli-satis-sozlesmesi") return "distance-sales";
+  if (p === "/on-bilgilendirme-formu" || p === "/preliminary-information" || hash === "#on-bilgilendirme-formu") return "preliminary-info";
+  if (p === "/iade-iptal-politikasi" || p === "/refund-policy" || hash === "#iade-iptal-politikasi") return "refund";
+  if (p === "/dokuman" || p.startsWith("/dokuman/")) return "docs";
   return null;
 }
 
-function getConsoleLoginUrl(intent: AuthIntent) {
+function getConsoleLoginUrl(intent: AuthIntent, locale: Locale) {
   const url = new URL("/giris", consoleBaseUrl);
   url.searchParams.set("auth", "google");
   url.searchParams.set("intent", intent === "trial" ? "signup" : "signin");
+  if (locale === "en") url.searchParams.set("locale", "en");
   return url.toString();
 }
 
-export default function App() {
-  /* ── Docs route'u: PageLoader olmadan, anında render ── */
-  const p = window.location.pathname;
-  if (p === "/dokuman" || p === "/dokuman/" || p.startsWith("/dokuman/")) {
-    return <DocsLayout />;
+function updateHead(locale: Locale) {
+  document.documentElement.lang = locale;
+  document.title = locale === "en" ? "Papirus AI | AI-assisted exam grading" : "Papirus AI | AI destekli sınav değerlendirme";
+  const description =
+    locale === "en"
+      ? "Papirus AI helps instructors read written exams, compare answers with rubrics, and review AI-supported grading drafts."
+      : "Papirus AI, akademisyenlerin yazılı sınavları rubrik ve AI destekli taslak puanlarla daha hızlı değerlendirmesine yardımcı olur.";
+  let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.name = "description";
+    document.head.appendChild(meta);
   }
-
-  return <AppShell />;
+  meta.content = description;
 }
 
-/** Landing + Policy sayfaları (PageLoader dahil) */
-function AppShell() {
+export default function App() {
+  const locale = getLocaleFromPath(window.location.pathname);
+  const normalizedPath = stripLocalePrefix(window.location.pathname).replace(/^\/docs/, "/dokuman");
+  if (normalizedPath === "/dokuman" || normalizedPath === "/dokuman/" || normalizedPath.startsWith("/dokuman/")) {
+    return <DocsLayout locale={locale} />;
+  }
+
+  return <AppShell initialLocale={locale} />;
+}
+
+function AppShell({ initialLocale }: { initialLocale: Locale }) {
   const [isLoading, setIsLoading] = useState(true);
   const [hash, setHash] = useState(window.location.hash);
   const [pathname, setPathname] = useState(window.location.pathname);
+  const locale = useMemo(() => normalizeLocale(getLocaleFromPath(pathname) || initialLocale), [initialLocale, pathname]);
+
+  useEffect(() => {
+    localStorage.setItem("papirus_locale", locale);
+    updateHead(locale);
+  }, [locale]);
 
   const goToConsole = (intent: AuthIntent) => {
-    window.location.href = getConsoleLoginUrl(intent);
+    window.location.href = getConsoleLoginUrl(intent, locale);
   };
 
   useEffect(() => {
-    const onHashChange = () => {
+    const onRouteChange = () => {
       setHash(window.location.hash);
       setPathname(window.location.pathname);
       window.scrollTo(0, 0);
     };
-    const onPopState = () => {
-      setHash(window.location.hash);
-      setPathname(window.location.pathname);
-      window.scrollTo(0, 0);
-    };
-    window.addEventListener("hashchange", onHashChange);
-    window.addEventListener("popstate", onPopState);
+    window.addEventListener("hashchange", onRouteChange);
+    window.addEventListener("popstate", onRouteChange);
     return () => {
-      window.removeEventListener("hashchange", onHashChange);
-      window.removeEventListener("popstate", onPopState);
+      window.removeEventListener("hashchange", onRouteChange);
+      window.removeEventListener("popstate", onRouteChange);
     };
   }, []);
 
@@ -101,9 +119,11 @@ function AppShell() {
     if (policyRoute === "refund") return <RefundPolicy />;
 
     return (
-      <PremiumLanding 
-        loginUrl={getConsoleLoginUrl("login")} 
-        tryUrl={getConsoleLoginUrl("trial")} 
+      <PremiumLanding
+        locale={locale}
+        loginUrl={getConsoleLoginUrl("login", locale)}
+        tryUrl={getConsoleLoginUrl("trial", locale)}
+        docsUrl={withLocalePath(locale, "/dokuman/")}
       />
     );
   };

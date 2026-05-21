@@ -1,50 +1,21 @@
-import { ArrowRight, Check } from "lucide-react";
+import type { LandingCopy } from "../../i18n";
 
-const plans = [
-  {
-    name: "Başlangıç",
-    price: "₺1.999",
-    period: "350 kağıt okuma kredisi",
-    description: "Dönem içi yazılı sınavlarını düzenli okumaya başlamak isteyen öğretim elemanları için.",
-    features: ["350 kağıt okuma", "Soru bazlı değerlendirme", "Gmail ile güvenli konsol girişi"],
-  },
-  {
-    name: "Akademik",
-    price: "₺4.999",
-    period: "1.000 kağıt okuma kredisi",
-    description: "Yoğun sınav dönemlerinde daha yüksek hacimli değerlendirme yapan akademik ekipler için.",
-    features: ["1.000 kağıt okuma", "Rubrik bazlı karşılaştırma", "Sınıf performans özeti"],
-    featured: true,
-  },
-  {
-    name: "Kurum",
-    price: "₺19.999",
-    period: "5.000 kağıt okuma kredisi",
-    description: "Bölüm, fakülte ve kurum ölçeğinde merkezi sınav değerlendirme akışları için.",
-    features: ["5.000 kağıt okuma", "Kurum ölçeğinde kullanım", "Öncelikli destek"],
-  },
-];
-
-type PremiumPricingProps = {
-  tryUrl?: string;
-};
-
-export function PremiumPricing({ tryUrl }: PremiumPricingProps) {
+export function PremiumPricing({ copy }: { copy: LandingCopy }) {
   return (
     <section className="premium-pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="premium-section-heading">
-        <span>Fiyatlandırma</span>
-        <h2 id="pricing-title">Kullanım hacminize göre sade paketler.</h2>
-        <p>Şimdi konsola girin, hesabınızı oluşturun ve ilk değerlendirme akışını 5 kağıt okuma hakkıyla deneyin.</p>
+        <span>{copy.pricing.eyebrow}</span>
+        <h2 id="pricing-title">{copy.pricing.title}</h2>
+        <p>{copy.pricing.text}</p>
       </div>
 
       <div className="premium-plan-row">
-        {plans.map((plan) => (
-          <article className={plan.featured ? "is-featured" : ""} key={plan.name}>
-            {plan.featured ? <em>Önerilen</em> : null}
-            <span>{plan.name}</span>
-            <div className="premium-pricing-beta-notice" style={{ marginTop: '1rem', marginBottom: 0 }}>
-              Beta sürümü devam etmektedir...
+        {copy.pricing.plans.map((name, index) => (
+          <article className={index === 1 ? "is-featured" : ""} key={name}>
+            {index === 1 ? <em>{copy.pricing.recommended}</em> : null}
+            <span>{name}</span>
+            <div className="premium-pricing-beta-notice" style={{ marginTop: "1rem", marginBottom: 0 }}>
+              {copy.pricing.beta}
             </div>
           </article>
         ))}

@@ -1,49 +1,37 @@
 import { Mail, ShieldCheck } from "lucide-react";
+import type { LandingCopy, Locale } from "../../i18n";
+import { withLocalePath } from "../../i18n";
 
-const legalLinks = [
-  ["Kullanım Koşulları", "/kullanim-kosullari/"],
-  ["Gizlilik Politikası", "/gizlilik-politikasi/"],
-  ["KVKK Aydınlatma Metni", "/kvkk-aydinlatma-metni/"],
-  ["Çerez Politikası", "/cerez-politikasi/"],
-  ["Mesafeli Satış Sözleşmesi", "/mesafeli-satis-sozlesmesi/"],
-  ["Ön Bilgilendirme Formu", "/on-bilgilendirme-formu/"],
-  ["İade ve İptal Politikası", "/iade-iptal-politikasi/"],
-  ["Güvenlik Politikası", "/guvenlik-politikasi/"],
-];
+function policyLinks(locale: Locale) {
+  if (locale === "en") {
+    return [
+      ["Terms", "/en/terms"],
+      ["Privacy Policy", "/en/privacy-policy"],
+      ["Security Policy", "/en/security-policy"],
+      ["Cookie Policy", "/en/cookie-policy"],
+      ["Refund Policy", "/en/refund-policy"],
+    ];
+  }
+  return [
+    ["Kullanım Koşulları", "/kullanim-kosullari/"],
+    ["Gizlilik Politikası", "/gizlilik-politikasi/"],
+    ["KVKK Aydınlatma Metni", "/kvkk-aydinlatma-metni/"],
+    ["Çerez Politikası", "/cerez-politikasi/"],
+    ["Mesafeli Satış Sözleşmesi", "/mesafeli-satis-sozlesmesi/"],
+    ["Ön Bilgilendirme Formu", "/on-bilgilendirme-formu/"],
+    ["İade ve İptal Politikası", "/iade-iptal-politikasi/"],
+    ["Güvenlik Politikası", "/guvenlik-politikasi/"],
+  ];
+}
 
-const membershipLinks = [
-  ["Paketler", "#pricing"],
-  ["Fiyatlandırma", "#pricing"],
-  ["Deneme Hakkı", "#pricing"],
-  ["Abonelik Yönetimi", "#abonelik-yonetimi"],
-  ["Kurumsal Kullanım", "#kurumsal"],
-  ["Fatura ve Ödeme", "#odeme"],
-];
-
-const productLinks = [
-  ["Sınav Kağıdı Okuma", "#scan"],
-  ["Rubrik Bazlı Değerlendirme", "#ai-compare"],
-  ["AI Karşılaştırma", "#compare"],
-  ["Sınıf Analizi", "#dashboard"],
-  ["Güvenli Konsol", "#top"],
-];
-
-const paymentBadges = ["Lemon Squeezy", "Visa", "Mastercard", "American Express", "Troy"];
+const paymentBadges = ["Visa", "Mastercard", "American Express", "Troy"];
 
 function FooterColumn({ title, links }: { title: string; links: string[][] }) {
   return (
     <nav className="premium-footer__column" aria-label={title}>
       <h2>{title}</h2>
       {links.map(([label, href]) => (
-        <a
-          href={href}
-          key={label}
-          onClick={(event) => {
-            if (!href.startsWith("/")) return;
-            event.preventDefault();
-            window.location.assign(href);
-          }}
-        >
+        <a href={href} key={label}>
           {label}
         </a>
       ))}
@@ -51,27 +39,39 @@ function FooterColumn({ title, links }: { title: string; links: string[][] }) {
   );
 }
 
-export function PremiumFooter() {
+export function PremiumFooter({ copy, locale }: { copy: LandingCopy; locale: Locale }) {
+  const membershipLinks = [
+    [locale === "en" ? "Plans" : "Paketler", "#pricing"],
+    [copy.nav.tryFree, "#pricing"],
+    [locale === "en" ? "Institutional Use" : "Kurumsal Kullanım", "#kurumsal"],
+  ];
+  const productLinks = [
+    [copy.nav.scan, "#scan"],
+    [copy.nav.compare, "#compare"],
+    [copy.nav.analysis, "#dashboard"],
+    [copy.nav.docs, withLocalePath(locale, "/dokuman/")],
+  ];
+
   return (
     <footer className="premium-footer">
       <div className="premium-footer__inner">
         <div className="premium-footer__columns">
-          <FooterColumn title="Yasal" links={legalLinks} />
-          <FooterColumn title="Üyelik ve Paketler" links={membershipLinks} />
-          <FooterColumn title="Ürünler" links={productLinks} />
+          <FooterColumn title={copy.footer.legal} links={policyLinks(locale)} />
+          <FooterColumn title={copy.footer.membership} links={membershipLinks} />
+          <FooterColumn title={copy.footer.product} links={productLinks} />
 
-          <section className="premium-footer__contact" aria-label="Bize ulaşın">
-            <h2>Bize Ulaşın</h2>
-            <p>Teknik destek, abonelik ve kurumsal kullanım soruları için bize ulaşabilirsiniz.</p>
+          <section className="premium-footer__contact" aria-label={copy.footer.contact}>
+            <h2>{copy.footer.contact}</h2>
+            <p>{copy.footer.contactText}</p>
             <a href="mailto:info@papirus-ai.com">
               <Mail aria-hidden="true" />
               info@papirus-ai.com
             </a>
 
             <div className="premium-footer__payment">
-              <h2>Güvenli Ödeme</h2>
-              <p>Ödemeler Lemon Squeezy altyapısı üzerinden güvenli olarak alınır.</p>
-              <div className="payment-badges" aria-label="Desteklenen ödeme altyapısı ve kart markaları">
+              <h2>{copy.footer.securePayment}</h2>
+              <p>{copy.footer.paymentText}</p>
+              <div className="payment-badges" aria-label={copy.footer.securePayment}>
                 {paymentBadges.map((badge) => (
                   <span key={badge}>{badge}</span>
                 ))}
@@ -81,14 +81,14 @@ export function PremiumFooter() {
         </div>
 
         <div className="premium-footer__bottom">
-          <a href="#top" className="premium-footer__brand" aria-label="Papirus AI ana sayfa" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.2rem' }}>
+          <a href={locale === "en" ? "/en" : "#top"} className="premium-footer__brand" aria-label="Papirus AI">
             <img src="/papi-logo-web.png" alt="Papirus AI" className="premium-footer__logo" />
             <span className="premium-beta-badge">BETA</span>
           </a>
-          <p>Copyright © 2026 Papirus AI. Tüm hakları saklıdır.</p>
+          <p>{copy.footer.copyright}</p>
           <span className="premium-footer__secure">
             <ShieldCheck aria-hidden="true" />
-            Akademik veriler güvenli konsol akışında işlenir.
+            {copy.footer.secure}
           </span>
         </div>
       </div>

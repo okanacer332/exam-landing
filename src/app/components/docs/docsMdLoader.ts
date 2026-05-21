@@ -14,8 +14,13 @@ const mdModules = import.meta.glob("/docs/**/*.md", {
  * slug → markdown string döner
  * slug örnek: "giris/papirus-ai-nedir"
  */
-export function getDocContent(slug: string): string {
+export function getDocContent(slug: string, locale: "tr" | "en" = "tr"): string {
   try {
+    const localizedKey = `/docs/${locale}/${slug}.md`;
+    const localizedRaw = mdModules[localizedKey];
+    if (typeof localizedRaw === "string" && localizedRaw.trim() !== "") {
+      return transformImagePaths(localizedRaw);
+    }
     const key = `/docs/${slug}.md`;
     const raw = mdModules[key];
     if (typeof raw === "string" && raw.trim() !== "") {
@@ -24,7 +29,7 @@ export function getDocContent(slug: string): string {
   } catch {
     // glob hatasını sessizce yakala
   }
-  return generatePlaceholder(slug);
+  return generatePlaceholder(slug, locale);
 }
 
 /**
@@ -46,12 +51,25 @@ function transformImagePaths(md: string): string {
     .replace(/!\[([^\]]*)\]\(medya\//g, "![$1](/docs-media/");
 }
 
-function generatePlaceholder(slug: string): string {
+function generatePlaceholder(slug: string, locale: "tr" | "en" = "tr"): string {
   const parts = slug.split("/");
   const rawName = parts[parts.length - 1];
   const name = rawName
     .replace(/-/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  if (locale === "en") {
+    return `# ${name}
+
+This documentation page is being prepared.
+
+## Overview
+
+Papirus AI supports teacher-controlled written exam reading, answer-key based grading, source-library based grading, institutional workspaces, and localized TR/EN output.
+
+For support, contact [info@papirus-ai.com](mailto:info@papirus-ai.com).
+`;
+  }
 
   return `# ${name}
 
