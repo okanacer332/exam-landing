@@ -95,11 +95,15 @@
 }
 
 .premium-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 2.75rem;
   padding: 0 1rem;
   border-radius: 999px;
   background: transparent;
   color: rgba(245, 245, 247, 0.76);
+  line-height: 1;
 }
 
 .premium-primary-button,
