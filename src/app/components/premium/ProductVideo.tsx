@@ -18,10 +18,6 @@ export function ProductVideo() {
       </div>
 
       <div className="product-video__frame">
-        <div className="product-video__chrome" aria-hidden="true">
-          <div><i /><i /><i /></div>
-          <span>papirus-ai.com · ürün demosu</span>
-        </div>
         {isPlaying ? (
           <iframe
             src="https://www.youtube-nocookie.com/embed/9NDZ5kQDGk8?autoplay=1&rel=0&modestbranding=1"
