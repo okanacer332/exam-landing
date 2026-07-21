@@ -1,6 +1,9 @@
-import { CheckCircle2, Clock3, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Clock3, Play, ShieldCheck } from "lucide-react";
+import { useState } from "react";
 
 export function ProductVideo() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section className="product-video" id="urun-videosu" aria-labelledby="product-video-title">
       <div className="product-video__glow product-video__glow--blue" aria-hidden="true" />
@@ -19,13 +22,29 @@ export function ProductVideo() {
           <div><i /><i /><i /></div>
           <span>papirus-ai.com · ürün demosu</span>
         </div>
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/9NDZ5kQDGk8?rel=0&modestbranding=1"
-          title="Papirus AI ürün tanıtım videosu"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
+        {isPlaying ? (
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/9NDZ5kQDGk8?autoplay=1&rel=0&modestbranding=1"
+            title="Papirus AI ürün tanıtım videosu"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        ) : (
+          <button
+            className="product-video__poster"
+            type="button"
+            onClick={() => setIsPlaying(true)}
+            aria-label="Papirus AI ürün videosunu oynat"
+          >
+            <img
+              src="https://i.ytimg.com/vi/9NDZ5kQDGk8/maxresdefault.jpg"
+              alt="Papirus AI ürün demosu"
+            />
+            <span><Play fill="currentColor" aria-hidden="true" /></span>
+            <strong>Ürün videosunu oynat</strong>
+          </button>
+        )}
       </div>
 
       <div className="product-video__proofs" aria-label="Videoda gösterilen yetenekler">
