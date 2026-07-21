@@ -1,5 +1,8 @@
 node_modules
 dist
+.chrome-*/
+*-preview.png
+media/*.mp4
 .wrangler
 .env
 .env.local

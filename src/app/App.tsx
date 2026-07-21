@@ -10,6 +10,7 @@ import { DistanceSalesContract } from "./components/policies/DistanceSalesContra
 import { PreliminaryInfoForm } from "./components/policies/PreliminaryInfoForm";
 import { RefundPolicy } from "./components/policies/RefundPolicy";
 import { DocsLayout } from "./components/docs/DocsLayout";
+import { ComingSoon } from "./components/ComingSoon";
 
 type AuthIntent = "login" | "trial";
 
@@ -24,6 +25,7 @@ function getRouteIntent(pathname: string): AuthIntent | null {
 
 function getPolicyRoute(pathname: string, hash: string) {
   const p = pathname.replace(/\/$/, "");
+  if (p === "/yakinda") return "coming-soon";
   if (p === "/gizlilik-politikasi" || hash === "#gizlilik-politikasi") return "privacy";
   if (p === "/kullanim-kosullari" || hash === "#kullanim-kosullari") return "terms";
   if (p === "/guvenlik-politikasi" || hash === "#guvenlik-politikasi") return "security";
@@ -91,6 +93,7 @@ function AppShell() {
 
   const renderContent = () => {
     const policyRoute = getPolicyRoute(pathname, hash);
+    if (policyRoute === "coming-soon") return <ComingSoon />;
     if (policyRoute === "privacy") return <PrivacyPolicy />;
     if (policyRoute === "terms") return <TermsOfUse />;
     if (policyRoute === "security") return <SecurityPolicy />;

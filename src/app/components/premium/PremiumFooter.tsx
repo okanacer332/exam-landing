@@ -1,34 +1,32 @@
 import { Mail, ShieldCheck } from "lucide-react";
 
 const legalLinks = [
-  ["Kullanım Koşulları", "/kullanim-kosullari/"],
-  ["Gizlilik Politikası", "/gizlilik-politikasi/"],
-  ["KVKK Aydınlatma Metni", "/kvkk-aydinlatma-metni/"],
-  ["Çerez Politikası", "/cerez-politikasi/"],
-  ["Mesafeli Satış Sözleşmesi", "/mesafeli-satis-sozlesmesi/"],
-  ["Ön Bilgilendirme Formu", "/on-bilgilendirme-formu/"],
-  ["İade ve İptal Politikası", "/iade-iptal-politikasi/"],
-  ["Güvenlik Politikası", "/guvenlik-politikasi/"],
+  ["Kullanım Koşulları", "/yakinda/"],
+  ["Gizlilik Politikası", "/yakinda/"],
+  ["KVKK Aydınlatma Metni", "/yakinda/"],
+  ["Çerez Politikası", "/yakinda/"],
+  ["Mesafeli Satış Sözleşmesi", "/yakinda/"],
+  ["Ön Bilgilendirme Formu", "/yakinda/"],
+  ["İade ve İptal Politikası", "/yakinda/"],
+  ["Güvenlik Politikası", "/yakinda/"],
 ];
 
 const membershipLinks = [
-  ["Paketler", "#pricing"],
-  ["Fiyatlandırma", "#pricing"],
-  ["Deneme Hakkı", "#pricing"],
-  ["Abonelik Yönetimi", "#abonelik-yonetimi"],
-  ["Kurumsal Kullanım", "#kurumsal"],
-  ["Fatura ve Ödeme", "#odeme"],
+  ["Paketler", "/yakinda/"],
+  ["Fiyatlandırma", "/yakinda/"],
+  ["Deneme Hakkı", "/yakinda/"],
+  ["Abonelik Yönetimi", "/yakinda/"],
+  ["Kurumsal Kullanım", "/yakinda/"],
+  ["Fatura ve Ödeme", "/yakinda/"],
 ];
 
 const productLinks = [
-  ["Sınav Kağıdı Okuma", "#scan"],
-  ["Rubrik Bazlı Değerlendirme", "#ai-compare"],
-  ["AI Karşılaştırma", "#compare"],
-  ["Sınıf Analizi", "#dashboard"],
-  ["Güvenli Konsol", "#top"],
+  ["Sınav Kağıdı Okuma", "/yakinda/"],
+  ["Rubrik Bazlı Değerlendirme", "/yakinda/"],
+  ["Yapay Zeka Karşılaştırması", "/yakinda/"],
+  ["Sınıf Analizi", "/yakinda/"],
+  ["Güvenli Konsol", "/yakinda/"],
 ];
-
-const paymentBadges = ["Lemon Squeezy", "Visa", "Mastercard", "American Express", "Troy"];
 
 function FooterColumn({ title, links }: { title: string; links: string[][] }) {
   return (
@@ -67,16 +65,6 @@ export function PremiumFooter() {
               <Mail aria-hidden="true" />
               info@papirus-ai.com
             </a>
-
-            <div className="premium-footer__payment">
-              <h2>Güvenli Ödeme</h2>
-              <p>Ödemeler Lemon Squeezy altyapısı üzerinden güvenli olarak alınır.</p>
-              <div className="payment-badges" aria-label="Desteklenen ödeme altyapısı ve kart markaları">
-                {paymentBadges.map((badge) => (
-                  <span key={badge}>{badge}</span>
-                ))}
-              </div>
-            </div>
           </section>
         </div>
 

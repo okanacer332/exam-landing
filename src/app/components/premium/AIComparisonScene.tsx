@@ -62,7 +62,7 @@ export function AIComparisonScene() {
         <div className="ai-core-ring ai-core-ring--inner" />
         <div className="ai-core-orb">
           <BrainCircuit aria-hidden="true" />
-          <strong>AI</strong>
+          <strong>YZ</strong>
         </div>
         <div className="ai-confidence">
           <span>Güven</span>
