@@ -3,6 +3,9 @@ import { useState } from "react";
 
 export function ProductVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [thumbnailUrl, setThumbnailUrl] = useState(
+    "https://i.ytimg.com/vi/9NDZ5kQDGk8/maxresdefault.jpg",
+  );
 
   return (
     <section className="product-video" id="urun-videosu" aria-labelledby="product-video-title">
@@ -34,8 +37,14 @@ export function ProductVideo() {
             aria-label="Papirus AI ürün videosunu oynat"
           >
             <img
-              src="https://i.ytimg.com/vi/9NDZ5kQDGk8/maxresdefault.jpg"
+              src={thumbnailUrl}
               alt="Papirus AI ürün demosu"
+              onLoad={(event) => {
+                if (event.currentTarget.naturalWidth < 640 && thumbnailUrl.includes("maxresdefault")) {
+                  setThumbnailUrl("https://i.ytimg.com/vi/9NDZ5kQDGk8/sddefault.jpg");
+                }
+              }}
+              onError={() => setThumbnailUrl("https://i.ytimg.com/vi/9NDZ5kQDGk8/sddefault.jpg")}
             />
             <span><Play fill="currentColor" aria-hidden="true" /></span>
             <strong>Ürün videosunu oynat</strong>
